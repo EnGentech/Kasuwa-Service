@@ -55,14 +55,102 @@ body{
     margin-top: 2.4%;
     padding-left: 5%;
     font-size:x-large;
+    padding-right: 3%;
+}
+
+.cart:hover{
+    color:red;
+    cursor: pointer;
 }
 
 .account{
-    padding-left: 3%;
     margin-top: 2.5%;
+    font-size: 5000;
 }
 
 #acc{
     font-size: xx-small;
     padding-left: 0%;
+}
+
+.account:hover, #user:hover{
+    color:red !important;
+    cursor: pointer;
+    
+}
+
+.drop_down_acc{
+    position:absolute;
+    box-shadow: 1px 1px 20px 1px rgb(184, 184, 184);
+    padding: 20px;
+    padding-bottom: 10px;
+    padding-top:0px;
+    background-color: white;
+    margin-top:5%;
+    margin-right: 10%;
+    width: 14%;
+    right: 0;
+    border-radius: 3%;
+    display: none;
+}
+
+.drop_down_acc p{
+    padding: 10px;
+    margin: 0px;
+    padding-left:0px;
+}
+
+.drop_down_acc #effect_p:hover{
+    cursor: pointer;
+    background-color: rgb(223, 222, 222);
+    padding-left: 5%;
+    border-radius: 5px;
+}
+
+.drop_down_acc button{
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.drop_down_acc button:hover{
+    cursor: pointer;
+}
+
+#btn1{
+    color: white;
+    background-color: red;
+    border: none;
+    font-weight: bolder;
+}
+
+#btn2{
+    color: red;
+    background-color: rgb(255, 232, 232);
+    border: none;
+    font-weight: bolder;
+}
+
+.category_section{
+    margin: 1%;
+    display:flex;
+    justify-content: space-between;
+    margin-right: 10%;
+}
+
+.category{
+    background-color: white;
+    width: 300px;
+    margin-left: 8%;
+    padding: 1.5%;
+    padding-top: 0.5%;
+    line-height: 1.3em;
+    border-radius: 10px;
+}
+
+.slider{
+    border:2px solid black;
+    height: 558px;
+    width: 600px;
 }
