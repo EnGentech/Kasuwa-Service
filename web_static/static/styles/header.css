@@ -1,0 +1,84 @@
+body {
+    background-color: rgb(254, 254, 254);
+    margin: 0px;
+}
+
+.head_content {
+    margin: 0px;
+    background-color: white;
+    height: 100px;
+    display: flex;
+    width: 100%;
+
+}
+
+.logo {
+    width: 15%;
+    margin-top: 2%;
+    /* margin-left: 2%px; */
+    margin-right: 4%;
+    padding-left: 2%
+}
+
+.logo img {
+    width: 150px;
+    margin-left: 50%;
+}
+
+.head_content h2 {
+    margin: 0px;
+    padding: 10%;
+    padding-top: 2%;
+    padding-right: 5%;
+}
+
+.search {
+    height: 30px;
+    width: 50%;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.search input[type='text'] {
+    width: 100%;
+    height: 30px;
+    border: 2px solid #7BF0A8;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.search input[type='text']:focus {
+    outline: none;
+}
+
+.search_icon {
+    height: 32px;
+    width: 3%;
+    margin-top: 2%;
+    background-color: #7BF0A8;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 2px solid #7BF0A8;
+    text-align: center;
+
+}
+
+.search_icon i {
+    margin-top: 15%;
+}
+
+.cart {
+    margin-top: 2.4%;
+    padding-left: 5%;
+    font-size: x-large;
+}
+
+.account {
+    padding-left: 3%;
+    margin-top: 2.5%;
+}
+
+#acc {
+    font-size: xx-small;
+    padding-left: 0%;
+}
