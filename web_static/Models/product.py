@@ -1,5 +1,6 @@
 from sqlalchemy import Column, String, Integer, ForeignKey, Float, LargeBinary
 from models.baseModels import BaseModel, Base
+from sqlalchemy.orm import relationship
 
 class Product(BaseModel, Base):
     """Populating products in database"""
@@ -11,3 +12,4 @@ class Product(BaseModel, Base):
     stock = Column(Integer, nullable=False)
     price = Column(Float, nullable=False)
     image_source = Column(LargeBinary, nullable=False)
+    category = relationship("Category", back_populates="products")
