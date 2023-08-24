@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String, Integer, ForeignKey, Float, LargeBinary
-from baseModels import BaseModel, Base
+from models.baseModels import BaseModel, Base
 
 class Product(BaseModel, Base):
     """Populating products in database"""

@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String, Integer
-from baseModels import BaseModel, Base
+from models.baseModels import BaseModel, Base
 
 class User(BaseModel, Base):
     """creating user table"""
@@ -8,4 +8,3 @@ class User(BaseModel, Base):
     email = Column(String(60), nullable=False)
     password = Column(String(20), nullable=False)
     phone_number = Column(Integer, nullable=False)
-    

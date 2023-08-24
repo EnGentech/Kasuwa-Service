@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String, Integer, ForeignKey
-from baseModels import BaseModel, Base
+from models.baseModels import BaseModel, Base
 
 class Transaction(BaseModel, Base):
     """Class for transaction"""

@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, ForeignKey
-from baseModels import BaseModel, Base
+from models.baseModels import BaseModel, Base
 
 class Cart(BaseModel, Base):
     """Cart class created"""

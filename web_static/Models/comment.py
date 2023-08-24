@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String, ForeignKey, Integer
-from baseModels import BaseModel, Base
+from models.baseModels import BaseModel, Base
 
 class Comment(BaseModel, Base):
     """Comment class built"""

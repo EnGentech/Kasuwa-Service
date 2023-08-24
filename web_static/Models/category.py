@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String
-from baseModels import BaseModel, Base
+from models.baseModels import BaseModel, Base
 
 class Caterory(BaseModel, Base):
     """category page created"""
