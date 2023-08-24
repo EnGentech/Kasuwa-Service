@@ -1,9 +1,12 @@
-from sqlalchemy import Column, String, Integer, ForeignKey
+from sqlalchemy import Column, Integer, ForeignKey
 from baseModels import BaseModel, Base
-from user import User
 
 class Rating(BaseModel, Base):
     """A class definition to define rating table"""
     __tablename__ = 'ratings'
-    User_id = Column(Integer, ForeignKey(User.id))
+    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
+    product_id = Column(Integer, ForeignKey('products.id'), nullable=False)
+    category_id = Column(Integer, ForeignKey('categories.id'), nullable=False)
+    rating = Column(Integer, primary_key=True)
+    value = Column(Integer, nullable=False)
     
