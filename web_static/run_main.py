@@ -1,7 +1,7 @@
 from sqlalchemy import engine, create_engine
 from models.baseModels import Base
 from sqlalchemy.orm import sessionmaker
-from models.category import Caterory
+from models.category import Category
 from models.cart import Cart
 from models.comment import Comment
 from models.product import Product
