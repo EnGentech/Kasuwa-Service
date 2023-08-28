@@ -1,0 +1,203 @@
+.summary_section{
+    float:right;
+    margin: 2%;
+    margin-right: 8%;
+    background-color: white;
+    width: 22%;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.payment_section{
+    float:right;
+    margin-right: 8%;
+    background-color: white;
+    width: 22%;
+    height: auto;
+    border-radius: 0px 0px 10px 10px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.payme{
+    word-spacing: 15px;
+}
+
+.payment_section img{
+    width: 36px;
+    height: 24px;
+}
+
+.payment_section  #dim_buyers_protection{
+    width: 17.68px;
+    height: 21px;
+    float: left;
+}
+
+.payment_section p{
+    line-height: 1.5em;
+    font-size: 15px;
+}
+
+.payment_section #dim{
+    width: 20px;
+    height: 24px;
+}
+
+.summary_section h3{
+    float: right;
+    margin:0px;
+    margin-right: 8%;
+}
+
+.summary_section button{
+    padding-bottom: 12px;
+    padding-top: 12px;
+    width:100%;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: large;
+    border: none;
+    background-color: rgba(187, 252, 187, 0.601);
+    color: rgb(1, 50, 1);
+    margin-bottom: 5%;
+    margin-top: 4%;
+}
+
+.gen_cart_items, .cart_items{
+    width: 780px;
+    height: auto;
+    background-color: white;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-left: 8% !important;
+    margin: 2%;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.gen_cart_items h2{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 16px;
+    padding-bottom: 0px;
+    margin: 0px;
+}
+
+.select_all{
+    display: flex;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.select_all input[type=checkbox]{
+    box-sizing: border-box;
+}
+
+.roundme{
+    border:1px solid black !important;
+    border-radius: 50% !important;
+}
+
+.select_all p{
+    padding-left: 8px;
+}
+
+.select_all_button{
+    padding-bottom: 24px;
+}
+
+.select_all_button button{
+    padding: 8px 16px;
+    margin-right: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#special_select_all_button{
+    border: 1px solid rgb(0, 126, 11);
+}
+
+.cart_items{
+    padding-bottom: 16px;
+}
+
+.cart_items_description{
+    display: flex
+}
+
+.cart_items h3{
+    padding-left: 8px;   
+}
+
+.cart_item_img{
+    width: 130px;
+    height: 130px;
+    display: flex;
+}
+
+.cart_item_img img{
+    height: 120px;
+    width: 120px;
+    box-shadow: 1px 1px 20px 1px rgb(184, 184, 184);
+    opacity: 0.7;
+    border-radius: 10px;
+    margin: 8px;
+}
+
+.description{
+    margin-left: 40px;
+}
+
+.description p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 500px;
+}
+
+.description #adjust{
+    float:right;
+}
+
+.description button{
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+    border: none;
+    background-color: rgb(225, 224, 224);
+    font-weight: 600;
+}
+
+.cart_icons{
+    margin:16px;
+    word-spacing: 10px;
+}
+
+.plus{
+    display: flex;
+    margin-top: 40%;
+}
+
+.cart_icons i:hover{
+    color:red;
+    cursor: pointer; 
+}
+
+#adjust{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    background-color: rgb(235, 234, 234);
+    color: rgb(161, 159, 159)
+}
+
+#adjust:hover{
+    cursor: pointer;
+}

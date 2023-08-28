@@ -1,0 +1,65 @@
+.signup-container .form-group {
+    margin-top: 20px;
+}
+
+.center_container{
+    display:flex;
+    justify-content: center;
+}
+.signup-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 1px;
+    width: 600px;
+    height: 600px;
+    margin: 15px;
+    box-shadow: 1px 1px 20px 1px rgb(184, 184, 184); 
+    border: 1px solid green  
+}
+
+h3 {
+    align-items: center;
+    color: #001b0a
+}
+
+.inp {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    cursor: pointer;
+    width: 400%;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-left: -130px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.form-group input::placeholder {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.form-group input:focus::placeholder {
+    transform: translateY(-15px);
+    opacity: 0.5;
+}
+#registerBtn {
+
+    background: #7BF0A8;
+    color: hsla(0, 0%, 100%, 0.952);  
+    border: none;
+    border-radius: 50px;
+    padding: 15px;
+    cursor: pointer;
+    width: 430%;
+    font-weight: 700;
+    margin-left: -127px;
+    margin-top: 20px;
+}

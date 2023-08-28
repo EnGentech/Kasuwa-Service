@@ -1,0 +1,135 @@
+{% extends "basic.html" %}
+{% block content %}
+    <div class="category_section">
+        <section class="category">  
+            <h3><i class="fa-solid fa-list" style="color: #000000;"></i>  &nbsp;Categories</h3>
+            <p><i class="fa-brands fa-gitlab" style="color: #96999c;"></i> &nbsp;Women's Fashion</p>
+            <p><i class="fa-solid fa-shirt" style="color: #96999c;"></i> &nbsp;Men's Fashion</p>
+            <p>&nbsp;<i class="fa-solid fa-mobile-screen-button" style="color: #96999c;"></i> &nbsp;Phones & Telecommunications</p>
+            <p><i class="fa-solid fa-desktop" style="color: #6d6d6f;"></i> &nbsp;Computer, Office & Security</p>
+            <p><i class="fa-solid fa-radio" style="color: #96999c;"></i> &nbsp;Consumer Electronics</p>
+            <p><i class="fa-solid fa-ring" style="color: #96999c;"></i> &nbsp;Jewelry & Watches</p>
+            <p><i class="fa-solid fa-house-chimney" style="color: #96999c;"></i> &nbsp;Home, Pet & Appliances</p>
+            <p>&nbsp;<i class="fa-solid fa-bag-shopping" style="color: #96999c;"></i> &nbsp;Bags & Shoes</p>
+            <p><i class="fa-solid fa-gamepad" style="color: #96999c;"></i> &nbsp;Toys, Kids & Babies</p>
+            <p><i class="fa-solid fa-football" style="color: #96999c;"></i> &nbsp;&nbsp;Outdoor Fun & Sports</p>
+            <p><i class="fa-solid fa-vest" style="color: #96999c;"></i> &nbsp;&nbsp;Beauty, Health & Hair</p>
+            <p><i class="fa-solid fa-bicycle" style="color: #96999c;"></i> &nbsp;Automobiles & Motorcycles</p>
+            <p><i class="fa-solid fa-screwdriver-wrench" style="color: #96999c;"></i> &nbsp;Tools & Home Improvement</p>
+        </section>
+        <section class="slider">
+            <div class="image_slider">
+                <img src="{{ url_for('static', filename='images/slider/market.jpg') }}" alt="" style="height:558px">
+                <img src="{{ url_for('static', filename='images/slider/shop_right.jpeg') }}" alt="" style="height:558px">
+                <img src="{{ url_for('static', filename='images/slider/e-market.jpeg') }}" alt="" style="height:558px; width: 600px">
+                <img src="{{ url_for('static', filename='images/slider/my logo.png') }}" alt="" style="height:558px; width: 600px">
+            </div>
+        </section>
+        <section class="login_sider">
+            <div class="login_content">
+                <img src="{{ url_for('static', filename='images/Logo/login.png') }}" alt="">
+                <h4>Welcome to Kasuwa</h4>
+                <button id="btn_log1">Register</button>&nbsp;&nbsp;
+                <button id="btn_log2">Sign in</button>
+            </div>
+            <hr>
+            <div class="login_sider_image">
+                <img src="{{ url_for('static', filename='images/slider/shop_right.jpeg') }}" alt="">
+            </div>
+            <p>We offer you shopping experience <br>beyond measureable doubt</b></p>
+        </section>
+    </div>
+    <div class="commodities">
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/flash_drive.webp') }}" alt="">
+            <h4>NGN<span>333</span>.5</h4>
+            <p>1,000+ sold</p>
+            <p id="flow">Xiaomi Portable U Disk 2TB 1TB 256GB 512GB USB 3.1 Type-C Interface Mobile Phone Computer Mutual Transmission USB Memory</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/watch.webp') }}" alt="">
+            <h4>NGN<span>4500</span>.50</h4>
+            <p>930 sold</p>
+            <p id="flow">Italian Wrist watch made for comfort if you like</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/drone.webp') }}" alt="">
+            <h4>NGN<span>15,000</span>.20</h4>
+            <p>590 sold</p>
+            <p id="flow">Drone for movies and fun fair</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/earbud.webp') }}" alt="">
+            <h4>NGN<span>7000</span>.30</h4>
+            <p>990 sold</p>
+            <p id="flow">Original earbud made in ABA, Nigeria</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/engagement_ring.webp') }}" alt="">
+            <h4>NGN<span>2,150</span>.3</h4>
+            <p>860 sold</p>
+            <p id="flow">You are due for marriage</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/good_ring.webp') }}" alt="">
+            <h4>NGN<span>1500</span>.23</h4>
+            <p>900 sold</p>
+            <p id="flow">Ring for ndo ke Akwa-Ibom State</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/pen.webp') }}" alt="">
+            <h4>NGN<span>250</span>.00</h4>
+            <p>1000+ sold</p>
+            <p id="flow">Pen to pass exams without stress</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/charger.webp') }}" alt="">
+            <h4>NGN<span>3,200</span>.10</h4>
+            <p>400 sold</p>
+            <p id="flow">Charger head and cord made from ABA</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/vitamin_c.webp') }}" alt="">
+            <h4>NGN<span>1,800</span>.27</h4>
+            <p>320 sold</p>
+            <p id="flow">Norish your body with Vitamin C</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/shirt.webp') }}" alt="">
+            <h4>NGN<span>7,200</span>.13</h4>
+            <p>1000+ sold</p>
+            <p id="flow">Quality shirt from US</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/pouch.webp') }}" alt="">
+            <h4>NGN<span>1,300</span>.08</h4>
+            <p>1000+ sold</p>
+            <p id="flow">Quality pouch to keep your phone sparkling</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/spy_cam.webp') }}" alt="">
+            <h4>NGN<span>10,200</span>.30</h4>
+            <p>780 sold</p>
+            <p id="flow">Observe you space sevretly and catch them live</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/typeC.webp') }}" alt="">
+            <h4>NGN<span>371</span>.41</h4>
+            <p>500 sold</p>
+            <p id="flow">For fash charging, obtain original typeC cord</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/smart.webp') }}" alt="">
+            <h4>NGN<span>15,000</span>.50</h4>
+            <p>1000+ sold</p>
+            <p id="flow">Smart device made available for tech guys</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/wall clock.webp') }}" alt="">
+            <h4>NGN<span>3800</span>.50</h4>
+            <p>998 sold</p>
+            <p id="flow">3D wall clock for your comfort</p>
+        </div>
+    </div><br>
+
+{% endblock %}
