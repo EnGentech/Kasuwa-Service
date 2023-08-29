@@ -44,9 +44,6 @@ def sign_up():
             return "Sign_up Successful"
 
 @start.route('/')
-def index():
-    return render_template('basic.html')
-
 @start.route('/kasuwa')
 def main():
     return render_template('index.html')
