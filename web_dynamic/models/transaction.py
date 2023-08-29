@@ -12,5 +12,6 @@ class Transaction(BaseModel, Base):
     quantity = Column(Integer, nullable=False)
     approval_status = Column(String(10), nullable=True)
     users = relationship('User', back_populates='transactions')
-    products = relationship('Product', back_populates='transactions', cascade='all, delete-orphan')
+    products = relationship('Product', back_populates='transactions')
+    order_items = relationship('OrderItems', back_populates='transactions')
     

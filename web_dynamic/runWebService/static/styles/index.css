@@ -14,8 +14,14 @@ body{
 .head_content img{
     width: 180px;
     height:37px;
+    
+}
+
+.head_content #shift{
     margin: 0px;
     padding: 10%;
+    padding-bottom: 0%;
+    margin-bottom: 0px;
     padding-top:2%;
     padding-right:1%;
 }
@@ -112,6 +118,7 @@ body{
 }
 
 .drop_down_acc button{
+    margin-left: 0px;
     padding-left: 12%;
     padding-right: 12%;
     padding-top: 4%;

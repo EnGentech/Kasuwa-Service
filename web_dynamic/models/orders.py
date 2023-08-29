@@ -10,3 +10,4 @@ class OrderItems(BaseModel, Base):
     product_id = Column(Integer, ForeignKey('products.id'), nullable=False)
     category_id = Column(Integer, ForeignKey('categories.id'), nullable=False)
     item = Column(String(60), nullable=False)
+    transactions = relationship('Transaction', back_populates='order_items')

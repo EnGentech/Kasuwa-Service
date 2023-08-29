@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/Logo/kasuwa_icon.png') }}" type="image/x-icon">
     {% block header %}
 
     {% endblock %}
@@ -16,7 +17,7 @@
 </head>
 <body>
     <div class="head_content">
-        <img src="{{ url_for('static', filename='images/Logo/kasuwa_logo.png') }}" alt="">
+        <a id='shift' href="{{ url_for('kasu.main')}}"><img src="{{ url_for('static', filename='images/Logo/kasuwa_logo.png') }}" alt=""></a>
         <div class="search">
             <form action="">
                 <input type="text">
@@ -35,8 +36,8 @@
         <div class="drop_down_acc">
             <p>Welcome to Kasuwa!</p>
             <div class="drop_down_acc_button">
-                <button id="btn1">Register</button>&nbsp;
-                <button id="btn2">Sign in</button>
+                <a href="{{ url_for('kasu.sign_up')}}"><button id="btn1">Register</button></a>&nbsp;
+                <a href="{{ url_for('kasu.sign_in')}}"><button id="btn2">Sign in</button></a>
             </div><hr>
             <p id="effect_p">My Orders</p>
             <p id="effect_p">My Coins</p>

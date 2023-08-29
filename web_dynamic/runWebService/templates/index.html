@@ -29,8 +29,8 @@
             <div class="login_content">
                 <img src="{{ url_for('static', filename='images/Logo/login.png') }}" alt="">
                 <h4>Welcome to Kasuwa</h4>
-                <button id="btn_log1">Register</button>&nbsp;&nbsp;
-                <button id="btn_log2">Sign in</button>
+                <a href="{{ url_for('kasu.sign_up')}}"><button id="btn_log1">Register</button></a>&nbsp;&nbsp;
+                <a href="{{ url_for('kasu.sign_in')}}"></a><button id="btn_log2">Sign in</button></a>
             </div>
             <hr>
             <div class="login_sider_image">

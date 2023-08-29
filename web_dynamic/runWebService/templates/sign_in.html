@@ -1,0 +1,28 @@
+{% extends 'basic.html' %}
+
+{% block header %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/sign_in.css') }}">
+<script src="{{ url_for('static', filename='scripts/sign_up.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="center_container">
+<div class="signup-container">
+    <img src="{{ url_for('static', filename='images/Logo/kasuwa_logo.png') }}" width="180px" height="37px" alt="kasuwa_logo">
+    <form action="" method="POST"><br><br>
+        <h3>Sign In</h3>
+        <div class="form-group">
+            <input class='inp' type="email" name="mail" placeholder="E-Mail"  required>
+        </div><br>
+        <div class="form-group">
+            <input class='inp' type="password" name="password" placeholder="Password" id="pass" required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,16}$" 
+            title="Password must contain at least one lowercase letter, one uppercase letter, one digit, and be at least 8 characters long">
+        </div> 
+        <input id='registerBtn' type="submit">
+        <p class="error">{{ error }}</p>
+    </form>
+</div>
+</div>
+
+{% endblock %}

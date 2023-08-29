@@ -62,4 +62,20 @@ h3 {
     font-weight: 700;
     margin-left: -127px;
     margin-top: 20px;
+    border-bottom: 5px solid #2f2f2f;
+    cursor: not-allowed;
+}
+
+#registerBtn:hover{
+    border-bottom: 5px solid #930606;
+}
+
+.error{
+    display: flex;
+    justify-content: center;
+    color:red;
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: small;
 }

@@ -10,5 +10,5 @@ class Rating(BaseModel, Base):
     category_id = Column(Integer, ForeignKey('categories.id'), nullable=False)
     rating = Column(Integer, primary_key=True)
     value = Column(Integer, nullable=False)
-    order_Items = relationship('Rating', back_populates='ratings')
     products = relationship('Product', back_populates='ratings')
+    users = relationship('User', back_populates='ratings')
