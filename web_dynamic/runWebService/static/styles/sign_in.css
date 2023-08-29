@@ -78,3 +78,12 @@ h3 {
     right: 0;
     font-size: small;
 }
+
+.flashMessage{
+    position:absolute;
+    text-align: center;
+    padding-top: 25px;
+    left:0;
+    right:0;
+    color: rgba(0, 138, 0, 0.425);
+}

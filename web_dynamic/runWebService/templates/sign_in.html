@@ -6,6 +6,19 @@
 {% endblock %}
 
 {% block content %}
+
+<div class="flashMessage">
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            
+        {% endif %}
+{% endwith %}
+</div>
+
 <div class="center_container">
 <div class="signup-container">
     <img src="{{ url_for('static', filename='images/Logo/kasuwa_logo.png') }}" width="180px" height="37px" alt="kasuwa_logo">
@@ -15,9 +28,7 @@
             <input class='inp' type="email" name="mail" placeholder="E-Mail"  required>
         </div><br>
         <div class="form-group">
-            <input class='inp' type="password" name="password" placeholder="Password" id="pass" required
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,16}$" 
-            title="Password must contain at least one lowercase letter, one uppercase letter, one digit, and be at least 8 characters long">
+            <input class='inp' type="password" name="password" placeholder="Password" id="pass" required>
         </div> 
         <input id='registerBtn' type="submit">
         <p class="error">{{ error }}</p>

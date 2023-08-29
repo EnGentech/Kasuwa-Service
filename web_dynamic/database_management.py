@@ -8,6 +8,9 @@ from models.user import User
 from models.orders import OrderItems
 from models.billing_address import BillingAddress
 from createModels import session
+from flask_bcrypt import Bcrypt
+
+bcrypt = Bcrypt()
 
 
 class Db_Management:
@@ -55,3 +58,16 @@ class Db_Management:
         found = self.__session.query(User).filter_by(email=mail).first()
         if found:
             return 'found'
+        
+    def authenticate(self, email, passcode):
+        """Authenticate user sign_in credentials"""
+        e_mail = self.__session.query(User).filter_by(email=email).first()
+        if e_mail == False and bcrypt.check_password_hash(e_mail.password, passcode) == False:
+            return 'invalid_credentials'
+        elif e_mail:
+            if bcrypt.check_password_hash(e_mail.password, passcode):
+                return 'allow_access'
+            else:
+                return "invalid_password"
+        else:
+            return "invalid_email"
