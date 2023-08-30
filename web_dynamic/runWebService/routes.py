@@ -2,7 +2,7 @@ import sys
 sys.path.append(r"c:\Users\Engr. Gentle Inyang\Web_Application_Projects\Kasuwa-Service\web_dynamic")
 import database_management
 
-from flask import Blueprint, render_template, request, url_for, redirect, session, flash, g
+from flask import Blueprint, render_template, request, url_for, redirect, session, flash
 from functools import wraps
 from mailVerification import send_verification_email
 from database_management import Db_Management
@@ -15,7 +15,7 @@ def login_required(func):
     def decorated_function(*args, **kwargs):
         if 'e_mail' not in session:
             pwdUrl(request.url)
-            return redirect(url_for('sign_in'))
+            return redirect(url_for('kasu.sign_in'))
         return func(*args, **kwargs)
     return decorated_function
 
@@ -41,12 +41,13 @@ def sign_in():
             return render_template('sign_in.html', error="Incorrect password")
         else:
             session['e_mail'] = e_mail
-            user_session = Db_Management().get_active_user(e_mail)
+            userS = Db_Management().get_active_user(e_mail)
             stored_url = session.pop('store', None)
             if stored_url:
+                #render_template('', userS=userS[0])
                 return redirect(stored_url)
             else:
-                return redirect(url_for('kasu.main'))
+                return render_template('index.html', userS=userS[0])
 
 @start.route('/kasuwa/signup', methods=['GET', 'POST'])
 def sign_up():
@@ -69,11 +70,18 @@ def sign_up():
             return render_template('sign_in.html')
             
 
-@login_required
 @start.route('/kasuwa/cart')
+@login_required
 def cart():
     """store the current url and redirect to login"""
     return render_template('shoping_cart.html')
+
+@start.route('/kasuwa/signOut')
+@login_required
+def signOut():
+    """Sign out route create if there exist a login session"""
+    session.pop('e_mail', None)
+    return redirect(url_for('kasu.main'))
 
 def pwdUrl(url):
     """store present user URL"""

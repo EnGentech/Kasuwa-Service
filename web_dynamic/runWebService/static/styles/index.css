@@ -53,7 +53,6 @@ body{
     border-top-right-radius: 5px;
     border: 2px solid rgb(0, 255, 132);
     text-align: center;
-
 }
 
 .search_icon i{
@@ -67,8 +66,12 @@ body{
     padding-right: 2%;
 }
 
-.cart:hover{
-    color:rgb(51, 181, 55);;
+.cart a{
+    color:green;
+}
+
+.cart a:hover{
+    color:rgb(188, 220, 189);;
     cursor: pointer;
 }
 
@@ -385,4 +388,32 @@ body{
     margin: 0px;
     margin-right: 10%;
     font-size: small;
+}
+
+.flex_me{
+    display: flex;
+}
+
+.login_drop_down img{
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.login_drop_down h3{
+    color: rgb(0, 82, 0);
+}
+
+.login_drop_down button{
+    margin-left: 10px;
+    width: 90%;
+    margin-right: 10px;
+    border-radius: 30px;
+    border: none;
+    background: rgb(221, 246, 217);
+    font-weight: 600;
+}
+
+.login_drop_down button:hover{
+    border-bottom: 4px solid black;
 }

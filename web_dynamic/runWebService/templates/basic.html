@@ -27,18 +27,31 @@
             <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
         </div>
         <div class="cart">
-            <i class="fa-solid fa-cart-shopping"></i>
+            <a href="{{ url_for('kasu.cart')}}"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
         <div class="account">
             <i class="fa-regular fa-user" style="color: #010813;" id="user"></i>&nbsp;&nbsp;Account
             <i class="fa-solid fa-play fa-rotate-90" id="acc" style="color: #c2c9d6;"></i>
         </div>
+
         <div class="drop_down_acc">
+        {% if 'e_mail' not in session %}     
             <p>Welcome to Kasuwa!</p>
             <div class="drop_down_acc_button">
                 <a href="{{ url_for('kasu.sign_up')}}"><button id="btn1">Register</button></a>&nbsp;
                 <a href="{{ url_for('kasu.sign_in')}}"><button id="btn2">Sign in</button></a>
             </div><hr>
+        {% else %}
+            <div class="login_drop_down">
+                <div class="flex_me">
+                    <img src="{{ url_for('static', filename='images/Logo/login.png') }}" alt=""> 
+                    <h3>Welcome <b>{{ userS }}</b></h3>
+                </div>
+                <a href="{{ url_for('kasu.signOut')}}"><button>Sign Out</button></a>
+                <hr>
+            </div>
+        {% endif %}            
+            
             <p id="effect_p">My Orders</p>
             <p id="effect_p">My Coins</p>
             <p id="effect_p">Message Center</p>
