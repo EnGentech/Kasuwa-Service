@@ -2,7 +2,7 @@ import sys
 sys.path.append(r"c:\Users\Engr. Gentle Inyang\Web_Application_Projects\Kasuwa-Service\web_dynamic")
 import database_management
 
-from flask import Blueprint, render_template, request, url_for, redirect, session, flash
+from flask import Blueprint, render_template, request, url_for, redirect, session, flash, g
 from functools import wraps
 from mailVerification import send_verification_email
 from database_management import Db_Management
@@ -39,13 +39,14 @@ def sign_in():
             return render_template('sign_in.html', error="e_mail not found, use the sign up option")
         elif validate == 'invalid_password':
             return render_template('sign_in.html', error="Incorrect password")
-    else:
-        session['e_mail'] = e_mail
-        stored_url = session.pop('store', None)
-        if stored_url:
-            return redirect(stored_url)
         else:
-            return redirect(url_for('main'))
+            session['e_mail'] = e_mail
+            user_session = Db_Management().get_active_user(e_mail)
+            stored_url = session.pop('store', None)
+            if stored_url:
+                return redirect(stored_url)
+            else:
+                return redirect(url_for('kasu.main'))
 
 @start.route('/kasuwa/signup', methods=['GET', 'POST'])
 def sign_up():

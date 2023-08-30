@@ -71,3 +71,8 @@ class Db_Management:
                 return "invalid_password"
         else:
             return "invalid_email"
+        
+    def get_active_user(self, email):
+        """this function will active user"""
+        user = self.__session.query(User.username).filter_by(email=email).first()
+        return user
