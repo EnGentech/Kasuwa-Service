@@ -2,7 +2,7 @@ import sys
 sys.path.append(r"c:\Users\Engr. Gentle Inyang\Web_Application_Projects\Kasuwa-Service\web_dynamic")
 import database_management
 
-from flask import Blueprint, render_template, request, url_for, redirect, session, flash
+from flask import Blueprint, render_template, request, url_for, redirect, session, flash, g
 from functools import wraps
 from mailVerification import send_verification_email
 from database_management import Db_Management
@@ -22,7 +22,17 @@ def login_required(func):
 @start.route('/')
 @start.route('/kasuwa')
 def main():
-    return render_template('index.html')
+    """render the index page"""
+    category = Db_Management().category()
+    if category:
+        return render_template('index.html', category=category)
+    else:
+        return render_template('index.html', category='No category, check back')
+
+@start.route('/kasuwa/index/category/product')
+def product():
+    """display product from category"""
+    return render_template('product.html')
 
 @start.route('/kasuwa/sign_in', methods=['GET', 'POST'])
 def sign_in():
@@ -82,6 +92,14 @@ def signOut():
     """Sign out route create if there exist a login session"""
     session.pop('e_mail', None)
     return redirect(url_for('kasu.main'))
+
+@start.route('/kasuwa/category/products', methods=['GET', 'POST'])
+def products():
+    """render the products to users"""
+    if request.method == "GET":
+        return render_template('product.html')
+    elif request.method == 'POST':
+        return render_template("sign_in.html")
 
 def pwdUrl(url):
     """store present user URL"""

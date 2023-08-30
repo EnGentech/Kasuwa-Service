@@ -3,19 +3,9 @@
     <div class="category_section">
         <section class="category">  
             <h3><i class="fa-solid fa-list" style="color: #000000;"></i>  &nbsp;Categories</h3>
-            <p><i class="fa-brands fa-gitlab" style="color: #96999c;"></i> &nbsp;Women's Fashion</p>
-            <p><i class="fa-solid fa-shirt" style="color: #96999c;"></i> &nbsp;Men's Fashion</p>
-            <p>&nbsp;<i class="fa-solid fa-mobile-screen-button" style="color: #96999c;"></i> &nbsp;Phones & Telecommunications</p>
-            <p><i class="fa-solid fa-desktop" style="color: #6d6d6f;"></i> &nbsp;Computer, Office & Security</p>
-            <p><i class="fa-solid fa-radio" style="color: #96999c;"></i> &nbsp;Consumer Electronics</p>
-            <p><i class="fa-solid fa-ring" style="color: #96999c;"></i> &nbsp;Jewelry & Watches</p>
-            <p><i class="fa-solid fa-house-chimney" style="color: #96999c;"></i> &nbsp;Home, Pet & Appliances</p>
-            <p>&nbsp;<i class="fa-solid fa-bag-shopping" style="color: #96999c;"></i> &nbsp;Bags & Shoes</p>
-            <p><i class="fa-solid fa-gamepad" style="color: #96999c;"></i> &nbsp;Toys, Kids & Babies</p>
-            <p><i class="fa-solid fa-football" style="color: #96999c;"></i> &nbsp;&nbsp;Outdoor Fun & Sports</p>
-            <p><i class="fa-solid fa-vest" style="color: #96999c;"></i> &nbsp;&nbsp;Beauty, Health & Hair</p>
-            <p><i class="fa-solid fa-bicycle" style="color: #96999c;"></i> &nbsp;Automobiles & Motorcycles</p>
-            <p><i class="fa-solid fa-screwdriver-wrench" style="color: #96999c;"></i> &nbsp;Tools & Home Improvement</p>
+            {% for key, value in category.items() %}
+                <p class="cat_prod{{ value[1] }}"><i class="{{ value[0] }}" style="color: #96999c;"></i> &nbsp;{{ key }}</p>
+            {% endfor %}
         </section>
         <section class="slider">
             <div class="image_slider">
@@ -31,8 +21,7 @@
                 <h4>Welcome to Kasuwa</h4>
                 <a href="{{ url_for('kasu.sign_up') }}"><button id="btn_log1">Register</button></a>&nbsp;&nbsp;
                 <a href="{{ url_for('kasu.sign_in') }}"><button id="btn_log2">Sign in</button></a>
-            </div>
-            <hr>
+            </div><hr>
             <div class="login_sider_image">
                 <img src="{{ url_for('static', filename='images/slider/shop_right.jpeg') }}" alt="">
             </div>

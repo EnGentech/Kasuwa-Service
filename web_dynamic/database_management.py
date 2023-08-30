@@ -9,6 +9,7 @@ from models.orders import OrderItems
 from models.billing_address import BillingAddress
 from createModels import session
 from flask_bcrypt import Bcrypt
+from flask import g
 
 bcrypt = Bcrypt()
 
@@ -76,3 +77,20 @@ class Db_Management:
         """this function will active user"""
         user = self.__session.query(User.username).filter_by(email=email).first()
         return user
+    
+    def category(self):
+        """get all data from catetory and store to a dictionary"""
+        cat_items = {}
+        cats = self.__session.query(Category).all()
+        if cats:
+            for cat in cats:
+                cat_items[cat.category] = [cat.icon, cat.id]
+            return cat_items
+        
+    def product_category(self, cat_id):
+        """return the entire product for a category"""
+        prod_cart_items = {}
+        prod = self.__session.query(Product).filter_by(category_id=cat_id).all()
+        if prod:
+            for p in prod:
+                print(p)
