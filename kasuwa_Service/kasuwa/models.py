@@ -1,15 +1,18 @@
 from sqlalchemy import Table, Column, String, Integer, Date, Enum
-from Base_connect import Base
+from .Base_connect import Base
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
+from flask_login import UserMixin
 
-class User(Base):
+class User(Base, UserMixin):
     __tablename__ = 'users'
     
     id = Column(Integer, primary_key=True)
     username = Column(String(length=50), nullable=False)
     fullname = Column(String(length=50), nullable=False)
-    email = Column(String(length=50), nullable=False)
+    email = Column(String(length=50), unique=True,
+    nullable=False)
+    password = Column(String(length=150))
     address = Column(String(length=200))
     phone = Column(String(length=20))  
     GENDER_CHOICES = ['male', 'female']

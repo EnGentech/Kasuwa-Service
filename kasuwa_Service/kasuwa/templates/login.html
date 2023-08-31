@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title%}sign_up{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/login.css') }}">
+    <title>{% block title%}login{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
 </head>
 <body>
-    
-    <div class="signup-container">
-        <img src="{{ url_for('static', filename='image/kasuwa_logo (2).png') }}">
-        <h3>Login</h3>
-        <form>
-            <div class="form-group">
-                <input type="email" placeholder="E-Mail" required>
-            </div>
-            <div class="form-group">
-                <input type="password" placeholder="Password" required>
-            </div>
-            <button type="submit">Login</button>
-        </form>
-    </div>
+        <div class="signup-container">
+            <img src="{{ url_for('static', filename='images/kasuwa_logo (2).png') }}">
+            <h3>Login</h3>
+            <form method="post", action="{{ url_for('auth.login')}}">
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="E-Mail" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
 </body>
 </html>

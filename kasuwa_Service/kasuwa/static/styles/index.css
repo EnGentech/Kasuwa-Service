@@ -1,0 +1,379 @@
+body{
+    background-color: rgb(248, 245, 245);
+    margin:0px;
+}
+
+.head_content{
+    margin:0px;
+    background-color: white;
+    height: 100px;
+    display: flex;
+}
+
+.head_content img{
+    width: 180px;
+    height:37px;
+    margin: 0px;
+    padding: 10%;
+    padding-top:2%;
+    padding-right:1%;
+}
+
+.search{
+    height: 30px;
+    width: 50%;
+    margin-top: 2%;
+}
+
+.search input[type='text']{
+    width: 100%;
+    height: 30px;
+    border: 2px solid rgb(0, 255, 132);
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.search input[type='text']:focus{
+    outline: none;
+}
+
+.search_icon{
+    height: 32px;
+    width: 3%;
+    margin-top: 2%;
+    background-color: rgb(0, 255, 132);
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 2px solid rgb(0, 255, 132);
+    text-align: center;
+
+}
+
+.search_icon i{
+    margin-top: 15%;
+}
+
+.cart{
+    margin-top: 2.4%;
+    padding-left: 3%;
+    font-size:x-large;
+    padding-right: 2%;
+}
+
+.cart:hover{
+    color:rgb(51, 181, 55);;
+    cursor: pointer;
+}
+
+.account{
+    margin-top: 2.5%;
+    font-size: 5000;
+}
+
+#acc{
+    font-size: xx-small;
+    padding-left: 0%;
+}
+
+.account:hover, #user:hover{
+    color:red !important;
+    cursor: pointer;
+    
+}
+
+.drop_down_acc{
+    position:absolute;
+    box-shadow: 1px 1px 20px 1px rgb(184, 184, 184);
+    padding: 20px;
+    padding-bottom: 10px;
+    padding-top:0px;
+    background-color: white;
+    margin-top:5%;
+    margin-right: 10%;
+    width: 15%;
+    right: 0;
+    border-radius: 3%;
+    display: none;
+}
+
+.drop_down_acc p{
+    padding: 10px;
+    margin: 0px;
+    padding-left:0px;
+}
+
+.drop_down_acc #effect_p:hover{
+    cursor: pointer;
+    background-color: rgb(242, 239, 239);
+    padding-left: 5%;
+    border-radius: 5px;
+    color: rgb(159, 4, 4);
+}
+
+.drop_down_acc button{
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.drop_down_acc button:hover{
+    cursor: pointer;
+}
+
+#btn1{
+    color: white;
+    background-color: rgb(57, 128, 59);
+    border: none;
+    font-weight: bolder;
+    border-radius: 5px;
+}
+
+#btn2{
+    color: rgb(57, 128, 59);
+    background-color: rgb(239, 247, 238);
+    border: none;
+    font-weight: bolder;
+    border-radius: 5px;
+}
+
+.category_section{
+    margin: 1%;
+    display:flex;
+    justify-content: space-between;
+    margin-right: 10%;
+}
+
+.category{
+    background-color: white;
+    box-shadow: 1px 1px 20px 1px rgb(184, 184, 184);
+    width: 250px;
+    margin-left: 8%;
+    padding: 1.5%;
+    padding-top: 0.5%;
+    line-height: 1.3em;
+    border-radius: 10px;
+}
+
+.slider{
+    border-radius: 10px;
+    height: 558px;
+    width: 600px;
+    overflow: hidden;
+}
+
+.image_slider img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image_slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.login_sider{
+    border-radius: 10px;
+    width:250px;
+    box-shadow: 1px 1px 20px 1px rgb(184, 184, 184);
+    height:558px;
+}
+
+.login_sider img{
+    height: 80px;
+    width:80px;
+    align-items: center;
+}
+
+.login_sider p{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    line-height: 1.5em;
+    color: rgb(142, 141, 141);
+}
+
+.login_content{
+    display:flex;
+    margin-top:5%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.login_content h4{
+    margin-top: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-weight: 550;
+}
+
+#btn_log1, #btn_log2{
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color:rgb(0, 255, 8);
+    border-radius: 50px;
+    border:none;
+    color: white;
+    font-size:medium;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#btn_log1{
+    background: linear-gradient(90deg, green, rgb(212, 232, 207) );
+}
+
+#btn_log2{
+    background-color: rgb(221, 246, 217);
+    color:black;
+}
+
+.login_sider_image{
+    display:flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.login_sider_image img{
+    height: 300px;
+    width: 220px;
+    border-radius: 5px;
+}
+
+.commodities{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 8%;
+    margin-top: 3%;
+    white-space: nowrap;
+    border-radius: 10px;
+    justify-content: space-between;
+    margin-right: 10%;
+}
+
+.row{
+    background-color: white;
+    padding-bottom: 10px;
+    height:320px;
+    border-radius: 10px;
+    margin-top: 20px
+}
+
+.row:hover{
+    box-shadow: 1px 1px 20px 1px rgb(184, 184, 184);
+    cursor: pointer;
+}
+
+.row img{
+    width: auto;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.row p{
+    margin: 0;
+    line-height: 1.5em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 190px;
+}
+
+.row h4{
+    margin:0;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.row span{
+    font-size: xx-large;
+}
+
+.row h4, .row p{
+    padding: 0px 8px;
+}
+
+.row #flow:hover{
+    position: absolute;
+    cursor: pointer;
+    overflow:visible;
+    color:red;
+}
+
+.footer{
+    background-color: white;
+    height: 570px;
+}
+
+.footer_upper{
+    display:flex;
+    flex-wrap: nowrap;
+    margin: 10%;
+    margin-top: 0px;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+
+.footer .part1{
+    margin-top: 50px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.footer .part1 p{
+    margin: 0px;
+    font-size: small;
+    color: rgb(158, 158, 158);
+    text-align: center;
+}
+
+.footer hr{
+    border-color: rgb(240, 235, 235);
+}
+
+.footer_down{
+    margin: 3% 10% 0 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(84, 84, 84);
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.footer_down .social{
+    margin-right: 250px;
+}
+
+.footer_down .social img{
+    height: 32px;
+    width: 32px;
+}
+
+.footer_down .part2_right p{
+    font-size: small;
+    color: gray;
+    padding:0;
+    margin:0px;
+    line-height: 2em;
+}
+
+.cp_right{
+    background-color: rgba(9, 43, 9, 0.737);
+    height: 50px;
+    margin:0;
+    justify-content: right;
+    align-items: center;
+    display: flex;
+}
+
+.cp_right p{
+    color: white;
+    margin: 0px;
+    margin-right: 10%;
+    font-size: small;
+}

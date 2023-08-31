@@ -1,5 +1,6 @@
 from flask import Flask
-from .Base_connect import db_uri
+from .Base_connect import db_uri, engine, Base
+from os import path
 
 def create_app():
     app = Flask(__name__)
@@ -11,5 +12,9 @@ def create_app():
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
+
+    Base.metadata.create_all(engine)
+    print("creating table")
+
 
     return app

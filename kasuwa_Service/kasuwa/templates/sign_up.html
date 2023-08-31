@@ -4,29 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title%}sign_up{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/sign_up.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/sign_up.css') }}">
 </head>
 <body>
     <div class="signup-container">
-        <img src="{{ url_for('static', filename='image/kasuwa_logo (2).png') }}">
-        <form>
+        <img src="{{ url_for('static', filename='images/kasuwa_logo (2).png') }}">
+        <form method="post" action="{{ url_for('auth.signup') }}">
             <h3>Sign Up</h3>
             <div class="form-group">
-                <input type="name" placeholder="Name">
+                <input type="name" name="name" placeholder="Name">
             </div>
             <div class="form-group">
-                <input type="password" placeholder="Password" required>
+                <input type="password" name="password" placeholder="Password" required>
             </div>
             <div class="form-group">
-                <input type="password" placeholder="Confirm Password" required>
+                <input type="password" name="password" placeholder="Confirm Password" required>
             </div>
             <div class="form-group">
-                <input type="email" placeholder="E-Mail" required>
+                <input type="email" name="email" placeholder="E-Mail" required>
             </div>
             <div class="form-group">
-                <input type="phone" class="float-label" placeholder="Phone" required>
+                <input type="phone" name="phone" class="float-label" placeholder="Phone" required>
             </div>
             <button type="submit">Sign Up</button>
+            <!-- {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                    {% if category == 'error' %}
+                        <div class="alert alert-danger alter-dismissable fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% else %}
+                    <div class="alert alert-success alter-dismissable fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endif %} 
+                {% endfor %}
+                {% endif %}
+            {% endwith %} -->
         </form>
     </div>
 </body>
