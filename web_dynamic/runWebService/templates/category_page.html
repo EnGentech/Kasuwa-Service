@@ -1,0 +1,450 @@
+{% extends 'basic.html' %}
+{% block header %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/category_page.css') }}">
+{% endblock %}
+{% block content %}
+
+    <section class="container container-wrap">
+
+        <div class="container-content">
+            <div>
+                <div class="breadcrumb-navigation">
+                    <span>
+                        <a class="breadcrumb-title" href="">Kasuwa</a>
+                        <span class="breadcrumb-seperator">></span>
+
+                    </span>
+                    <span class="breadcrumb-keyword">{{ cat_name }}</span>
+
+
+                </div>
+            </div>
+            <div class="featureSwitch--featureContainer">
+                <div class="featureSwitch-container">
+                    <div>
+                        <label class="comet-checkbox comet-checkbox-square" for="">
+                            <span class="comet-checkbox-icon">
+                                <span class="comet-checkbox-circle"></span>
+
+                            </span>
+                            <input type="checkbox" class="comet-checkout-input" value>
+
+                            <span>
+                                <span class="featureSwitch--text">SALE</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="featureSwitch-container">
+                    <div>
+                        <label class="comet-checkbox comet-checkbox-square" for="">
+                            <span class="comet-checkbox-icon">
+                                <span class="comet-checkbox-circle"></span>
+
+                            </span>
+                            <input type="checkbox" class="comet-checkout-input" value>
+
+                            <span>
+                                <span class="featureSwitch--text">NGN2, 289.81 off</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="featureSwitch-container">
+                    <div>
+                        <label class="comet-checkbox comet-checkbox-square" for="">
+                            <span class="comet-checkbox-icon">
+                                <span class="comet-checkbox-circle"></span>
+
+                            </span>
+                            <input type="checkbox" class="comet-checkout-input" value>
+
+                            <span>
+                                <span class="featureSwitch--text">Plus</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="featureSwitch-container">
+                    <div>
+                        <label class="comet-checkbox comet-checkbox-square" for="">
+                            <span class="comet-checkbox-icon">
+                                <span class="comet-checkbox-circle"></span>
+
+                            </span>
+                            <input type="checkbox" class="comet-checkout-input" value>
+
+                            <span>
+                                <span class="featureSwitch--text">Free shipping</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="sort-sortContainer">
+                <div class="sort--leftSort">
+                    <div class="sort-sort">
+                        <span class="sort-t">
+                            Sort by
+                            <!--  -->
+                            :
+                        </span>
+                        <div class="sort-sortSpan">
+                            <div class="sort-sortItem sort-sortBorder">
+                                <span class>Best Match</span>
+                            </div>
+                            <div class="sort-sortItem sortBorder">
+                                <span class>Orders</span>
+                            </div>
+                            <div class="sort-sortItem sortBorder">
+                                <span class>Price</span>
+                                <div class="sort-iconContainer">
+                                    <span class=" comet-icon arrowUp">
+                                        <i class="fa fa-sort-asc" aria-hidden="true"></i>
+
+                                    </span>
+                                    <span class="comet-icon arrowDown">
+                                        <i class="fa fa-sort-desc" aria-hidden="true"></i>
+
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="sort--views">
+                    <span>
+                        View
+                        <!--  -->
+                        :
+                    </span>
+                    <span class="comet--icon sort-icon sort-gallery">
+                        <i class="fa fa-th-large" aria-hidden="true"></i>
+                    </span>
+                    <span class="comet--icon sort-icon sort-bar">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </span>
+
+                </div>
+            </div>
+
+            <div class="list-gallery" style="display: none;">
+                <a class="cards-gallery" href="">
+                    <div class="cards-image" style="padding-bottom: 100%;">
+                        <img class="product-img" src="../static/images/products/product.webp" alt="">
+                        <span class="ad" style="background-color: rgba(0,0,0, 0.2);">AD</span>
+                    </div>
+                    <div class="cards-content">
+                        <div class="prices">
+                            <div class="price-sale">
+                                <span style="font-size: 12px;">NGN</span>
+                                <span style="font-size: 20px;">30</span>
+                                <span style="font-size: 12px;">,</span>
+                                <span style="font-size: 20px;">535</span>
+                                <span style="font-size: 12px;">.</span>
+                                <span style="font-size: 12px;">63</span>
+                            </div>
+                        </div>
+                        <div class="tradeContainer">
+                            <span class="trade">1 sold</span>
+                        </div>
+                        <div title="2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female"
+                            class="products-title">
+                            <h1 class="titleText">2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter
+                                Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female</h1>
+                        </div>
+                    </div>
+
+                </a>
+                <a class="cards-gallery" href="">
+                    <div class="cards-image" style="padding-bottom: 100%;">
+                        <img class="product-img" src="../static/images/products/product.webp" alt="">
+                        <span class="ad" style="background-color: rgba(0,0,0, 0.2);">AD</span>
+                    </div>
+                    <div class="cards-content">
+                        <div class="prices">
+                            <div class="price-sale">
+                                <span style="font-size: 12px;">NGN</span>
+                                <span style="font-size: 20px;">30</span>
+                                <span style="font-size: 12px;">,</span>
+                                <span style="font-size: 20px;">535</span>
+                                <span style="font-size: 12px;">.</span>
+                                <span style="font-size: 12px;">63</span>
+                            </div>
+                        </div>
+                        <div class="tradeContainer">
+                            <span class="trade">1 sold</span>
+                        </div>
+                        <div title="2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female"
+                            class="products-title">
+                            <h1 class="titleText">2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter
+                                Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female</h1>
+                        </div>
+                    </div>
+
+                </a>
+                <a class="cards-gallery" href="">
+                    <div class="cards-image" style="padding-bottom: 100%;">
+                        <img class="product-img" src="../static/images/products/products2.webp" alt="">
+                        <span class="ad" style="background-color: rgba(0,0,0, 0.2);">AD</span>
+                    </div>
+                    <div class="cards-content">
+                        <div class="prices">
+                            <div class="price-sale">
+                                <span style="font-size: 12px;">NGN</span>
+                                <span style="font-size: 20px;">30</span>
+                                <span style="font-size: 12px;">,</span>
+                                <span style="font-size: 20px;">535</span>
+                                <span style="font-size: 12px;">.</span>
+                                <span style="font-size: 12px;">63</span>
+                            </div>
+                        </div>
+                        <div class="tradeContainer">
+                            <span class="trade">1 sold</span>
+                        </div>
+                        <div title="2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female"
+                            class="products-title">
+                            <h1 class="titleText">2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter
+                                Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female</h1>
+                        </div>
+                    </div>
+
+                </a>
+                <a class="cards-gallery" href="">
+                    <div class="cards-image" style="padding-bottom: 100%;">
+                        <img class="product-img" src="../static/images/products/product3.webp" alt="">
+                        <span class="ad" style="background-color: rgba(0,0,0, 0.2);">AD</span>
+                    </div>
+                    <div class="cards-content">
+                        <div class="prices">
+                            <div class="price-sale">
+                                <span style="font-size: 12px;">NGN</span>
+                                <span style="font-size: 20px;">30</span>
+                                <span style="font-size: 12px;">,</span>
+                                <span style="font-size: 20px;">535</span>
+                                <span style="font-size: 12px;">.</span>
+                                <span style="font-size: 12px;">63</span>
+                            </div>
+                        </div>
+                        <div class="tradeContainer">
+                            <span class="trade">1 sold</span>
+                        </div>
+                        <div title="2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female"
+                            class="products-title">
+                            <h1 class="titleText">2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter
+                                Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female</h1>
+                        </div>
+                    </div>
+
+                </a>
+                <a class="cards-gallery" href="">
+                    <div class="cards-image" style="padding-bottom: 100%;">
+                        <img class="product-img" src="../static/images/products/product4.webp" alt="">
+                        <span class="ad" style="background-color: rgba(0,0,0, 0.2);">AD</span>
+                    </div>
+                    <div class="cards-content">
+                        <div class="prices">
+                            <div class="price-sale">
+                                <span style="font-size: 12px;">NGN</span>
+                                <span style="font-size: 20px;">30</span>
+                                <span style="font-size: 12px;">,</span>
+                                <span style="font-size: 20px;">535</span>
+                                <span style="font-size: 12px;">.</span>
+                                <span style="font-size: 12px;">63</span>
+                            </div>
+                        </div>
+                        <div class="tradeContainer">
+                            <span class="trade">1 sold</span>
+                        </div>
+                        <div title="2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female"
+                            class="products-title">
+                            <h1 class="titleText">2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter
+                                Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female</h1>
+                        </div>
+                    </div>
+
+                </a>
+                <a class="cards-gallery" href="">
+                    <div class="cards-image" style="padding-bottom: 100%;">
+                        <img class="product-img" src="../static/images/products/product6.webp" alt="">
+                        <span class="ad" style="background-color: rgba(0,0,0, 0.2);">AD</span>
+                    </div>
+                    <div class="cards-content">
+                        <div class="prices">
+                            <div class="price-sale">
+                                <span style="font-size: 12px;">NGN</span>
+                                <span style="font-size: 20px;">30</span>
+                                <span style="font-size: 12px;">,</span>
+                                <span style="font-size: 20px;">535</span>
+                                <span style="font-size: 12px;">.</span>
+                                <span style="font-size: 12px;">63</span>
+                            </div>
+                        </div>
+                        <div class="tradeContainer">
+                            <span class="trade">1 sold</span>
+                        </div>
+                        <div title="2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female"
+                            class="products-title">
+                            <h1 class="titleText">2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter
+                                Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female</h1>
+                        </div>
+                    </div>
+
+                </a>
+                <a class="cards-gallery" href="">
+                    <div class="cards-image" style="padding-bottom: 100%;">
+                        <img class="product-img" src="../static/images/products/product.webp" alt="">
+                        <span class="ad" style="background-color: rgba(0,0,0, 0.2);">AD</span>
+                    </div>
+                    <div class="cards-content">
+                        <div class="prices">
+                            <div class="price-sale">
+                                <span style="font-size: 12px;">NGN</span>
+                                <span style="font-size: 20px;">30</span>
+                                <span style="font-size: 12px;">,</span>
+                                <span style="font-size: 20px;">535</span>
+                                <span style="font-size: 12px;">.</span>
+                                <span style="font-size: 12px;">63</span>
+                            </div>
+                        </div>
+                        <div class="tradeContainer">
+                            <span class="trade">1 sold</span>
+                        </div>
+                        <div title="2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female"
+                            class="products-title">
+                            <h1 class="titleText">2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter
+                                Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female</h1>
+                        </div>
+                    </div>
+
+                </a>
+                <a class="cards-gallery" href="">
+                    <div class="cards-image" style="padding-bottom: 100%;">
+                        <img class="product-img" src="../static/images/products/product.webp" alt="">
+                        <span class="ad" style="background-color: rgba(0,0,0, 0.2);">AD</span>
+                    </div>
+                    <div class="cards-content">
+                        <div class="prices">
+                            <div class="price-sale">
+                                <span style="font-size: 12px;">NGN</span>
+                                <span style="font-size: 20px;">30</span>
+                                <span style="font-size: 12px;">,</span>
+                                <span style="font-size: 20px;">535</span>
+                                <span style="font-size: 12px;">.</span>
+                                <span style="font-size: 12px;">63</span>
+                            </div>
+                        </div>
+                        <div class="tradeContainer">
+                            <span class="trade">1 sold</span>
+                        </div>
+                        <div title="2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female"
+                            class="products-title">
+                            <h1 class="titleText">2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter
+                                Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female</h1>
+                        </div>
+                    </div>
+
+                </a>
+                <a class="cards-gallery" href="">
+                    <div class="cards-image" style="padding-bottom: 100%;">
+                        <img class="product-img" src="../static/images/products/product.webp" alt="">
+                        <span class="ad" style="background-color: rgba(0,0,0, 0.2);">AD</span>
+                    </div>
+                    <div class="cards-content">
+                        <div class="prices">
+                            <div class="price-sale">
+                                <span style="font-size: 12px;">NGN</span>
+                                <span style="font-size: 20px;">30</span>
+                                <span style="font-size: 12px;">,</span>
+                                <span style="font-size: 20px;">535</span>
+                                <span style="font-size: 12px;">.</span>
+                                <span style="font-size: 12px;">63</span>
+                            </div>
+                        </div>
+                        <div class="tradeContainer">
+                            <span class="trade">1 sold</span>
+                        </div>
+                        <div title="2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female"
+                            class="products-title">
+                            <h1 class="titleText">2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter
+                                Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female</h1>
+                        </div>
+                    </div>
+
+                </a>
+                <a class="cards-gallery" href="">
+                    <div class="cards-image" style="padding-bottom: 100%;">
+                        <img class="product-img" src="../static/images/products/product.webp" alt="">
+                        <span class="ad" style="background-color: rgba(0,0,0, 0.2);">AD</span>
+                    </div>
+                    <div class="cards-content">
+                        <div class="prices">
+                            <div class="price-sale">
+                                <span style="font-size: 12px;">NGN</span>
+                                <span style="font-size: 20px;">30</span>
+                                <span style="font-size: 12px;">,</span>
+                                <span style="font-size: 20px;">535</span>
+                                <span style="font-size: 12px;">.</span>
+                                <span style="font-size: 12px;">63</span>
+                            </div>
+                        </div>
+                        <div class="tradeContainer">
+                            <span class="trade">1 sold</span>
+                        </div>
+                        <div title="2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female"
+                            class="products-title">
+                            <h1 class="titleText">2023 Fashion Baggy Jeans Women Denim Pants Autumn Winter
+                                Vintage Y2k Elastic Waist Loose Streetwear Cargo Denim Trouser Female</h1>
+                        </div>
+                    </div>
+
+                </a>
+            </div>
+
+            
+            
+            <!-- this part is the list view for the category page -->
+
+
+           
+            <div class="list--list">
+                {% if products %}
+                {% for product in products.values() %}
+                <a class="manhattan--container card--list search-card-item" href="">
+                    <div class="mahattan-image cards--image" style="padding-bottom: 100%;">
+                        <img class="mahattan-img" src="{{ url_for('static', filename='images/products/' + product['type'] + '.webp') }}" alt="">
+                    </div>
+                    <div class="manhattan--content">
+                        <div class="manhattan--title card--title"
+                            title="Casual Simplicity Women's Elastic Waist Wide Leg Cropped Pants All-match Fashion Solid Color Trousers Summer Female Clothing">
+                            <h1 class="manhattan--titleText">
+                                {{ product['description'] }}
+                                <!--  -->
+                            </h1>
+                        </div>
+                        <div class="manhattan--tradeContainer">
+                            <span class="manhattan--trade">1 sold</span>
+                        </div>
+                        <div class="manhattan--price manhattan--topList">
+                            <div class="manhattan--price-sale">
+                                <p>NGN <span class="integer"> &nbsp;{{ product['naira'] }}.</span> {{ product['kobo'] }}</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </a>
+                {% endfor %}
+                {% else %}
+                    <p>No products yet for this category, check back letter</p>
+                {% endif %}
+            </div>
+        </div>
+
+    </section>
+    <br>
+
+    {% endblock %}

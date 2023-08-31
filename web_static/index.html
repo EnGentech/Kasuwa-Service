@@ -5,6 +5,8 @@
     <script src="https://kit.fontawesome.com/11285bfb5b.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/static/scripts/index.js"></script>
+    <script src="static/scripts/slider.js"></script>
+    <link rel="stylesheet" href="static/styles/index.css">
     <link rel="stylesheet" href="/static/styles/index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +14,9 @@
 </head>
 <body>
     <div class="head_content">
+        <img src="static/images/Logo/kasuwa_logo.png" alt="">
         <h2>Kasuwa</h2>
+
         <div class="search">
             <form action="">
                 <input type="text">
@@ -25,9 +29,238 @@
             <i class="fa-solid fa-cart-shopping"></i>
         </div>
         <div class="account">
+            <i class="fa-regular fa-user" style="color: #010813;" id="user"></i>&nbsp;&nbsp;Account
+            <i class="fa-solid fa-play fa-rotate-90" id="acc" style="color: #c2c9d6;"></i>
+        </div>
+        <div class="drop_down_acc">
+            <p>Welcome to Kasuwa!</p>
+            <div class="drop_down_acc_button">
+                <button id="btn1">Register</button>&nbsp;
+                <button id="btn2">Sign in</button>
+            </div><hr>
+            <p id="effect_p">My Orders</p>
+            <p id="effect_p">My Coins</p>
+            <p id="effect_p">Message Center</p>
+            <p id="effect_p">Payment</p>
+            <p id="effect_p">Wish List</p>
+            <p id="effect_p">My Favorite Stores</p>
+            <p id="effect_p">My Coupons</p>
+        </div>
+    </div>
+    <div class="category_section">
+        <section class="category">  
+            <h3><i class="fa-solid fa-list" style="color: #000000;"></i>  &nbsp;Categories</h3>
+            <p><i class="fa-brands fa-gitlab" style="color: #96999c;"></i> &nbsp;Women's Fashion</p>
+            <p><i class="fa-solid fa-shirt" style="color: #96999c;"></i> &nbsp;Men's Fashion</p>
+            <p>&nbsp;<i class="fa-solid fa-mobile-screen-button" style="color: #96999c;"></i> &nbsp;Phones & Telecommunications</p>
+            <p><i class="fa-solid fa-desktop" style="color: #6d6d6f;"></i> &nbsp;Computer, Office & Security</p>
+            <p><i class="fa-solid fa-radio" style="color: #96999c;"></i> &nbsp;Consumer Electronics</p>
+            <p><i class="fa-solid fa-ring" style="color: #96999c;"></i> &nbsp;Jewelry & Watches</p>
+            <p><i class="fa-solid fa-house-chimney" style="color: #96999c;"></i> &nbsp;Home, Pet & Appliances</p>
+            <p>&nbsp;<i class="fa-solid fa-bag-shopping" style="color: #96999c;"></i> &nbsp;Bags & Shoes</p>
+            <p><i class="fa-solid fa-gamepad" style="color: #96999c;"></i> &nbsp;Toys, Kids & Babies</p>
+            <p><i class="fa-solid fa-football" style="color: #96999c;"></i> &nbsp;&nbsp;Outdoor Fun & Sports</p>
+            <p><i class="fa-solid fa-vest" style="color: #96999c;"></i> &nbsp;&nbsp;Beauty, Health & Hair</p>
+            <p><i class="fa-solid fa-bicycle" style="color: #96999c;"></i> &nbsp;Automobiles & Motorcycles</p>
+            <p><i class="fa-solid fa-screwdriver-wrench" style="color: #96999c;"></i> &nbsp;Tools & Home Improvement</p>
+        </section>
+        <section class="slider">
+            <div class="image_slider">
+                <img src="static/images/slider/market.jpg" alt="" style="height:558px">
+                <img src="static/images/slider/shop_right.jpeg" alt="" style="height:558px">
+                <img src="static/images/slider/e-market.jpeg" alt="" style="height:558px; width: 600px">
+                <img src="static/images/slider/my logo.png" alt="" style="height:558px; width: 600px">
+            </div>
+        </section>
+        <section class="login_sider">
+            <div class="login_content">
+                <img src="static/images/Logo/login.png" alt="">
+                <h4>Welcome to Kasuwa</h4>
+                <button id="btn_log1">Register</button>&nbsp;&nbsp;
+                <button id="btn_log2">Sign in</button>
+            </div>
+            <hr>
+            <div class="login_sider_image">
+                <img src="static/images/slider/shop_right.jpeg" alt="">
+            </div>
+            <p>We offer you shopping experience <br>beyond measureable doubt</b></p>
+        </section>
+    </div>
+    <div class="commodities">
+        <div class="row">
+            <img src="static/images/products/flash_drive.webp" alt="">
+            <h4>NGN<span>333</span>.5</h4>
+            <p>1,000+ sold</p>
+            <p id="flow">Xiaomi Portable U Disk 2TB 1TB 256GB 512GB USB 3.1 Type-C Interface Mobile Phone Computer Mutual Transmission USB Memory</p>
+        </div>
+        <div class="row">
+            <img src="static/images/products/watch.webp" alt="">
+            <h4>NGN<span>4500</span>.50</h4>
+            <p>930 sold</p>
+            <p id="flow">Italian Wrist watch made for comfort if you like</p>
+        </div>
+        <div class="row">
+            <img src="static/images/products/drone.webp" alt="">
+            <h4>NGN<span>15,000</span>.20</h4>
+            <p>590 sold</p>
+            <p id="flow">Drone for movies and fun fair</p>
+        </div>
+        <div class="row">
+            <img src="static/images/products/earbud.webp" alt="">
+            <h4>NGN<span>7000</span>.30</h4>
+            <p>990 sold</p>
+            <p id="flow">Original earbud made in ABA, Nigeria</p>
+        </div>
+        <div class="row">
+            <img src="static/images/products/engagement_ring.webp" alt="">
+            <h4>NGN<span>2,150</span>.3</h4>
+            <p>860 sold</p>
+            <p id="flow">You are due for marriage</p>
+        </div>
+        <div class="row">
+            <img src="static/images/products/good_ring.webp" alt="">
+            <h4>NGN<span>1500</span>.23</h4>
+            <p>900 sold</p>
+            <p id="flow">Ring for ndo ke Akwa-Ibom State</p>
+        </div>
+        <div class="row">
+            <img src="static/images/products/pen.webp" alt="">
+            <h4>NGN<span>250</span>.00</h4>
+            <p>1000+ sold</p>
+            <p id="flow">Pen to pass exams without stress</p>
+        </div>
+        <div class="row">
+            <img src="static/images/products/charger.webp" alt="">
+            <h4>NGN<span>3,200</span>.10</h4>
+            <p>400 sold</p>
+            <p id="flow">Charger head and cord made from ABA</p>
+        </div>
+        <div class="row">
+            <img src="static/images/products/vitamin_c.webp" alt="">
+            <h4>NGN<span>1,800</span>.27</h4>
+            <p>320 sold</p>
+            <p id="flow">Norish your body with Vitamin C</p>
+        </div>
+        <div class="row">
+            <img src="static/images/products/shirt.webp" alt="">
+            <h4>NGN<span>7,200</span>.13</h4>
+            <p>1000+ sold</p>
+            <p id="flow">Quality shirt from US</p>
+        </div>
+        <div class="row">
+            <img src="static/images/products/pouch.webp" alt="">
+            <h4>NGN<span>1,300</span>.08</h4>
+            <p>1000+ sold</p>
+            <p id="flow">Quality pouch to keep your phone sparkling</p>
+        </div>
+        <div class="row">
+            <img src="static/images/products/spy_cam.webp" alt="">
+            <h4>NGN<span>10,200</span>.30</h4>
+            <p>780 sold</p>
+            <p id="flow">Observe you space sevretly and catch them live</p>
+        </div>
+        <div class="row">
+            <img src="static/images/products/typeC.webp" alt="">
+            <h4>NGN<span>371</span>.41</h4>
+            <p>500 sold</p>
+            <p id="flow">For fash charging, obtain original typeC cord</p>
+        </div>
+        <div class="row">
+            <img src="static/images/products/smart.webp" alt="">
+            <h4>NGN<span>15,000</span>.50</h4>
+            <p>1000+ sold</p>
+            <p id="flow">Smart device made available for tech guys</p>
+        </div>
+        <div class="row">
+            <img src="static/images/products/wall clock.webp" alt="">
+            <h4>NGN<span>3800</span>.50</h4>
+            <p>998 sold</p>
+            <p id="flow">3D wall clock for your comfort</p>
+        </div>
+    </div><br>
+
+    <div class="footer">
+        <div class="footer_upper">
+            <div class="part1">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <h3>Great value</h3>
+                <p>We offer competitive prices <br>and over 100 million items. <br>&nbsp;</p>
+            </div>
+            <div class="part1">
+                <i class="fa-solid fa-truck" style="color: #000000;"></i>
+                <h3>Woldwide shopping</h3>
+                <p>We ship to over 200 countries <br>and regions, and our site
+                <br>comes in 12 languages.</p>
+            </div>
+            <div class="part1">
+                <i class="fa-regular fa-credit-card" style="color: #000000;"></i>
+                <h3>Safe payment</h3>
+                <p>Pay with the world's most <br>popular and secure payment
+                <br>methods</p>
+            </div>
+            <div class="part1">
+                <i class="fa-solid fa-square-check" style="color: #000000;"></i>
+                <h3>Shop with confidence</h3>
+                <p>Our buyer protection policy <br>
+                covers your entire purchase <br>
+                journey.</p>
+            </div>
+            <div class="part1">
+                <i class="fa-solid fa-user-group fa-beat-fade" style="color: #000000;"></i>
+                <h3>Help center</h3>
+                <p>Round-the-clock assistance <br>for a smooth shopping <br>
+                    experience</p>
+            </div>
+            <div class="part1">
+                <i class="fa-brands fa-android fa-bounce" style="color: #0a0a0a;"></i>
+                <h3>Shop better</h3>
+                <p><span>Download the app</span> for mobile
+                <br> only features such as image <br> search and discount games.</p>
+            </div>
+        </div>
+        <hr>
+        <div class="footer_down">
+            <div class="part2">
+                <h4>Stay connected</h4>
+                <div class="social">
+                    <a href=""><img src="static/images/social_media/facebook.png" alt=""></a>
+                    <a href=""><img src="static/images/social_media/twitter.png" alt=""></a>
+                    <a href=""><img src="static/images/social_media/instagram.png" alt=""></a>
+                    <a href=""><img src="static/images/social_media/messengerFB.png" alt=""></a>
+                    <a href=""><img src="static/images/social_media/whatsapp.png" alt=""></a>
+                </div>
+            </div>
+            <div class="part2_right">
+                <h4>Shopping with us</h4>
+                <p>Making payments</p>
+                <p>Delivery options</p>
+                <p>Buyer Protection</p>
+            </div>
+            <div class="part2_right">
+                <h4>Customer service</h4>
+                <p>Help Center</p>
+                <p>Transaction Services Agreement</p>
+                <p>for non-EU/UK Consumers</p>
+                <p>Terms and Conditions for</p>
+                <p>EU/EEA/UK Consumers</p>
+                <p>(Transactions)</p>
+                <p>Take our feedback survey</p>
+            </div>
+            <div class="part2_right">
+                <h4>Colaborate with Us</h4>
+                <p>Partnership</p>
+                <p>Affiliate program</p>
+                <p>DS Center</p>
+            </div>
+        </div>
+    </div>
+    <div class="cp_right">
+        <p>&copy;2023|Kasuwa_Service...</p>
+
             <i class="fa-regular fa-user" style="color: #010813;"></i>&nbsp;&nbsp;Account
             <i class="fa-solid fa-play fa-rotate-90" id="acc" style="color: #c2c9d6;"></i>
         </div>
+
     </div>
 </body>
 </html>

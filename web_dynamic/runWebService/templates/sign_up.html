@@ -1,0 +1,38 @@
+{% extends 'basic.html' %}
+
+{% block header %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/sign_up.css') }}">
+<script src="{{ url_for('static', filename='scripts/sign_up.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="center_container">
+<div class="signup-container">
+    <img src="{{ url_for('static', filename='images/Logo/kasuwa_logo.png') }}" width="180px" height="37px" alt="kasuwa_logo">
+    <form action="" method="POST">
+        <h3>Sign Up</h3>
+        <div class="form-group">
+            <input class='inp' type="text"  name='username' placeholder="Username" minlength="2"
+            pattern="^[A-Za-z]+[A-Za-z0-9]*$" title="Username must begin with an alphabetical character" required>
+        </div>
+        <div class="form-group">
+            <input class='inp' type="password" name="password" placeholder="Password" id="pass" required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,16}$" 
+            title="Password must contain at least one lowercase letter, one uppercase letter, one digit, and be at least 8 characters long">
+        </div>
+        <div class="form-group">
+            <input class='inp' type="password" placeholder="Confirm Password" id="con_pass" required>
+        </div>
+        <div class="form-group">
+            <input class='inp' type="email" name="mail" placeholder="E-Mail"  required>
+        </div>
+        <div class="form-group">
+            <input class='inp' type="tel" name="phoneNumber" class="float-label" placeholder="Phone" required>
+        </div>
+        <input id='registerBtn' type="submit">
+        <p class="error">{{ error }}</p>
+    </form>
+</div>
+</div>
+
+{% endblock %}

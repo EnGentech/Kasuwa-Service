@@ -1,0 +1,131 @@
+{% extends "basic.html" %}
+{% block content %}
+    <div class="category_section">
+        <section class="category">  
+            <form action="" method="POST">
+                <input type="text" name="cat_id">
+                <input type="text" name="cat_name">
+                <input type="submit" id="auto_click">
+            </form>
+            <h3><i class="fa-solid fa-list" style="color: #000000;"></i>  &nbsp;Categories</h3>
+            {% if category %}
+            {% for key, value in category.items() %}
+                <p class="cat_prod{{ value[1] }}" catName="{{ value[2] }}"><i class="{{ value[0] }}" style="color: #96999c;"></i> &nbsp;{{ key }}</p>
+            {% endfor %}
+            {% endif %}
+        </section>
+        <section class="slider">
+            <div class="image_slider">
+                <img src="{{ url_for('static', filename='images/slider/market.jpg') }}" alt="" style="height:558px">
+                <img src="{{ url_for('static', filename='images/slider/shop_right.jpeg') }}" alt="" style="height:558px">
+                <img src="{{ url_for('static', filename='images/slider/e-market.jpeg') }}" alt="" style="height:558px; width: 600px">
+                <img src="{{ url_for('static', filename='images/slider/my logo.png') }}" alt="" style="height:558px; width: 600px">
+            </div>
+        </section>
+        <section class="login_sider">
+            <div class="login_content">
+                <img src="{{ url_for('static', filename='images/Logo/login.png') }}" alt="">
+                <h4>Welcome to Kasuwa</h4>
+                <a href="{{ url_for('kasu.sign_up') }}"><button id="btn_log1">Register</button></a>&nbsp;&nbsp;
+                <a href="{{ url_for('kasu.sign_in') }}"><button id="btn_log2">Sign in</button></a>
+            </div><hr>
+            <div class="login_sider_image">
+                <img src="{{ url_for('static', filename='images/slider/shop_right.jpeg') }}" alt="">
+            </div>
+            <p>We offer you shopping experience <br>beyond measureable doubt</b></p>
+        </section>
+    </div>
+    <div class="commodities">
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/flash_drive.webp') }}" alt="">
+            <h4>NGN<span>333</span>.5</h4>
+            <p>1,000+ sold</p>
+            <p id="flow">Xiaomi Portable U Disk 2TB 1TB 256GB 512GB USB 3.1 Type-C Interface Mobile Phone Computer Mutual Transmission USB Memory</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/watch.webp') }}" alt="">
+            <h4>NGN<span>4500</span>.50</h4>
+            <p>930 sold</p>
+            <p id="flow">Italian Wrist watch made for comfort if you like</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/drone.webp') }}" alt="">
+            <h4>NGN<span>15,000</span>.20</h4>
+            <p>590 sold</p>
+            <p id="flow">Drone for movies and fun fair</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/earbud.webp') }}" alt="">
+            <h4>NGN<span>7000</span>.30</h4>
+            <p>990 sold</p>
+            <p id="flow">Original earbud made in ABA, Nigeria</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/engagement_ring.webp') }}" alt="">
+            <h4>NGN<span>2,150</span>.3</h4>
+            <p>860 sold</p>
+            <p id="flow">You are due for marriage</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/good_ring.webp') }}" alt="">
+            <h4>NGN<span>1500</span>.23</h4>
+            <p>900 sold</p>
+            <p id="flow">Ring for ndo ke Akwa-Ibom State</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/pen.webp') }}" alt="">
+            <h4>NGN<span>250</span>.00</h4>
+            <p>1000+ sold</p>
+            <p id="flow">Pen to pass exams without stress</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/charger.webp') }}" alt="">
+            <h4>NGN<span>3,200</span>.10</h4>
+            <p>400 sold</p>
+            <p id="flow">Charger head and cord made from ABA</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/vitamin_c.webp') }}" alt="">
+            <h4>NGN<span>1,800</span>.27</h4>
+            <p>320 sold</p>
+            <p id="flow">Norish your body with Vitamin C</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/shirt.webp') }}" alt="">
+            <h4>NGN<span>7,200</span>.13</h4>
+            <p>1000+ sold</p>
+            <p id="flow">Quality shirt from US</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/pouch.webp') }}" alt="">
+            <h4>NGN<span>1,300</span>.08</h4>
+            <p>1000+ sold</p>
+            <p id="flow">Quality pouch to keep your phone sparkling</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/spy_cam.webp') }}" alt="">
+            <h4>NGN<span>10,200</span>.30</h4>
+            <p>780 sold</p>
+            <p id="flow">Observe you space sevretly and catch them live</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/typeC.webp') }}" alt="">
+            <h4>NGN<span>371</span>.41</h4>
+            <p>500 sold</p>
+            <p id="flow">For fash charging, obtain original typeC cord</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/smart.webp') }}" alt="">
+            <h4>NGN<span>15,000</span>.50</h4>
+            <p>1000+ sold</p>
+            <p id="flow">Smart device made available for tech guys</p>
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='images/products/wall clock.webp') }}" alt="">
+            <h4>NGN<span>3800</span>.50</h4>
+            <p>998 sold</p>
+            <p id="flow">3D wall clock for your comfort</p>
+        </div>
+    </div><br>
+
+{% endblock %}

@@ -8,23 +8,22 @@ body{
     background-color: white;
     height: 100px;
     display: flex;
+    border-bottom: 1px solid rgb(153, 169, 153);
 }
-
 
 .head_content img{
     width: 180px;
     height:37px;
+    
+}
+
+.head_content #shift{
     margin: 0px;
     padding: 10%;
+    padding-bottom: 0%;
+    margin-bottom: 0px;
     padding-top:2%;
     padding-right:1%;
-
-.head_content h2{
-    margin: 0px;
-    padding: 10%;
-    padding-top:2%;
-    padding-right:5%;
-
 }
 
 .search{
@@ -36,11 +35,7 @@ body{
 .search input[type='text']{
     width: 100%;
     height: 30px;
-
     border: 2px solid rgb(0, 255, 132);
-
-    border: 2px solid red;
-
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
 }
@@ -53,19 +48,11 @@ body{
     height: 32px;
     width: 3%;
     margin-top: 2%;
-
     background-color: rgb(0, 255, 132);
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     border: 2px solid rgb(0, 255, 132);
-
-    background-color: red;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    border: 2px solid red;
-
     text-align: center;
-
 }
 
 .search_icon i{
@@ -74,41 +61,33 @@ body{
 
 .cart{
     margin-top: 2.4%;
-
     padding-left: 3%;
     font-size:x-large;
     padding-right: 2%;
 }
 
-.cart:hover{
-    color:rgb(51, 181, 55);;
+.cart a{
+    color:green;
+}
+
+.cart a:hover{
+    color:rgb(188, 220, 189);;
     cursor: pointer;
 }
 
 .account{
     margin-top: 2.5%;
     font-size: 5000;
-
-    padding-left: 5%;
-    font-size:x-large;
-}
-
-.account{
-    padding-left: 3%;
-    margin-top: 2.5%;
-
 }
 
 #acc{
     font-size: xx-small;
     padding-left: 0%;
-
 }
 
 .account:hover, #user:hover{
     color:red !important;
-    cursor: pointer;
-    
+    cursor: pointer;   
 }
 
 .drop_down_acc{
@@ -124,6 +103,7 @@ body{
     right: 0;
     border-radius: 3%;
     display: none;
+    border: 1px solid rgb(153, 169, 153);
 }
 
 .drop_down_acc p{
@@ -141,6 +121,7 @@ body{
 }
 
 .drop_down_acc button{
+    margin-left: 0px;
     padding-left: 12%;
     padding-right: 12%;
     padding-top: 4%;
@@ -183,6 +164,11 @@ body{
     padding-top: 0.5%;
     line-height: 1.3em;
     border-radius: 10px;
+}
+
+.category p:hover{
+    cursor: pointer;
+    color:brown;
 }
 
 .slider{
@@ -335,6 +321,7 @@ body{
 .footer{
     background-color: white;
     height: 570px;
+    border-top: 1px solid rgb(153, 169, 153);
 }
 
 .footer_upper{
@@ -406,5 +393,37 @@ body{
     margin: 0px;
     margin-right: 10%;
     font-size: small;
+}
 
+.flex_me{
+    display: flex;
+}
+
+.login_drop_down img{
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.login_drop_down h3{
+    color: rgb(0, 82, 0);
+}
+
+.login_drop_down button{
+    margin-left: 10px;
+    width: 90%;
+    margin-right: 10px;
+    border-radius: 30px;
+    border: none;
+    background: rgb(221, 246, 217);
+    font-weight: 600;
+}
+
+.login_drop_down button:hover{
+    border-bottom: 4px solid black;
+}
+
+.category input{
+    position: absolute;
+    display: none;
 }

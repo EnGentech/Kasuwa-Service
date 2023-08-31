@@ -1,0 +1,22 @@
+INSERT INTO products (category_id, product_name, product_type, description, stock, price, image_source, id, date_created)
+VALUES
+(1, 'Smartphone', 'Mobile Phones', 'Latest smartphone model', 100, 599.99, 'smartphone_image.jpg', 1, '2023-08-25 10:00:00'),
+(1, 'Laptop', 'Laptops', 'High-performance laptop', 50, 1299.99, 'laptop_image.jpg', 2, '2023-08-25 10:05:00'),
+(1, 'Headphones', 'Audio Accessories', 'Noise-cancelling headphones', 200, 149.99, 'headphones_image.jpg', 3, '2023-08-25 10:10:00'),
+(1, 'Smart TV', 'Televisions', '4K Ultra HD Smart TV', 30, 899.99, 'tv_image.jpg', 4, '2023-08-25 10:15:00'),
+(1, 'Gaming Console', 'Gaming Consoles', 'Next-gen gaming console', 75, 399.99, 'console_image.jpg', 5, '2023-08-25 10:20:00'),
+(1, 'Wireless Mouse', 'Computer Accessories', 'Ergonomic wireless mouse', 150, 29.99, 'mouse_image.jpg', 6, '2023-08-25 10:25:00'),
+(1, 'Tablet', 'Tablets', 'Lightweight touchscreen tablet', 80, 299.99, 'tablet_image.jpg', 7, '2023-08-25 10:30:00'),
+(1, 'Soundbar', 'Audio Accessories', 'Premium soundbar', 40, 199.99, 'soundbar_image.jpg', 8, '2023-08-25 10:35:00'),
+(1, 'Drone', 'Drones', 'HD camera drone', 25, 499.99, 'drone_image.jpg', 9, '2023-08-25 10:40:00'),
+(1, 'Smart Watch', 'Wearables', 'Fitness tracking smart watch', 120, 179.99, 'watch_image.jpg', 10, '2023-08-25 10:45:00'),
+(1, 'Monitor', 'Monitors', 'Curved LED monitor', 60, 349.99, 'monitor_image.jpg', 11, '2023-08-25 10:50:00'),
+(1, 'Camera', 'Cameras', 'DSLR camera with lens', 45, 699.99, 'camera_image.jpg', 12, '2023-08-25 10:55:00'),
+(1, 'Bluetooth Speaker', 'Audio Accessories', 'Portable Bluetooth speaker', 100, 69.99, 'speaker_image.jpg', 13, '2023-08-25 11:00:00'),
+(1, 'VR Headset', 'Virtual Reality', 'Immersive VR headset', 35, 249.99, 'vr_image.jpg', 14, '2023-08-25 11:05:00'),
+(1, 'External HDD', 'Storage Devices', '1TB external hard drive', 90, 79.99, 'hdd_image.jpg', 15, '2023-08-25 11:10:00'),
+(1, 'Wireless Keyboard', 'Computer Accessories', 'Slim wireless keyboard', 110, 49.99, 'keyboard_image.jpg', 16, '2023-08-25 11:15:00'),
+(1, 'Home Security Camera', 'Security', 'HD wireless security camera', 70, 129.99, 'security_image.jpg', 17, '2023-08-25 11:20:00'),
+(1, 'E-reader', 'E-readers', 'Paper-like e-reader', 55, 129.99, 'ereader_image.jpg', 18, '2023-08-25 11:25:00'),
+(1, 'Gaming Mouse', 'Gaming Accessories', 'RGB gaming mouse', 130, 39.99, 'gaming_mouse_image.jpg', 19, '2023-08-25 11:30:00'),
+(1, 'Projector', 'Projectors', 'HD multimedia projector', 20, 499.99, 'projector_image.jpg', 20, '2023-08-25 11:35:00');

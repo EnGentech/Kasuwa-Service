@@ -1,0 +1,12 @@
+insert into categories(category, icon, date_created) values
+("Phones & Telecommunications", "fa-solid fa-mobile-screen-button", now()),
+("Computer, Office & Security", "fa-solid fa-desktop", now()),
+("Consumer Electronics", "fa-solid fa-radio", now()),
+("Jewelry & Watches", "fa-solid fa-ring", now()),
+("Home, Pet & Appliances", "fa-solid fa-house-chimney", now()),
+("Bags & Shoes", "fa-solid fa-bag-shopping", now()),
+("Toys, Kids & Babies", "fa-solid fa-gamepad", now()),
+("Outdoor Fun & Sports", "fa-solid fa-football", now()),
+("Beauty, Health & Hair", "fa-solid fa-vest", now()),
+("Automobiles & Motorcycles", "fa-solid fa-bicycle", now()),
+("Tools & Home Improvement", "fa-solid fa-screwdriver-wrench", now());

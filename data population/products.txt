@@ -1,0 +1,22 @@
+insert if not exists into products(category_id, product_name, product_type, description, stock, price, image_source, date_created) values
+(1, 'fuzzy_flexy', 'leggings', 'fits to the body to reveal curve and enhance sexiness', 623, 14500.50, "https://ae01.alicdn.com/kf/Sc20ea26e2a134c1388de0dcf24abdd07I/Tie-Dye-Yoga-Pants-Sport-Leggings-Women-Seamless-High-Waist-Push-Up-Woman-Tights-Fitness-Workout.jpg_220x220xz.jpg_.webp", now()),
+(1, 'Rubber Pant', 'pant', 'Being sexy is a work through to make your man crazy, we are committed to enhancing your inner
+part of who your are to make your man stay focus and reselient to loving you better', 1800, 5000.98, "https://ae01.alicdn.com/kf/S755fc1f3f7d84b9a85e355495323fa39h/Finetoo-4PCS-Cotton-Panties-for-Women-Sexy-Letter-Low-Waist-Briefs-Waffle-Elastic-Female-Underwear-Soft.jpg_220x220xz.jpg_.webp", now());
+
+
+Mens_wear
+INSERT INTO products(category_id, product_name, product_type, description, stock, price, image_source, date_created) VALUES
+(2, 'Body_fitted polo', 'polo', 'let the world feel your masculinity by using this attractive awesome nice sexy sweet pool', 6223, 7202.51, 'hi', NOW()),
+(2, 'Italian shirts', 'shirt', 'Dress like a smart niggi, get the best quality product here', 10400, 12034.45, 'hi', NOW()),
+(2, 'Italian shoes', 'shoe', 'Your shoes speaks more of your dressing, Dress like a smart niggi, get the best quality product here', 5400, 35400.45, 'hi', NOW()),
+(2, 'Italian shirts', 'shirt', 'Dress like a smart niggi, get the best quality product here', 10400, 12034.45, 'hi', NOW()),
+(2, 'Quality wrist watch', 'watch', 'You cant be complete without a perfect wrist watch, get one today', 10400, 24800.45, 'hi', NOW()),
+(2, 'rocket boxers', 'boxer', 'cover your odogu while getting a bit of attraction, only if you a man i mean a man', 15400, 6100.15, 'hi', NOW()),
+(2, 'Channels quality bag', 'bag', 'Dont use urgly bags, you will not make heaven, get a good one today', 21899, 21000.00, 'hi', NOW()),
+(2, 'UI/UX shoes', 'shoeUI', 'Do you think italian is the best shoe?, then you are yet to try UI/UX, your number one in quality', 10400, 32500.25, 'hi', NOW()),
+(2, 'London Polo', 'polo_london', 'You dont need to go to US before getting quality designers, kasuwa service, your priority', 10400, 13200.45, 'hi', NOW()),
+(2, 'Peace Underwear', 'underwear', 'when we call it white then its white, we talk less and give quality', 23122, 4800.95, 'hi', NOW()),
+(2, 'sporty face-cap', 'faceCap', 'Get fitted with sport, all work with no play, my brother you are doll', 219000, 3500.55, 'hi', NOW()),
+(2, 'Peacat Sucks', 'sucks', 'Dress like a smart niggi, get the best quality product here', 10400, 321.45, 'hi', NOW())
+(2, 'Designers boxers', 'boxer_design', 'cover your odogu while getting a bit of attraction, only if you a man i mean a man. With our product, the fear of disgrace when you see good looks is covered', 15400, 2750.15, 'hi', NOW());
+
