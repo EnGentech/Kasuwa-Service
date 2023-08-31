@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> kasuwa Servive</title>
-    <link rel="stylesheet" href="styles/sign_up.css">
+    <title>{% block title%}sign_up{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/sign_up.css') }}">
 </head>
 <body>
     <div class="signup-container">
-        <img src="kasuwa_logo (2).png" alt="kasuwa_logo">
+        <img src="{{ url_for('static', filename='image/kasuwa_logo (2).png') }}">
         <form>
             <h3>Sign Up</h3>
             <div class="form-group">
