@@ -14,7 +14,7 @@
                         <span class="breadcrumb-seperator">></span>
 
                     </span>
-                    <span class="breadcrumb-keyword">"Women's Clothing"</span>
+                    <span class="breadcrumb-keyword">{{ cat_name }}</span>
 
 
                 </div>
@@ -403,17 +403,25 @@
 
                 </a>
             </div>
+
+            
+            
+            <!-- this part is the list view for the category page -->
+
+
+           
             <div class="list--list">
+                {% if products %}
+                {% for product in products.values() %}
                 <a class="manhattan--container card--list search-card-item" href="">
                     <div class="mahattan-image cards--image" style="padding-bottom: 100%;">
-                        <img class="mahattan-img" src="../static/images/products/product.webp" alt="">
+                        <img class="mahattan-img" src="{{ url_for('static', filename='images/products/' + product['type'] + '.webp') }}" alt="">
                     </div>
                     <div class="manhattan--content">
                         <div class="manhattan--title card--title"
                             title="Casual Simplicity Women's Elastic Waist Wide Leg Cropped Pants All-match Fashion Solid Color Trousers Summer Female Clothing">
                             <h1 class="manhattan--titleText">
-                                Casual Simplicity Women's Elastic Waist Wide Leg Cropped Pants All-match Fashion Solid
-                                Color Trousers Summer Female Clothing
+                                {{ product['description'] }}
                                 <!--  -->
                             </h1>
                         </div>
@@ -422,139 +430,21 @@
                         </div>
                         <div class="manhattan--price manhattan--topList">
                             <div class="manhattan--price-sale">
-                                <p>NGN <span class="integer">7,960.</span> 09</p>
+                                <p>NGN <span class="integer"> &nbsp;{{ product['naira'] }}.</span> {{ product['kobo'] }}</p>
                             </div>
                         </div>
 
                     </div>
 
                 </a>
-                <a class="manhattan--container card--list search-card-item" href="">
-                    <div class="mahattan-image cards--image" style="padding-bottom: 100%;">
-                        <img class="mahattan-img" src="../static/images/products/product.webp" alt="">
-                    </div>
-                    <div class="manhattan--content">
-                        <div class="manhattan--title card--title"
-                            title="Casual Simplicity Women's Elastic Waist Wide Leg Cropped Pants All-match Fashion Solid Color Trousers Summer Female Clothing">
-                            <h1 class="manhattan--titleText">
-                                Casual Simplicity Women's Elastic Waist Wide Leg Cropped Pants All-match Fashion Solid
-                                Color Trousers Summer Female Clothing
-                                <!--  -->
-                            </h1>
-                        </div>
-                        <div class="manhattan--tradeContainer">
-                            <span class="manhattan--trade">1 sold</span>
-                        </div>
-                        <div class="manhattan--price manhattan--topList">
-                            <div class="manhattan--price-sale">
-                                <span
-                                    style="font-size:12px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">NGN</span>
-                                <span
-                                    style="font-size:20px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">7</span>
-                                <span
-                                    style="font-size:12px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">,</span>
-                                <span
-                                    style="font-size:20px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">960</span>
-                                <span
-                                    style="font-size:12px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">.</span>
-                                <span
-                                    style="font-size:12px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">09</span>
-
-
-
-
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </a>
-                <a class="manhattan--container card--list search-card-item" href="">
-                    <div class="mahattan-image cards--image" style="padding-bottom: 100%;">
-                        <img class="mahattan-img" src="../static/images/products/product.webp" alt="">
-                    </div>
-                    <div class="manhattan--content">
-                        <div class="manhattan--title card--title"
-                            title="Casual Simplicity Women's Elastic Waist Wide Leg Cropped Pants All-match Fashion Solid Color Trousers Summer Female Clothing">
-                            <h1 class="manhattan--titleText">
-                                Casual Simplicity Women's Elastic Waist Wide Leg Cropped Pants All-match Fashion Solid
-                                Color Trousers Summer Female Clothing
-                                <!--  -->
-                            </h1>
-                        </div>
-                        <div class="manhattan--tradeContainer">
-                            <span class="manhattan--trade">1 sold</span>
-                        </div>
-                        <div class="manhattan--price manhattan--topList">
-                            <div class="manhattan--price-sale">
-                                <span
-                                    style="font-size:12px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">NGN</span>
-                                <span
-                                    style="font-size:20px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">7</span>
-                                <span
-                                    style="font-size:12px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">,</span>
-                                <span
-                                    style="font-size:20px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">960</span>
-                                <span
-                                    style="font-size:12px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">.</span>
-                                <span
-                                    style="font-size:12px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">09</span>
-
-
-
-
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </a>
-                <a class="manhattan--container card--list search-card-item" href="">
-                    <div class="mahattan-image cards--image" style="padding-bottom: 100%;">
-                        <img class="mahattan-img" src="../static/images/products/product.webp" alt="">
-                    </div>
-                    <div class="manhattan--content">
-                        <div class="manhattan--title card--title"
-                            title="Casual Simplicity Women's Elastic Waist Wide Leg Cropped Pants All-match Fashion Solid Color Trousers Summer Female Clothing">
-                            <h1 class="manhattan--titleText">
-                                Casual Simplicity Women's Elastic Waist Wide Leg Cropped Pants All-match Fashion Solid
-                                Color Trousers Summer Female Clothing
-                                <!--  -->
-                            </h1>
-                        </div>
-                        <div class="manhattan--tradeContainer">
-                            <span class="manhattan--trade">1 sold</span>
-                        </div>
-                        <div class="manhattan--price manhattan--topList">
-                            <div class="manhattan--price-sale">
-                                <span
-                                    style="font-size:12px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">NGN</span>
-                                <span
-                                    style="font-size:20px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">7</span>
-                                <span
-                                    style="font-size:12px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">,</span>
-                                <span
-                                    style="font-size:20px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">960</span>
-                                <span
-                                    style="font-size:12px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">.</span>
-                                <span
-                                    style="font-size:12px;currency-symbol:NGN;show-decimal:true;decimal_point:.;symbol_position:left;comma_style:,">09</span>
-
-
-
-
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </a>
+                {% endfor %}
+                {% else %}
+                    <p>No products yet for this category, check back letter</p>
+                {% endif %}
             </div>
         </div>
 
     </section>
+    <br>
 
     {% endblock %}

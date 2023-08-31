@@ -422,3 +422,8 @@ body{
 .login_drop_down button:hover{
     border-bottom: 4px solid black;
 }
+
+.category input{
+    position: absolute;
+    display: none;
+}

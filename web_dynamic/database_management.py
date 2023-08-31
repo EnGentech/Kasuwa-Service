@@ -84,13 +84,26 @@ class Db_Management:
         cats = self.__session.query(Category).all()
         if cats:
             for cat in cats:
-                cat_items[cat.category] = [cat.icon, cat.id]
+                cat_items[cat.category] = [cat.icon, cat.id, cat.category]
             return cat_items
         
     def product_category(self, cat_id):
         """return the entire product for a category"""
         prod_cart_items = {}
         prod = self.__session.query(Product).filter_by(category_id=cat_id).all()
+        print(prod)
         if prod:
-            for p in prod:
-                print(p)
+            for prods in prod:
+                value = prods.price
+                new_value = str(value).split('.')
+                mydict = {
+                    'name': prods.product_name,
+                    'type': prods.product_type,
+                    'description': prods.description,
+                    'naira': '{:,}'.format(int(new_value[0])),
+                    'kobo': '{:02}'.format(int(new_value[1])),
+                    'image': prods.image_source
+                }
+                prod_cart_items[prods.id] = mydict
+            return prod_cart_items
+            

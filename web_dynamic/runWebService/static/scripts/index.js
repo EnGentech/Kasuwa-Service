@@ -6,20 +6,12 @@ $(document).ready(function(){
         $('.drop_down_acc').hide()
     })
 
-    $('.cat_prod2').click(function(){
-       execute()
+    $('.category p').click(function(){
+        let clas = $(this).attr('class')
+        let catNam = $(this).attr('catName')
+        $(".category input[name='cat_id']").val(clas)
+        $(".category input[name='cat_name']").val(catNam)
+        $(".category input[type='submit']").click()
     })
-
-    function execute(){
-        fetch('/kasuwa/category/products', {
-            method: 'POST'
-        }).then(function(response) {
-            if (response.ok){
-                console.log('success')
-            } else {
-                alert('failure')
-            }
-        })
-    }
 
 })

@@ -19,24 +19,33 @@ def login_required(func):
         return func(*args, **kwargs)
     return decorated_function
 
-@start.route('/')
-@start.route('/kasuwa')
+@start.route('/', methods=['GET', 'POST'])
+@start.route('/kasuwa', methods=["GET", 'POST'])
 def main():
     """render the index page"""
     category = Db_Management().category()
     if category:
-        return render_template('index.html', category=category)
+        if request.method == 'GET':
+            return render_template('index.html', category=category)
+        elif request.method == "POST":
+            cat_id = request.form.get('cat_id')
+            catName = request.form.get('cat_name')
+            new_id = cat_id.split('d')
+            id = int(new_id[1])
+            products = Db_Management().product_category(id)
+            return render_template('category_page.html', products=products, cat_name=catName)
     else:
         return render_template('index.html', category='No category, check back')
 
 @start.route('/kasuwa/index/category/product')
 def product():
     """display product from category"""
-    return render_template('product.html')
+    return render_template('category_page.html')
 
 @start.route('/kasuwa/sign_in', methods=['GET', 'POST'])
 def sign_in():
     """Write sign in code"""
+    category = Db_Management().category()
     if request.method == 'GET':
         return render_template('sign_in.html')
     elif request.method == "POST":
@@ -57,7 +66,7 @@ def sign_in():
                 #render_template('', userS=userS[0])
                 return redirect(stored_url)
             else:
-                return render_template('index.html', userS=userS[0])
+                return render_template('index.html', userS=userS[0], category=category)
 
 @start.route('/kasuwa/signup', methods=['GET', 'POST'])
 def sign_up():
@@ -93,13 +102,14 @@ def signOut():
     session.pop('e_mail', None)
     return redirect(url_for('kasu.main'))
 
-@start.route('/kasuwa/category/products', methods=['GET', 'POST'])
+
+
+
+
+@start.route('/kasuwa/category/products')
 def products():
     """render the products to users"""
-    if request.method == "GET":
-        return render_template('product.html')
-    elif request.method == 'POST':
-        return render_template("sign_in.html")
+    return render_template('product.html')
 
 def pwdUrl(url):
     """store present user URL"""

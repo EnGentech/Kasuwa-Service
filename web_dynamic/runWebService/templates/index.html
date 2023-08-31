@@ -2,10 +2,17 @@
 {% block content %}
     <div class="category_section">
         <section class="category">  
+            <form action="" method="POST">
+                <input type="text" name="cat_id">
+                <input type="text" name="cat_name">
+                <input type="submit" id="auto_click">
+            </form>
             <h3><i class="fa-solid fa-list" style="color: #000000;"></i>  &nbsp;Categories</h3>
+            {% if category %}
             {% for key, value in category.items() %}
-                <p class="cat_prod{{ value[1] }}"><i class="{{ value[0] }}" style="color: #96999c;"></i> &nbsp;{{ key }}</p>
+                <p class="cat_prod{{ value[1] }}" catName="{{ value[2] }}"><i class="{{ value[0] }}" style="color: #96999c;"></i> &nbsp;{{ key }}</p>
             {% endfor %}
+            {% endif %}
         </section>
         <section class="slider">
             <div class="image_slider">
