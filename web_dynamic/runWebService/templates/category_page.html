@@ -1,6 +1,7 @@
 {% extends 'basic.html' %}
 {% block header %}
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/category_page.css') }}">
+    <script src="{{ url_for('static', filename='scripts/category_page.js') }}"></script>
 {% endblock %}
 {% block content %}
 
@@ -409,17 +410,25 @@
             <!-- this part is the list view for the category page -->
 
 
+
+            <div class="hide">
+                <form action="/kasuwa/category/products"  method="POST">
+                    <input type="text" name="prodID">
+                    <input type="submit">
+                </form>
+            </div>
            
             <div class="list--list">
                 {% if products %}
                 {% for product in products.values() %}
-                <a class="manhattan--container card--list search-card-item" href="">
+                <div class="manhattan--container card--list search-card-item" >
+                    <p style="display: none;" id="prodID">{{ product['prodID'] }}</p>
                     <div class="mahattan-image cards--image" style="padding-bottom: 100%;">
                         <img class="mahattan-img" src="{{ url_for('static', filename='images/products/' + product['type'] + '.webp') }}" alt="">
                     </div>
                     <div class="manhattan--content">
                         <div class="manhattan--title card--title"
-                            title="Casual Simplicity Women's Elastic Waist Wide Leg Cropped Pants All-match Fashion Solid Color Trousers Summer Female Clothing">
+                            title="{{ product['description'] }}">
                             <h1 class="manhattan--titleText">
                                 {{ product['description'] }}
                                 <!--  -->
@@ -436,7 +445,7 @@
 
                     </div>
 
-                </a>
+                </div>
                 {% endfor %}
                 {% else %}
                     <p>No products yet for this category, check back letter</p>

@@ -91,12 +91,13 @@ class Db_Management:
         """return the entire product for a category"""
         prod_cart_items = {}
         prod = self.__session.query(Product).filter_by(category_id=cat_id).all()
-        print(prod)
         if prod:
             for prods in prod:
                 value = prods.price
                 new_value = str(value).split('.')
                 mydict = {
+                    'prodID': prods.id,
+                    'cartID': prods.category_id,
                     'name': prods.product_name,
                     'type': prods.product_type,
                     'description': prods.description,
@@ -107,4 +108,24 @@ class Db_Management:
                 }
                 prod_cart_items[prods.id] = mydict
             return prod_cart_items
+        
+    def view_product(self, prodid):
+        """View user selected product in details"""
+        choice = self.__session.query(Product).filter_by(id=prodid).first()
+        if choice:
+            value = choice.price
+            new_value = str(value).split('.')
+            productInfo = {
+                "id": choice.id,
+                "name": choice.product_name,
+                'description': choice.description,
+                'naira': '{:,}'.format(int(new_value[0])),
+                'kobo': '{:02}'.format(int(new_value[1])),
+                'image': choice.image_source,
+                'stock': choice.stock,
+                'type': choice.product_type
+            }
+            return productInfo
+        else:
+            print("nothing selected")
             

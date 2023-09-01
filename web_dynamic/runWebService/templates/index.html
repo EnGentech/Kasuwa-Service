@@ -1,12 +1,12 @@
 {% extends "basic.html" %}
 {% block content %}
+    <form class='hidden' style="display:none" action="/kasuwa/index/category/product" method="POST">
+        <input type="text" name="cat_id">
+        <input type="text" name="cat_name">
+        <input type="submit" id="auto_click">
+    </form>
     <div class="category_section">
         <section class="category">  
-            <form action="/kasuwa/index/category/product" method="POST">
-                <input type="text" name="cat_id">
-                <input type="text" name="cat_name">
-                <input type="submit" id="auto_click">
-            </form>
             <h3><i class="fa-solid fa-list" style="color: #000000;"></i>  &nbsp;Categories</h3>
             {% if category %}
             {% for key, value in category.items() %}
@@ -40,17 +40,12 @@
         {% for product in productsIndex.values() %}
         <div class="hide">
             <form action="/kasuwa/category/products"  method="POST">
-                <input name='name' type="text">
-                <input type="text" name="description">
-                <input type="text" name="image">
-                <input type="text" name="naira">
-                <input type="text" name="kobo">
-                <input type="text" name="stock">
+                <input type="text" name="prodID">
                 <input type="submit">
             </form>
         </div>
         <div class="row">
-            <p style="display: none;" id="name">{{ product['name'] }}</p>
+            <p style="display: none;" id="prodID">{{ product['prodID'] }}</p>
             <img id="image" src="{{ url_for('static', filename='images/products/' + product['type'] + '.webp') }}" alt="">
             <h4 id="naira" naira="{{ product['naira'] }}">NGN<span id="kobo" kobo="{{ product['kobo'] }}"> {{ product['naira'] }}</span>.{{ product['kobo'] }}</h4>
             <p id="stock" stock="{{ product['stock']}}">{{ product['stock']}} in stock</p>

@@ -9,22 +9,14 @@ $(document).ready(function(){
     $('.category p').click(function(){
         let clas = $(this).attr('class')
         let catNam = $(this).attr('catName')
-        $(".category input[name='cat_id']").val(clas)
-        $(".category input[name='cat_name']").val(catNam)
-        $(".category input[type='submit']").click()
+        $(".hidden input[name='cat_id']").val(clas)
+        $(".hidden input[name='cat_name']").val(catNam)
+        $(".hidden input[type='submit']").click()
     })
 
     $('.row').click(function(){
-        let name = $(this).find('p#name').text()
-        let description = $(this).find('p#flow').text()
-        let naira = $(this).find('h4#naira').attr('naira')
-        let kobo = $(this).find('span#kobo').attr('kobo')
-        let stock = $(this).find('p#stock').attr('stock')
-        $(".hide input[name='name']").val(name)
-        $(".hide input[name='description']").val(description)
-        $(".hide input[name='naira']").val(naira)
-        $(".hide input[name='kobo']").val(kobo)
-        $(".hide input[name='stock']").val(stock)
+        let prodID = $(this).find('p#prodID').text()
+        $(".hide input[name='prodID']").val(prodID)
         $('.hide input[type="submit"]').click() 
     })
 

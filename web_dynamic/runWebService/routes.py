@@ -8,6 +8,7 @@ from mailVerification import send_verification_email
 from database_management import Db_Management
 from flask_bcrypt import Bcrypt
 from random import randint
+from datetime import datetime
 
 start = Blueprint('kasu', __name__, template_folder='templates')
 
@@ -39,11 +40,7 @@ def product():
     category = Db_Management().category()
     if category:
         if request.method == 'GET':
-            cat_id = request.form.get('cat_id')
-            new_id = cat_id.split('d')
-            id = int(new_id[1])
-            displayProducts = Db_Management().product_category(id)
-            return render_template('category_page.html', category=category, productsIndex=displayProducts)
+            return render_template('category_page.html')
         elif request.method == "POST":
             cat_id = request.form.get('cat_id')
             catName = request.form.get('cat_name')
@@ -118,13 +115,15 @@ def signOut():
 @start.route('/kasuwa/category/products', methods=['GET', 'POST'])
 def products():
     """render the products to users"""
+    time = datetime.now()
+    time = time.strftime('%Y-%m-%d %H:%M:%S')
     if request.method == "GET":
         return render_template('product.html')
     elif request.method == 'POST':
-        addToCart = []
-        SelectedItem = request.form.get('add_cart')
-        print(SelectedItem)
-        return render_template('product.html', use=SelectedItem)
+        productID = request.form.get('prodID')
+        renderCart = Db_Management().view_product(productID)
+        print(renderCart)
+        return render_template('product.html', productInView=renderCart, time=time)
 
 def pwdUrl(url):
     """store present user URL"""

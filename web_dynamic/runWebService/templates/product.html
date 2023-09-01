@@ -5,20 +5,19 @@
 {% endblock %}
 
 {% block content %}
+{% if productInView %}
     <section class="product-wrap product-body">
         <div class="product-body-left">
             <div class="product-info">
                 <div class="product-info-left">
                     <div class="image-viewer">
-                        <img src="/static/images/products/len.jpg" alt="Kasuwa">
+                        <img src="{{ url_for('static', filename='images/products/' + productInView['type'] + '.webp') }}" alt="Kasuwa">
                     </div>
                 </div>
+                
                 <div class="product-info-right">
                     <div class="product-title_container">
-                        <h1 class="product-title">IFXLIFE Wireless Bluetooth Mouse for APPLE Mac Book Macbook Air Pro
-                            Ergonomic Design
-                            Multi-touch
-                            BT {{ use }}</h1>
+                        <h1 class="product-title">{{ productInView['name']}}</h1>
                     </div>
                     <div class="comet-divider comet-divider_small"></div>
                     <div class="price-banner">
@@ -32,12 +31,8 @@
                                     <div class="counter">
 
                                         <div class="timer">
-                                            <span>Start:</span>
-                                            <span class="hour">16</span>
-                                            <span class="split">:</span>
-                                            <span class="minute">28</span>
-                                            <span class="split">:</span>
-                                            <span class="seconds">40</span>
+                                            <span>Date/Time:</span>
+                                            {{ time }}
                                         </div>
                                     </div>
                                 </div>
@@ -50,15 +45,7 @@
                         </div>
                     </div>
                     <div class="main-price">
-                        <span class="common currency">
-                            NGN
-                        </span>
-                        <span class="common round-figure">
-                            9,000
-                        </span>
-                        <span class="common float-amount">
-                            .9
-                        </span>
+                        <p>NGN <span class="integer"> &nbsp;{{ productInView['naira'] }}.</span> {{ productInView['kobo'] }}</p>
                     </div>
 
                 </div>
@@ -71,50 +58,7 @@
                 </div>
 
                 <div class="product-description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at semper purus. Fusce non
-                        rhoncus justo. Donec eget scelerisque urna. Nullam in tellus dolor. Suspendisse eu tellus ac
-                        arcu dictum tristique. Nam nec purus in felis tincidunt commodo.</p>
-
-                    <p>Nullam bibendum elit sit amet odio accumsan iaculis. Integer at mauris nisl. Vestibulum ante
-                        ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam dignissim nunc vel
-                        nunc faucibus cursus. Quisque euismod dui ut nulla cursus auctor.</p>
-
-                    <p>Phasellus vehicula nunc et tortor iaculis, a tristique urna rhoncus. Duis eu justo justo. Cras
-                        sit amet bibendum arcu. Sed sit amet consequat tellus, et posuere nisl. Vivamus a nisi sed justo
-                        ultrices suscipit nec eget eros.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at semper purus. Fusce non
-                        rhoncus justo. Donec eget scelerisque urna. Nullam in tellus dolor. Suspendisse eu tellus ac
-                        arcu dictum tristique. Nam nec purus in felis tincidunt commodo.</p>
-
-                    <p>Nullam bibendum elit sit amet odio accumsan iaculis. Integer at mauris nisl. Vestibulum ante
-                        ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam dignissim nunc vel
-                        nunc faucibus cursus. Quisque euismod dui ut nulla cursus auctor.</p>
-
-                    <p>Phasellus vehicula nunc et tortor iaculis, a tristique urna rhoncus. Duis eu justo justo. Cras
-                        sit amet bibendum arcu. Sed sit amet consequat tellus, et posuere nisl. Vivamus a nisi sed justo
-                        ultrices suscipit nec eget eros.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at semper purus. Fusce non
-                        rhoncus justo. Donec eget scelerisque urna. Nullam in tellus dolor. Suspendisse eu tellus ac
-                        arcu dictum tristique. Nam nec purus in felis tincidunt commodo.</p>
-
-                    <p>Nullam bibendum elit sit amet odio accumsan iaculis. Integer at mauris nisl. Vestibulum ante
-                        ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam dignissim nunc vel
-                        nunc faucibus cursus. Quisque euismod dui ut nulla cursus auctor.</p>
-
-                    <p>Phasellus vehicula nunc et tortor iaculis, a tristique urna rhoncus. Duis eu justo justo. Cras
-                        sit amet bibendum arcu. Sed sit amet consequat tellus, et posuere nisl. Vivamus a nisi sed justo
-                        ultrices suscipit nec eget eros.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at semper purus. Fusce non
-                        rhoncus justo. Donec eget scelerisque urna. Nullam in tellus dolor. Suspendisse eu tellus ac
-                        arcu dictum tristique. Nam nec purus in felis tincidunt commodo.</p>
-
-                    <p>Nullam bibendum elit sit amet odio accumsan iaculis. Integer at mauris nisl. Vestibulum ante
-                        ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam dignissim nunc vel
-                        nunc faucibus cursus. Quisque euismod dui ut nulla cursus auctor.</p>
-
-                    <p>Phasellus vehicula nunc et tortor iaculis, a tristique urna rhoncus. Duis eu justo justo. Cras
-                        sit amet bibendum arcu. Sed sit amet consequat tellus, et posuere nisl. Vivamus a nisi sed justo
-                        ultrices suscipit nec eget eros.</p>
+                    <p>{{ productInView['description'] }}</p>
                 </div>
             </section>
             <div class="comet-divider comet-divider_small"></div>
@@ -201,7 +145,10 @@
                     </li>
                 </ul>
             </section>
-
+           
+            {% else %}
+                <p>Product not available at the moment, please check back</p>
+            {% endif %}
 
 
         </div>
@@ -276,7 +223,7 @@
                         </div>
                         <div class="quantity-info">
                             <div>
-                                <span>9463 Pieces available</span>
+                                <span>{{ productInView['stock'] }} Pieces available</span>
                             </div>
                         </div>
                     </div>
