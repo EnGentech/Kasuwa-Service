@@ -311,13 +311,6 @@ body{
     padding: 0px 8px;
 }
 
-.row #flow:hover{
-    position: absolute;
-    cursor: pointer;
-    overflow:visible;
-    color:red;
-}
-
 .footer{
     background-color: white;
     height: 570px;
@@ -426,4 +419,9 @@ body{
 .category input{
     position: absolute;
     display: none;
+}
+
+.hide{
+    display: none;
+    position:absolute;
 }

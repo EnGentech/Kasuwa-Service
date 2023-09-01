@@ -102,7 +102,8 @@ class Db_Management:
                     'description': prods.description,
                     'naira': '{:,}'.format(int(new_value[0])),
                     'kobo': '{:02}'.format(int(new_value[1])),
-                    'image': prods.image_source
+                    'image': prods.image_source,
+                    'stock': prods.stock
                 }
                 prod_cart_items[prods.id] = mydict
             return prod_cart_items

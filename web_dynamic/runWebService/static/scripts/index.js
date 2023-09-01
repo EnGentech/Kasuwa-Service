@@ -14,4 +14,11 @@ $(document).ready(function(){
         $(".category input[type='submit']").click()
     })
 
+    $('.row').click(function(){
+        let img = $('.row p').attr('title')
+        alert(img)
+        $(".hide input[type='text']").val('img')
+        $(".hide input[type='submit']").click()
+    })
+
 })

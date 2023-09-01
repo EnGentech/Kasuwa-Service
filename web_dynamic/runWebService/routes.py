@@ -7,6 +7,7 @@ from functools import wraps
 from mailVerification import send_verification_email
 from database_management import Db_Management
 from flask_bcrypt import Bcrypt
+from random import randint
 
 start = Blueprint('kasu', __name__, template_folder='templates')
 
@@ -26,7 +27,9 @@ def main():
     category = Db_Management().category()
     if category:
         if request.method == 'GET':
-            return render_template('index.html', category=category)
+            sendid = randint(1, len(category) + 1)
+            displayProducts = Db_Management().product_category(2)
+            return render_template('index.html', category=category, productsIndex=displayProducts)
         elif request.method == "POST":
             cat_id = request.form.get('cat_id')
             catName = request.form.get('cat_name')
@@ -103,13 +106,16 @@ def signOut():
     return redirect(url_for('kasu.main'))
 
 
-
-
-
-@start.route('/kasuwa/category/products')
+@start.route('/kasuwa/category/products', methods=['GET', 'POST'])
 def products():
     """render the products to users"""
-    return render_template('product.html')
+    if request.method == "GET":
+        return render_template('product.html')
+    elif request.method == 'POST':
+        addToCart = []
+        SelectedItem = request.form.get('add_cart')
+        print(SelectedItem)
+        return render_template('product.html', use=SelectedItem)
 
 def pwdUrl(url):
     """store present user URL"""
