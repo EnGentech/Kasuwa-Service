@@ -2,7 +2,7 @@
 {% block content %}
     <div class="category_section">
         <section class="category">  
-            <form action="" method="POST">
+            <form action="/kasuwa/index/category/product" method="POST">
                 <input type="text" name="cat_id">
                 <input type="text" name="cat_name">
                 <input type="submit" id="auto_click">
@@ -40,14 +40,20 @@
         {% for product in productsIndex.values() %}
         <div class="hide">
             <form action="/kasuwa/category/products"  method="POST">
-                <input name='add_cart' type="text">
+                <input name='name' type="text">
+                <input type="text" name="description">
+                <input type="text" name="image">
+                <input type="text" name="naira">
+                <input type="text" name="kobo">
+                <input type="text" name="stock">
                 <input type="submit">
             </form>
         </div>
         <div class="row">
-            <img src="{{ url_for('static', filename='images/products/' + product['type'] + '.webp') }}" alt="">
-            <h4>NGN<span> {{ product['naira'] }}</span>.{{ product['kobo'] }}</h4>
-            <p>{{ product['stock']}} in stock</p>
+            <p style="display: none;" id="name">{{ product['name'] }}</p>
+            <img id="image" src="{{ url_for('static', filename='images/products/' + product['type'] + '.webp') }}" alt="">
+            <h4 id="naira" naira="{{ product['naira'] }}">NGN<span id="kobo" kobo="{{ product['kobo'] }}"> {{ product['naira'] }}</span>.{{ product['kobo'] }}</h4>
+            <p id="stock" stock="{{ product['stock']}}">{{ product['stock']}} in stock</p>
             <p id="flow" title="{{ product['description'] }}">{{ product['description'] }} </p>
         </div>
         {% endfor %}

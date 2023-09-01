@@ -2,7 +2,7 @@ import sys
 sys.path.append(r"c:\Users\Engr. Gentle Inyang\Web_Application_Projects\Kasuwa-Service\web_dynamic")
 import database_management
 
-from flask import Blueprint, render_template, request, url_for, redirect, session, flash, g
+from flask import Blueprint, render_template, request, url_for, redirect, session, flash
 from functools import wraps
 from mailVerification import send_verification_email
 from database_management import Db_Management
@@ -20,8 +20,8 @@ def login_required(func):
         return func(*args, **kwargs)
     return decorated_function
 
-@start.route('/', methods=['GET', 'POST'])
-@start.route('/kasuwa', methods=["GET", 'POST'])
+@start.route('/', methods=['GET'])
+@start.route('/kasuwa', methods=["GET"])
 def main():
     """render the index page"""
     category = Db_Management().category()
@@ -30,6 +30,20 @@ def main():
             sendid = randint(1, len(category) + 1)
             displayProducts = Db_Management().product_category(2)
             return render_template('index.html', category=category, productsIndex=displayProducts)
+    else:
+        return render_template('index.html', category='No category, check back')
+
+@start.route('/kasuwa/index/category/product', methods=['GET', 'POST'])
+def product():
+    """display product from category"""
+    category = Db_Management().category()
+    if category:
+        if request.method == 'GET':
+            cat_id = request.form.get('cat_id')
+            new_id = cat_id.split('d')
+            id = int(new_id[1])
+            displayProducts = Db_Management().product_category(id)
+            return render_template('category_page.html', category=category, productsIndex=displayProducts)
         elif request.method == "POST":
             cat_id = request.form.get('cat_id')
             catName = request.form.get('cat_name')
@@ -39,11 +53,6 @@ def main():
             return render_template('category_page.html', products=products, cat_name=catName)
     else:
         return render_template('index.html', category='No category, check back')
-
-@start.route('/kasuwa/index/category/product')
-def product():
-    """display product from category"""
-    return render_template('category_page.html')
 
 @start.route('/kasuwa/sign_in', methods=['GET', 'POST'])
 def sign_in():

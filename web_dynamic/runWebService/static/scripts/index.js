@@ -15,10 +15,17 @@ $(document).ready(function(){
     })
 
     $('.row').click(function(){
-        let img = $('.row p').attr('title')
-        alert(img)
-        $(".hide input[type='text']").val('img')
-        $(".hide input[type='submit']").click()
+        let name = $(this).find('p#name').text()
+        let description = $(this).find('p#flow').text()
+        let naira = $(this).find('h4#naira').attr('naira')
+        let kobo = $(this).find('span#kobo').attr('kobo')
+        let stock = $(this).find('p#stock').attr('stock')
+        $(".hide input[name='name']").val(name)
+        $(".hide input[name='description']").val(description)
+        $(".hide input[name='naira']").val(naira)
+        $(".hide input[name='kobo']").val(kobo)
+        $(".hide input[name='stock']").val(stock)
+        $('.hide input[type="submit"]').click() 
     })
 
 })
