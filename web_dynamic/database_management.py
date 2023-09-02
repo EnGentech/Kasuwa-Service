@@ -143,10 +143,15 @@ class Db_Management:
         """Get product ids and populate database"""
         addtoDB = Cart(product_id=productids, category_id=categoryids, user_id=userids, quantity=qty)
         self.__session.add(addtoDB)
-        self.__session.commit()
+        self.save()
         self.__session.close()
 
     def cartProductIDs(self, userID):
         """Retrieve all products Id for listing cart"""
-        allPD = self.__session.query(Cart.product_id).filter_by(user_id=userID).all()
+        allPD = self.__session.query(Cart.product_id, Cart.quantity).filter_by(user_id=userID).all()
         return allPD
+    
+    def delCartItem(self, productid):
+        """Delete data product from cart"""
+        delItem = self.__session.query(Cart).filter_by(product_id=productid).first()
+        self.__session.delete(delItem)

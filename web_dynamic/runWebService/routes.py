@@ -11,6 +11,7 @@ from random import randint
 from datetime import datetime
 
 start = Blueprint('kasu', __name__, template_folder='templates')
+db = Db_Management()
 
 def login_required(func):
     @wraps(func)
@@ -25,11 +26,11 @@ def login_required(func):
 @start.route('/kasuwa', methods=["GET"])
 def main():
     """render the index page"""
-    category = Db_Management().category()
+    category = db.category()
     if category:
         if request.method == 'GET':
             sendid = randint(1, len(category) + 1)
-            displayProducts = Db_Management().product_category(2)
+            displayProducts = db.product_category(2)
             return render_template('index.html', category=category, productsIndex=displayProducts)
     else:
         return render_template('index.html', category='No category, check back')
@@ -37,7 +38,7 @@ def main():
 @start.route('/kasuwa/index/category/product', methods=['GET', 'POST'])
 def product():
     """display product from category"""
-    category = Db_Management().category()
+    category = db.category()
     if category:
         if request.method == 'GET':
             return render_template('category_page.html')
@@ -46,7 +47,7 @@ def product():
             catName = request.form.get('cat_name')
             new_id = cat_id.split('d')
             id = int(new_id[1])
-            products = Db_Management().product_category(id)
+            products = db.product_category(id)
             return render_template('category_page.html', products=products, cat_name=catName)
     else:
         return render_template('index.html', category='No category, check back')
@@ -54,13 +55,13 @@ def product():
 @start.route('/kasuwa/sign_in', methods=['GET', 'POST'])
 def sign_in():
     """Write sign in code"""
-    category = Db_Management().category()
+    category = db.category()
     if request.method == 'GET':
         return render_template('sign_in.html')
     elif request.method == "POST":
         e_mail = request.form.get('mail')
         password = request.form.get('password')
-        validate = Db_Management().authenticate(e_mail, password)
+        validate = db.authenticate(e_mail, password)
         if validate == "invalid_credentials":
             return render_template('sign_in.html', error="Invalid credentials, please sign_up")
         elif validate == "invalid_email":
@@ -69,7 +70,7 @@ def sign_in():
             return render_template('sign_in.html', error="Incorrect password")
         else:
             session['e_mail'] = e_mail
-            userS = Db_Management().get_active_user(e_mail)
+            userS = db.get_active_user(e_mail)
             stored_url = session.pop('store', None)
             if stored_url:
                 #render_template('', userS=userS[0])
@@ -89,11 +90,11 @@ def sign_up():
         phoneNumber = request.form.get('phoneNumber')
         reg = [username, e_mail, password, phoneNumber]
         #send_verification_email(e_mail, '123ab')
-        check = Db_Management().verify_mail(e_mail)
+        check = db.verify_mail(e_mail)
         if check == 'found':
             return render_template('sign_up.html', error="e_mail already registered, please use sign_in option")
         else:
-            Db_Management().new_user(reg)
+            db.new_user(reg)
             flash('Sign Up was successful, please sign_in')
             return render_template('sign_in.html')
             
@@ -109,8 +110,8 @@ def cart():
             lis = []
             if session['e_mail']:
                 email = (session['e_mail'])
-                userid = Db_Management().get_active_userID(email)
-                retriveProducts = Db_Management().cartProductIDs(userid[0])
+                userid = db.get_active_userID(email)
+                retriveProducts = db.cartProductIDs(userid[0])
             if len(cart) == 0 and len(retriveProducts) == 0:
                 return render_template('shoping_cart.html', count=0)
             else:
@@ -119,17 +120,17 @@ def cart():
                 if len(cart) > 0:
                     for pid in cart:
                         increase += 1
-                        catid = Db_Management().get_catID(pid['pid'])
+                        catid = db.get_catID(pid['pid'])
                         qty = pid['qty']
-                        #Db_Management().addToCart(pid['pid'], catid[0], userid[0], qty)
-                    newlist = Db_Management().cartProductIDs(userid[0])
+                        db.addToCart(pid['pid'], catid[0], userid[0], qty)
+                    newlist = db.cartProductIDs(userid[0])
                     for content in newlist:
-                        gotten = Db_Management().view_product(content[0])
-                        lis.append(gotten)
+                        gotten = db.view_product(content[0])
+                        lis.append([gotten, content[1]])
                 else:
                     for content in cart_list:
-                        gotten = Db_Management().view_product(content[0])
-                        lis.append(gotten)                    
+                        gotten = db.view_product(content[0])
+                        lis.append([gotten, content[1]])                    
                      
             return render_template('shoping_cart.html', lis=lis, count=increase)
         return cart_get()
@@ -162,9 +163,18 @@ def products():
         return render_template('product.html')
     elif request.method == 'POST':
         productID = request.form.get('prodID')
-        renderCart = Db_Management().view_product(productID)
-        print(renderCart)
+        renderCart = db.view_product(productID)
         return render_template('product.html', productInView=renderCart, time=time)
+
+@start.route('/kasuwa/cart/delete', methods=['GET', 'POST'])
+def delete():
+    """Delete item from cart"""
+    if request.method == 'GET':
+        return None
+    elif request.method == 'POST':
+        productid = request.form.get('delid')
+        db.delCartItem(productid)
+    return 'Success'
 
 def pwdUrl(url):
     """store present user URL"""

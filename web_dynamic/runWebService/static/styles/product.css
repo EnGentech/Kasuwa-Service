@@ -373,3 +373,8 @@ ul {
     font-size: x-large;
     font-weight: 600;
 }
+
+#minus{
+    pointer-events: auto;
+    cursor:not-allowed;
+}

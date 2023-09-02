@@ -2,6 +2,7 @@
 
 {% block header %}
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/shopping_cart.css') }}">
+<script src="{{ url_for('static', filename='scripts/cart.js') }}"></script>
 {% endblock %}
 
 {% block content %}
@@ -44,26 +45,27 @@
         {% for items in lis %}
         <div class="select_all">
             <input type="checkbox" class="roundme">
-            <h3>{{ items['name'] }}</h3>
+            <h3>{{ items[0]['name'] }}</h3>
         </div>
         <hr>
         <div class="cart_items_description">
             <div class="cart_item_img">
                 <input type="checkbox">
-                <img src="{{ url_for('static', filename='images/products/' + items['type'] + '.webp') }}" alt="">
+                <img src="{{ url_for('static', filename='images/products/' + items[0]['type'] + '.webp') }}" alt="">
             </div>
             <div class="description">
-                <p>{{ items['description'] }}</p> 
-                <p id="adjust">-</p>                
-                <button>{{ items['type'] }} ></button>
-                <h3>NGN <span>{{ items['naira'] }}</span>.{{ items['kobo'] }}</h3>
+                <p>{{ items[0]['description'] }}</p> 
+                <p id="adjust">qty</p>                
+                <button>{{ items[0]['type'] }} ></button>
+                <h3>NGN <span>{{ items[0]['naira'] }}</span>.{{ items[0]['kobo'] }}</h3>
             </div>
             <div class="cart_icons">
                 <i class="fa-regular fa-heart" style="color: #1f1f1f;"></i>
-                <i class="fa-solid fa-trash-can" style="color: #080808;"></i>
+                <i del='delete' class="fa-solid fa-trash-can" style="color: #080808;">
+                    <p class="delid" style="display: none;">{{ items[0]['id'] }}</p>
+                </i>
                 <div class="plus">
-                    <p><b id="qty">1</b></p>&nbsp;
-                    <p id="adjust">+</p>
+                    <p><b id="qty">{{ items[1] }}</b></p>&nbsp;
                 </div> 
             </div>
         </div>

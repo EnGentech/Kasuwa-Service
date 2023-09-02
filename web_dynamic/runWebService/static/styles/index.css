@@ -425,3 +425,19 @@ body{
     display: none;
     position:absolute;
 }
+
+#btn_log3{
+    padding: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+    color:rgb(0, 255, 8);
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border:none;
+    color: white;
+    font-size:medium;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgb(52, 149, 52), rgb(229, 236, 182) );
+}

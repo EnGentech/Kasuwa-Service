@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="main-price">
-                        <p>NGN <span class="integer"> &nbsp;{{ productInView['naira'] }}.</span> {{ productInView['kobo'] }}</p>
+                        <p>NGN <span class="integer"> &nbsp;{{ productInView['naira'] }}.</span> <span class='kobo' >{{ productInView['kobo'] }}</span></p>
                     </div>
 
                 </div>
@@ -171,8 +171,14 @@
                         <div class="dynamic-shipping-title-layout">
                             <span>
                                 <span class="shipping-price">
-                                    <strong>Shipping: NGN1, 053.57</strong>
-
+                                    <strong>Shipping: NGN1, 053.57</strong><br>
+                                    <strong>Item_Worth: <span>NGN
+                                        {% if productInView %}
+                                            <span id="ammount">0</span>.<span id="kobo">0</span>
+                                        {% else %}
+                                            <span>0</span>
+                                        {% endif %}
+                                    </span></strong>
                                 </span>
 
                             </span>
@@ -206,16 +212,16 @@
                     <div>
                         <div class="quantity-title">Quantity</div>
                         <div class="input-number quantity-picker">
-                            <div class="number-btn btn-disable">
+                            <div class="number-btn">
                                 <span class="icon-subtract ">
-                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                    <i id="minus" class="fa fa-minus"></i>
 
                                 </span>
                             </div>
                             <p id="qty" type="text" class="input-value" name="qty">1</p>
                             <div class="number-btn ">
                                 <span class="icon-subtract ">
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                    <i id='plus' class="fa fa-plus" aria-hidden="true"></i>
 
 
                                 </span>
