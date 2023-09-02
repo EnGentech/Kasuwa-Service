@@ -128,4 +128,25 @@ class Db_Management:
             return productInfo
         else:
             print("nothing selected")
+
+    def get_active_userID(self, email):
+        """this function will active user"""
+        userID = self.__session.query(User.id).filter_by(email=email).first()
+        return userID
+    
+    def get_catID(self, productID):
+        """this function will active user"""
+        catID = self.__session.query(Product.category_id).filter_by(id=productID).first()
+        return catID
             
+    def addToCart(self, productids, categoryids, userids, qty):
+        """Get product ids and populate database"""
+        addtoDB = Cart(product_id=productids, category_id=categoryids, user_id=userids, quantity=qty)
+        self.__session.add(addtoDB)
+        self.__session.commit()
+        self.__session.close()
+
+    def cartProductIDs(self, userID):
+        """Retrieve all products Id for listing cart"""
+        allPD = self.__session.query(Cart.product_id).filter_by(user_id=userID).all()
+        return allPD

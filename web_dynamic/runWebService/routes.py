@@ -98,17 +98,58 @@ def sign_up():
             return render_template('sign_in.html')
             
 
-@start.route('/kasuwa/cart')
-@login_required
+@start.route('/kasuwa/cart', methods=['GET', 'POST'])
 def cart():
     """store the current url and redirect to login"""
-    return render_template('shoping_cart.html')
+    cart = session.get('cart', [])
+    if request.method == 'GET':
+        @login_required
+        def cart_get(): 
+            increase = 0 
+            lis = []
+            if session['e_mail']:
+                email = (session['e_mail'])
+                userid = Db_Management().get_active_userID(email)
+                retriveProducts = Db_Management().cartProductIDs(userid[0])
+            if len(cart) == 0 and len(retriveProducts) == 0:
+                return render_template('shoping_cart.html', count=0)
+            else:
+                cart_list = retriveProducts
+                increase = len(retriveProducts)
+                if len(cart) > 0:
+                    for pid in cart:
+                        increase += 1
+                        catid = Db_Management().get_catID(pid['pid'])
+                        qty = pid['qty']
+                        #Db_Management().addToCart(pid['pid'], catid[0], userid[0], qty)
+                    newlist = Db_Management().cartProductIDs(userid[0])
+                    for content in newlist:
+                        gotten = Db_Management().view_product(content[0])
+                        lis.append(gotten)
+                else:
+                    for content in cart_list:
+                        gotten = Db_Management().view_product(content[0])
+                        lis.append(gotten)                    
+                     
+            return render_template('shoping_cart.html', lis=lis, count=increase)
+        return cart_get()
+        
+    elif request.method == 'POST':
+        pid = request.form.get('productid')
+        qty = request.form.get('quantity')
+        
+        cartSelect = {'pid':pid, 'qty':qty}
+
+        cart.append(cartSelect)
+        session['cart'] = cart
+        return 'Successful'
 
 @start.route('/kasuwa/signOut')
 @login_required
 def signOut():
     """Sign out route create if there exist a login session"""
     session.pop('e_mail', None)
+    session.pop('cart', None)
     return redirect(url_for('kasu.main'))
 
 

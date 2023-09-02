@@ -2,6 +2,7 @@
 
 {% block header %}
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/product.css') }}">
+<script src="{{ url_for('static', filename='scripts/product_detail_page.js') }}"></script>
 {% endblock %}
 
 {% block content %}
@@ -211,7 +212,7 @@
 
                                 </span>
                             </div>
-                            <input type="text" class="input-value" value="1">
+                            <p id="qty" type="text" class="input-value" name="qty">1</p>
                             <div class="number-btn ">
                                 <span class="icon-subtract ">
                                     <i class="fa fa-plus" aria-hidden="true"></i>
@@ -228,13 +229,15 @@
                         </div>
                     </div>
                     <div class="action-stickyWrap">
+                        <p id="productid" style="display: none;">{{ productInView['id'] }}</p>
                         <button type="button"
                             class="comet-btn comet-btn-primary buy-now comet-btn-large comet-btn-important">
                             <span>Buy Now</span>
                         </button>
+
                         <button type="button"
                             class="comet-btn comet-btn-primary  comet-btn-large add-to-cart comet-btn-important">
-                            <span>Add to Cart</span>
+                            <span id="addToCart">Add to Cart</span>
                         </button>
                     </div>
 

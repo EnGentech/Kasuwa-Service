@@ -201,3 +201,12 @@
 #adjust:hover{
     cursor: pointer;
 }
+
+.description span{
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.description h3{
+    font-weight: 400;
+}
