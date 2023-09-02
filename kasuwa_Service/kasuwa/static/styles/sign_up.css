@@ -17,6 +17,7 @@ body {
     margin-top: 20px;
 }
 .signup-container {
+    position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -28,22 +29,24 @@ body {
     padding: 15px;
     width: 600px;
     height: 600px;
-    margin: 0;
+    margin: auto;
     
 }
-h3 {
-    margin-left: -20px;
+h5 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
     color: #7BF0A8
 }
 input {
     display: flex;
     justify-content: center;
-    padding: 15px;
+    padding: 10px;
     cursor: pointer;
-    width: 350%;
+    width: 350px;
     font-weight: 700;
     margin-top: 20px;
-    margin-left: -130px;
+    margin:auto;
     border: 1px solid #ccc;
     border-radius: 10px;
 }
@@ -59,17 +62,17 @@ input {
     opacity: 0.5;
 }
 button {
-
+    /* position: fixed; */
     background: #7BF0A8;
     color: hsla(0, 0%, 100%, 0.952);  
     border: none;
     border-radius: 50px;
-    padding: 15px;
+    padding: 10px;
     cursor: pointer;
-    width: 380%;
+    width: 350px;
     font-weight: 700;
-    margin-left: -127px;
-    margin-top: 20px;
+    margin: auto;
+    margin-top:10px;
 }
 img {
     width: 30%;
@@ -77,3 +80,27 @@ img {
     justify-content: center;
     align-items: center;   
 }
+/* .alert.alert-danger {
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+} */
+/* .alert.alert-danger p{
+    margin-bottom: -20px;
+    position: absolute;
+    background-color: #7BF0A8;
+}  */
+/* .alert.alert-success {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+}
+.alert.alert-success .alert-danger button{
+    float: right;
+} */ 

@@ -15,9 +15,9 @@ class User(Base, UserMixin):
     password = Column(String(length=150))
     address = Column(String(length=200))
     phone = Column(String(length=20))  
-    GENDER_CHOICES = ['male', 'female']
-    gender = Column(Enum(*GENDER_CHOICES, name='gender_enum'))
-    birthDate = Column(Date)
+    # GENDER_CHOICES = ['male', 'female']
+    # gender = Column(Enum(*GENDER_CHOICES, name='gender_enum'), default='unspecified')
+    # birthDate = Column(Date)
     comments = relationship("Comment", back_populates="user")
     ratings = relationship("Rating")
     billing_address = relationship("Billing_address", back_populates="user")
