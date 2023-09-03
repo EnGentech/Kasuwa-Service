@@ -30,7 +30,7 @@ def main():
     if category:
         if request.method == 'GET':
             sendid = randint(1, len(category) + 1)
-            displayProducts = db.product_category(2)
+            displayProducts = db.product_category(sendid)
             return render_template('index.html', category=category, productsIndex=displayProducts)
     else:
         return render_template('index.html', category='No category, check back')
