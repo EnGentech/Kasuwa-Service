@@ -155,3 +155,5 @@ class Db_Management:
         """Delete data product from cart"""
         delItem = self.__session.query(Cart).filter_by(product_id=productid).first()
         self.__session.delete(delItem)
+        self.__session.commit()
+        self.save()

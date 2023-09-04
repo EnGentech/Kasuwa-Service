@@ -27,11 +27,25 @@ def login_required(func):
 def main():
     """render the index page"""
     category = db.category()
+    displayProduct = []
     if category:
         if request.method == 'GET':
-            sendid = randint(1, len(category) + 1)
-            displayProducts = db.product_category(sendid)
-            return render_template('index.html', category=category, productsIndex=displayProducts)
+            if 'e_mail' not in session:
+                try:
+                    for x in range (1, 4):
+                        sendid = randint(1, len(category) + 1)
+                        displayProducts = db.product_category(sendid)
+                        displayProduct.append(displayProducts)
+                    return render_template('index.html', category=category, productsIndex=displayProduct)
+                except Exception:
+                    return render_template('index.html', category=category)
+            else:
+                userS = db.get_active_user(session['e_mail'])
+                for x in range (1, 4):
+                    sendid = randint(1, len(category) + 1)
+                    displayProducts = db.product_category(sendid)
+                    displayProduct.append(displayProducts)
+                return render_template('index.html', category=category, productsIndex=displayProduct, userS=userS[0])
     else:
         return render_template('index.html', category='No category, check back')
 
@@ -70,13 +84,12 @@ def sign_in():
             return render_template('sign_in.html', error="Incorrect password")
         else:
             session['e_mail'] = e_mail
-            userS = db.get_active_user(e_mail)
             stored_url = session.pop('store', None)
             if stored_url:
                 #render_template('', userS=userS[0])
                 return redirect(stored_url)
             else:
-                return render_template('index.html', userS=userS[0], category=category)
+                return redirect(url_for('kasu.main'))
 
 @start.route('/kasuwa/signup', methods=['GET', 'POST'])
 def sign_up():
@@ -111,6 +124,7 @@ def cart():
             if session['e_mail']:
                 email = (session['e_mail'])
                 userid = db.get_active_userID(email)
+                userS = db.get_active_user(session['e_mail'])
                 retriveProducts = db.cartProductIDs(userid[0])
             if len(cart) == 0 and len(retriveProducts) == 0:
                 return render_template('shoping_cart.html', count=0)
@@ -132,7 +146,7 @@ def cart():
                         gotten = db.view_product(content[0])
                         lis.append([gotten, content[1]])                    
                      
-            return render_template('shoping_cart.html', lis=lis, count=increase)
+            return render_template('shoping_cart.html', lis=lis, count=increase, userS=userS[0])
         return cart_get()
         
     elif request.method == 'POST':

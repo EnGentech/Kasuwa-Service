@@ -11,12 +11,33 @@
         <h2>Summary</h2>
         <h3>US $0.00</h3>
         <h4>Total</h4>
+        <div class="payNow">
+            <h3>US $0.00</h3> 
+            <h4>Shipping fee</h4>
+            <h3 style="font-weight: 600; font-size: large;">US $0.00</h3> 
+            <h4 style="font-weight: 600; font-size: large;">Total</h4>
+        </div>
         <button>Checkout (<span>0</span>)</button>
+        <div class="empty">
+            
+        </div>
+        <div class="payment_section">
+            <h2>Payment Methods</h2>
+            <div class="payme">
+                <img src="{{ url_for('static', filename='images/Payment_channel/visa.png') }}" alt="">
+                <img src="{{ url_for('static', filename='images/Payment_channel/mastercard.png') }}" alt="">
+                <img src="{{ url_for('static', filename='images/Payment_channel/jcb.png') }}" alt="" id="dim">
+                <img src="{{ url_for('static', filename='images/Payment_channel/greencard.png') }}" alt="" id="dim">
+            </div><br>
+            <h5>Buyers Protection</h5>
+            <p><img src="{{ url_for('static', filename='images/Payment_channel/confrim.png') }}" alt="" id="dim_buyers_protection">
+            &nbsp;Get full refund if the item is not as described or if it is not deliverd</p>
+        </div>
     </div>
 
     <div class="gen_cart_items">
         <h2>Shopping Cart (<span>{{ count }}</span>)</h2>
-        <div class="select_all">
+        <div class="select_all" id="specialSelectAll">
             <input type="checkbox" class="roundme">
             <p>Select all items</p>
         </div>
@@ -27,30 +48,20 @@
         </div>
     </div>
 
-    <div class="payment_section">
-        <h3>Payment Methods</h3>
-        <div class="payme">
-            <img src="{{ url_for('static', filename='images/Payment_channel/visa.png') }}" alt="">
-            <img src="{{ url_for('static', filename='images/Payment_channel/mastercard.png') }}" alt="">
-            <img src="{{ url_for('static', filename='images/Payment_channel/jcb.png') }}" alt="" id="dim">
-            <img src="{{ url_for('static', filename='images/Payment_channel/greencard.png') }}" alt="" id="dim">
-        </div><br>
-        <h3>Buyers Protection</h3>
-        <p><img src="{{ url_for('static', filename='images/Payment_channel/confrim.png') }}" alt="" id="dim_buyers_protection">
-        &nbsp;Get full refund if the item is not as described or if it is not deliverd</p>
-    </div>
 
+
+    <div class="all">
+    {% if lis %}
+    {% for items in lis %}
     <div class="cart_items">
-        {% if lis %}
-        {% for items in lis %}
-        <div class="select_all">
+        <div class="select_all" id="selectOne">
             <input type="checkbox" class="roundme">
             <h3>{{ items[0]['name'] }}</h3>
         </div>
         <hr>
         <div class="cart_items_description">
             <div class="cart_item_img">
-                <input type="checkbox">
+                <input style="cursor: not-allowed;" type="checkbox">
                 <img src="{{ url_for('static', filename='images/products/' + items[0]['type'] + '.webp') }}" alt="">
             </div>
             <div class="description">
@@ -69,10 +80,12 @@
                 </div> 
             </div>
         </div>
-        {% endfor %}
-        {% else %}
-            <p>No items in cart, please add items</p>
-        {% endif %}
+        
+    </div>
+    {% endfor %}
+    {% else %}
+        <p>No items in cart, please add items</p>
+    {% endif %}
     </div>
 
 {% endblock %}

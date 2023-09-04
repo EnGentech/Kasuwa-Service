@@ -41,7 +41,8 @@
     </div>
     <div class="commodities">
         {% if productsIndex %}
-        {% for product in productsIndex.values() %}
+        {% for products in productsIndex %}
+        {% for product in products.values() %}
         <div class="hide">
             <form action="/kasuwa/category/products"  method="POST">
                 <input type="text" name="prodID">
@@ -55,6 +56,7 @@
             <p id="stock" stock="{{ product['stock']}}">{{ product['stock']}} in stock</p>
             <p id="flow" title="{{ product['description'] }}">{{ product['description'] }} </p>
         </div>
+        {% endfor %}
         {% endfor %}
         {% else %}
             <p>No products to be displayed at the moment, service soon to be restored...</p>

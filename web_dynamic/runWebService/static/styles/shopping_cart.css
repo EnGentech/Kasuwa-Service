@@ -2,6 +2,9 @@
     float:right;
     margin: 2%;
     margin-right: 8%;
+    position:sticky;
+    top: 0;
+    z-index: 1;
     background-color: white;
     width: 22%;
     height: auto;
@@ -9,17 +12,11 @@
     padding-left: 24px;
     padding-right: 24px;
     font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid rgb(197, 233, 197);
 }
 
 .payment_section{
-    float:right;
-    margin-right: 8%;
-    background-color: white;
-    width: 22%;
-    height: auto;
     border-radius: 0px 0px 10px 10px;
-    padding-left: 24px;
-    padding-right: 24px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -48,10 +45,21 @@
     height: 24px;
 }
 
+.payment_section h2{
+    font-size: large;
+}
+
+.payment_section h5{
+    font-size: large;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
 .summary_section h3{
     float: right;
     margin:0px;
     margin-right: 8%;
+    font-size: medium;
 }
 
 .summary_section button{
@@ -66,6 +74,7 @@
     color: rgb(1, 50, 1);
     margin-bottom: 5%;
     margin-top: 4%;
+    cursor: not-allowed;
 }
 
 .gen_cart_items, .cart_items{
@@ -209,4 +218,27 @@
 
 .description h3{
     font-weight: 400;
+}
+
+.all{
+    background-color: white;
+    width:40px;
+    margin-left: 8%;
+    margin-bottom: 2%;
+    border:2px solid rgb(248, 168, 168);
+    border-radius: 0, 50px, 50px 0px;
+}
+
+.empty{
+    height:8px;
+    width: 100%;
+    background-color: rgb(223, 219, 219);
+    margin-bottom: 30px;
+    border-radius: 50px;
+    border-bottom: 2px solid rgb(178, 156, 156);
+    margin-top: 30px;
+}
+
+.payNow{
+    display: none;
 }

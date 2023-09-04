@@ -104,6 +104,7 @@ body{
     border-radius: 3%;
     display: none;
     border: 1px solid rgb(153, 169, 153);
+    z-index: 2;
 }
 
 .drop_down_acc p{
