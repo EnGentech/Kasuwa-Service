@@ -1,3 +1,7 @@
+a {
+    text-decoration: none; /* Remove underline for the link */
+    color: black;
+}
 body{
     background-color: rgb(248, 245, 245);
     margin:0px;
@@ -8,15 +12,21 @@ body{
     background-color: white;
     height: 100px;
     display: flex;
+    padding: 0 70px;
 }
-
+/* a img{
+    margin-top: 50px;
+    display: block;
+} */
 .head_content img{
     width: 180px;
-    height:37px;
+    height: 37px;
     margin: 0px;
     padding: 10%;
     padding-top:2%;
     padding-right:1%;
+    margin-top: 5%;
+    margin-right: 70px;
 }
 
 .search{
@@ -60,8 +70,8 @@ body{
     padding-right: 2%;
 }
 
-.cart:hover{
-    color:rgb(51, 181, 55);;
+a:hover{
+    color:rgb(51, 181, 55);
     cursor: pointer;
 }
 
@@ -107,7 +117,7 @@ body{
     background-color: rgb(242, 239, 239);
     padding-left: 5%;
     border-radius: 5px;
-    color: rgb(159, 4, 4);
+    color: rgb(51, 181, 55);
 }
 
 .drop_down_acc button{
@@ -137,6 +147,14 @@ body{
     border-radius: 5px;
 }
 
+#btn3{
+    color: red;
+    background-color: rgb(239, 247, 238);
+    border: none;
+    font-weight: bolder;
+    border-radius: 5px;
+    margin-top: 4px;
+}
 .category_section{
     margin: 1%;
     display:flex;
@@ -153,6 +171,7 @@ body{
     padding-top: 0.5%;
     line-height: 1.3em;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .slider{

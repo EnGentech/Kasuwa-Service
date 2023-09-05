@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://kit.fontawesome.com/11285bfb5b.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url_for('static', filename='scripts/index.js') }}"></script>
@@ -12,38 +13,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="head_content">
-        <img src="{{ url_for('static', filename='images/kasuwa_logo (2).png') }}">
-        <div class="search">
-            <form action="">
-                <input type="text">
-            </form>
-        </div>
-        <div class="search_icon">
-            <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
-        </div>
-        <div class="cart">
-            <i class="fa-solid fa-cart-shopping"></i>
-        </div>
-        <div class="account">
-            <i class="fa-regular fa-user" style="color: #010813;" id="user"></i>&nbsp;&nbsp;Account
-            <i class="fa-solid fa-play fa-rotate-90" id="acc" style="color: #c2c9d6;"></i>
-        </div>
-        <div class="drop_down_acc">
-            <p>Welcome to Kasuwa!</p>
-            <div class="drop_down_acc_button">
-                <button id="btn1">Register</button>&nbsp;
-                <button id="btn2">Sign in</button>
-            </div><hr>
-            <p id="effect_p">My Orders</p>
-            <p id="effect_p">My Coins</p>
-            <p id="effect_p">Message Center</p>
-            <p id="effect_p">Payment</p>
-            <p id="effect_p">Wish List</p>
-            <p id="effect_p">My Favorite Stores</p>
-            <p id="effect_p">My Coupons</p>
-        </div>
-    </div>
+    {% include 'header.html' %}
     <div class="category_section">
         <section class="category">  
             <h3><i class="fa-solid fa-list" style="color: #000000;"></i>  &nbsp;Categories</h3>
@@ -70,8 +40,12 @@
             <div class="login_content">
                 <img src="static/images/Logo/login.png" alt="">
                 <h4>Welcome to Kasuwa</h4>
-                <button id="btn_log1">Register</button>&nbsp;&nbsp;
-                <button id="btn_log2">Sign in</button>
+                <a href="url_for('auth.signup')">
+                    <button id="btn_log1">Register</button>&nbsp;&nbsp;
+                </a>
+                <a href="url_for('auth.login')">
+                    <button id="btn_log2">Sign in</button>
+                </a>
             </div>
             <hr>
             <div class="login_sider_image">

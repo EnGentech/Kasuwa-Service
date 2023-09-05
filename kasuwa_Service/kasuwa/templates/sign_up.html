@@ -20,30 +20,30 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/sign_up.css') }}">
 </head>
 <body>
+    <!-- {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        {% if category == 'error' %}
+        <div class="alert alert-danger alter-dismissable fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% else %}
+        <div class="alert alert-success alter-dismissable fade show" role="alert">
+            {{ message }}
+               <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endif %} 
+    {% endfor %}
+    {% endif %}
+{% endwith %} -->
     <div class="signup-container">
         <img src="{{ url_for('static', filename='images/kasuwa_logo (2).png') }}">
         <h5>Sign Up</h5>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-            {% if category == 'error' %}
-            <div class="alert alert-danger alter-dismissable fade show" role="alert">
-                {{ message }}
-                <button type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {% else %}
-            <div class="alert alert-success alter-dismissable fade show" role="alert">
-                {{ message }}
-                   <button type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {% endif %} 
-        {% endfor %}
-        {% endif %}
-    {% endwith %}
         <form method="post" action="{{ url_for('auth.signup') }}">
             <div class="form-group">
                 <input type="name" name="name" placeholder="Name">

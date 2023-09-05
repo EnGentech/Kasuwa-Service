@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/11285bfb5b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/scripts/index.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/shopping_cart.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopping cart</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="summary_section">
+        <h2>Summary</h2>
+        <h3>US $0.00</h3>
+        <h4>Total</h4>
+        <button>Checkout (<span>0</span>)</button>
+    </div>
+
+    <div class="gen_cart_items">
+        <h2>Shopping Cart (<span>1</span>)</h2>
+        <div class="select_all">
+            <input type="checkbox" class="roundme">
+            <p>Select all items</p>
+        </div>
+        <div class="select_all_button">
+            <button id="special_select_all_button">All</button>
+            <button>US $15 off</button>
+            <button>Choice</button>
+        </div>
+    </div>
+
+    <div class="payment_section">
+        <h3>Payment Methods</h3>
+        <div class="payme">
+            <img src="static/images/Payment_channel/visa.png" alt="">
+            <img src="static/images/Payment_channel/mastercard.png" alt="">
+            <img src="static/images/Payment_channel/jcb.png" alt="" id="dim">
+            <img src="static/images/Payment_channel/greencard.png" alt="" id="dim">
+        </div><br>
+        <h3>Buyers Protection</h3>
+        <p><img src="static/images/Payment_channel/confrim.png" alt="" id="dim_buyers_protection">
+        &nbsp;Get full refund if the item is not as described or if it is not deliverd</p>
+    </div>
+
+    <div class="cart_items">
+        <div class="select_all">
+            <input type="checkbox" class="roundme">
+            <h3>FFP2 CE Approved ProtectiveMask Store</h3>
+        </div>
+        <hr>
+        <div class="cart_items_description">
+            <div class="cart_item_img">
+                <input type="checkbox">
+                <img src="static/images/cart_img/USB3.0.webp" alt="">
+            </div>
+            <div class="description">
+                <p>Olaf USB Flash Drive Metal Pen Drive 2TB/1TB/512G Waterproof High
+                    speed Flash Disk Mini Memory Sticks 2TB U Disk Pen Drive
+                </p> 
+                <p id="adjust">-</p>                
+                <button>otg type c ></button>
+                <h3>US $0.75</h3>
+            </div>
+            <div class="cart_icons">
+                <i class="fa-regular fa-heart" style="color: #1f1f1f;"></i>
+                <i class="fa-solid fa-trash-can" style="color: #080808;"></i>
+                <div class="plus">
+                    <p><b>1</b></p>&nbsp;
+                    <p id="adjust">+</p>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer_upper">
+            <div class="part1">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <h3>Great value</h3>
+                <p>We offer competitive prices <br>and over 100 million items. <br>&nbsp;</p>
+            </div>
+            <div class="part1">
+                <i class="fa-solid fa-truck" style="color: #000000;"></i>
+                <h3>Woldwide shopping</h3>
+                <p>We ship to over 200 countries <br>and regions, and our site
+                <br>comes in 12 languages.</p>
+            </div>
+            <div class="part1">
+                <i class="fa-regular fa-credit-card" style="color: #000000;"></i>
+                <h3>Safe payment</h3>
+                <p>Pay with the world's most <br>popular and secure payment
+                <br>methods</p>
+            </div>
+            <div class="part1">
+                <i class="fa-solid fa-square-check" style="color: #000000;"></i>
+                <h3>Shop with confidence</h3>
+                <p>Our buyer protection policy <br>
+                covers your entire purchase <br>
+                journey.</p>
+            </div>
+            <div class="part1">
+                <i class="fa-solid fa-user-group fa-beat-fade" style="color: #000000;"></i>
+                <h3>Help center</h3>
+                <p>Round-the-clock assistance <br>for a smooth shopping <br>
+                    experience</p>
+            </div>
+            <div class="part1">
+                <i class="fa-brands fa-android fa-bounce" style="color: #0a0a0a;"></i>
+                <h3>Shop better</h3>
+                <p><span>Download the app</span> for mobile
+                <br> only features such as image <br> search and discount games.</p>
+            </div>
+        </div>
+        <hr>
+        <div class="footer_down">
+            <div class="part2">
+                <h4>Stay connected</h4>
+                <div class="social">
+                    <a href=""><img src="static/images/social_media/facebook.png" alt=""></a>
+                    <a href=""><img src="static/images/social_media/twitter.png" alt=""></a>
+                    <a href=""><img src="static/images/social_media/instagram.png" alt=""></a>
+                    <a href=""><img src="static/images/social_media/messengerFB.png" alt=""></a>
+                    <a href=""><img src="static/images/social_media/whatsapp.png" alt=""></a>
+                </div>
+            </div>
+            <div class="part2_right">
+                <h4>Shopping with us</h4>
+                <p>Making payments</p>
+                <p>Delivery options</p>
+                <p>Buyer Protection</p>
+            </div>
+            <div class="part2_right">
+                <h4>Customer service</h4>
+                <p>Help Center</p>
+                <p>Transaction Services Agreement</p>
+                <p>for non-EU/UK Consumers</p>
+                <p>Terms and Conditions for</p>
+                <p>EU/EEA/UK Consumers</p>
+                <p>(Transactions)</p>
+                <p>Take our feedback survey</p>
+            </div>
+            <div class="part2_right">
+                <h4>Colaborate with Us</h4>
+                <p>Partnership</p>
+                <p>Affiliate program</p>
+                <p>DS Center</p>
+            </div>
+        </div>
+    </div>
+    <div class="cp_right">
+        <p>&copy;2023|Kasuwa_Service...</p>
+    </div>
+</body>
+</html>

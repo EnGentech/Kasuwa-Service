@@ -1,0 +1,64 @@
+<div class="head_content">
+    <a href="{{ url_for('Views.index') }}">
+        <img src="{{ url_for('static', filename='images/kasuwa_logo (2).png') }}">
+    </a>
+    <div class="search">
+        <form action="">
+            <input type="text">
+        </form>
+    </div>
+    <div class="search_icon">
+        <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+    </div>
+    <div class="cart">
+        <a href="{{ url_for('auth.shopping_cart') }}">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        </a>
+    <div class="account">
+        <a href="{{ url_for('auth.login') }}">
+            <i class="far fa-user" style="color: #010813;" id="user"></i>&nbsp;&nbsp;Account
+        </a>
+        <a href="{{ url_for('auth.signup') }}">
+            <i class="fas fa-play fa-rotate-90" id="acc" style="color: #c2c9d6;"></i>
+        </a>
+        
+    </div>
+    <div class="drop_down_acc">
+        {% include "split_email.html" %}
+        <div class="drop_down_acc_button">
+            <a href="{{ url_for('auth.signup') }}">
+                <button id="btn1">Register</button>
+            </a>
+            <a href="{{ url_for('auth.login') }}">
+                <button id="btn2">Sign in</button>
+            </a>
+            <a href="{{ url_for('auth.logout') }}">
+                <button id="btn3">signout</button>
+            </a>                
+        </div><hr>
+        <a href="{{ url_for('auth.my_orders') }}">
+            <p id="effect_p">My Orders</p>
+        </a>
+        <a href="{{ url_for('auth.my_coins') }}">
+            <p id="effect_p">My Coins</p>
+        </a>
+        <a href="{{ url_for('auth.message_center') }}">
+            <p id="effect_p">Message Center</p>
+        </a>
+        <a href="{{ url_for('auth.payment') }}">
+            <p id="effect_p">Payment</p>
+        </a>
+        <a href="{{ url_for('auth.wish_list') }}">
+            <p id="effect_p">Wish List</p>
+        </a>
+        <a href="{{ url_for('auth.my_fav_stores') }}">
+            <p id="effect_p">My Favorite Stores</p>
+        </a>
+
+        <a href="{{ url_for('auth.my_coupons') }}">
+            <p id="effect_p">My Coupons</p>
+        </a>
+    </div>
+</div>
+

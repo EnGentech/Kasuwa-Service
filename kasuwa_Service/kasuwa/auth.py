@@ -20,25 +20,25 @@ def login():
             if check_password_hash(user.password, password):
                 flash('Logged in successful', category='success')
                 login_user(user, remember=True)
-                return redirect(url_for('Views.home'))
-                print("sucessful")
+                return redirect(url_for('Views.index'))
             else:
                 flash('Incorrect password, try again.', category='error')
         else:
             flash('Email does not exist', category='error')
-    print("failure")
     return render_template("login.html", user=current_user)
 
 @auth.route('/logout')
+@login_required
 def logout():
-    return render_template("")
+    logout_user()
+    return redirect(url_for("auth.login"))
+
 
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
-    data = request.form
-    print(data)
+    # data = request.form
+    # print(data)
     # Initialize success_msg with an empty string
-    success_msg = ""
 
     if request.method == "POST":
         name = request.form.get('name')
@@ -47,22 +47,26 @@ def signup():
         email = request.form.get('email')
         phone = request.form.get('phone')
 
-        errors = []
 
         existing_usr = session.query(User).filter_by(email=email).first()
         if existing_usr:
-            flash ("User with the email already exists. please login", category="error")
+            flash("User already exists, Please login", "error")
             return redirect(url_for("auth.login"))
         if len(name) < 2:
-           errors.append("name must be greater than 1 character.")
+           flash("name must be greater than 1 character.", category="error")
+           return redirect(url_for("auth.signup"))
         elif password1 != password2:
-            errors.append("passwords don't match.")
+            flash("passwords don't match.", category="error")
+            return redirect(url_for("auth.signup"))
         elif len(password1) < 7:
-            errors.append("password must be greater than or equal to 7 characters.")
+            flash("password must be greater than or equal to 7 characters.", category="error")
+            return redirect(url_for("auth.signup"))
         elif len(email) < 4:
-            errors.append("email is too short.")
+            flash("email is too short.", category="error")
+            return redirect(url_for("auth.signup"))
         elif len(phone) < 5:
-            errors.append("phone is not valid.")
+            flash("phone is not valid.", category="error")
+            return redirect(url_for("auth.signup"))
         else:
             # add user
             user = User(
@@ -77,9 +81,52 @@ def signup():
             )
             session.add(user)
             session.commit()
-            success_msg = "Account created successfully!"
-            return redirect(url_for('Views.home'))
-        
-        
-    return render_template("sign_up.html", success_msg=success_msg)
+            login_user(user, remember=True)
+            flash("Account created successfully!", category="success")
+            return redirect(url_for('Views.index'))
 
+    return render_template("sign_up.html")
+
+@auth.route('/shopping_cart', methods=['GET', 'POST'])
+@login_required
+def shopping_cart():
+    data = request.form
+    print(data)
+
+    # if request.method=='POST':
+    return render_template('shopping_cart.html')
+
+@auth.route('/my_orders', methods=['GET', 'POST'])
+@login_required
+def my_orders():
+    return render_template('my_orders.html')
+
+@auth.route('/my_coins', methods=['GET', 'POST'])
+@login_required
+def my_coins():
+    return render_template('my_coins.html')
+
+@auth.route('/message_center', methods=['GET', 'POST'])
+@login_required
+def message_center():
+    return render_template('message_center.html')
+
+@auth.route('/payment', methods=['GET', 'POST'])
+@login_required
+def payment():
+    return render_template('payment.html')
+
+@auth.route('/wish_list', methods=['GET', 'POST'])
+@login_required
+def wish_list():
+    return render_template('wish_list.html')
+
+@auth.route('/my_favourite_stores', methods=['GET', 'POST'])
+@login_required
+def my_fav_stores():
+    return render_template('my_fav_stores.html')
+
+@auth.route('/my_coupons', methods=['GET', 'POST'])
+@login_required
+def my_coupons():
+    return render_template('my_coupons.html')

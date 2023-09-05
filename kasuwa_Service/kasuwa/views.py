@@ -1,11 +1,12 @@
 from flask import Blueprint, render_template, redirect, url_for, request
-from flask_login import login_required, current_user
+from flask_login import current_user
+
 views = Blueprint('Views', __name__)
 
+
+
 @views.route('/home')
-@login_required
 def index():
-    
     categories = [
         {"name": "Women's Fashion", "icon": "fa-brands fa-gitlab", "color": "#96999c"},
         {"name": "Men's Fashion", "icon": "fa-solid fa-shirt", "color": "#96999c"},
@@ -37,6 +38,19 @@ def index():
         return render_template('product.html')
     if clicked_category == categories[6]['name']:
         return render_template('product.html')
+    if clicked_category == categories[7]['name']:
+        return render_template('product.html')
+    if clicked_category == categories[8]['name']:
+        return render_template('product.html')
+    if clicked_category == categories[9]['name']:
+        return render_template('product.html')
+    if clicked_category == categories[10]['name']:
+        return render_template('product.html')
+    if clicked_category == categories[11]['name']:
+        return render_template('product.html')
+    if clicked_category == categories[12]['name']:
+        return render_template('product.html')
 
 
     return render_template("index.html", categories=categories, user=current_user)
+    

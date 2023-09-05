@@ -1,0 +1,7 @@
+<link rel="stylesheet" href="static/styles/etxt.css">
+{% if current_user.is_authenticated %}
+{% set parts = current_user.email.split("@") %}
+<p>Welcome back, {{ parts[0] }}</p>
+{% else %}
+<p>Welcome to Kasuwa!</p>
+{% endif %}
