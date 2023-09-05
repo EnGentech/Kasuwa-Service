@@ -442,3 +442,19 @@ body{
     cursor: pointer;
     background: linear-gradient(90deg, rgb(52, 149, 52), rgb(229, 236, 182) );
 }
+
+#cartCount{
+    position: absolute;
+    font-size: small;
+    margin-left: 20px;
+    z-index: 1;
+    margin-top: 0px;
+    border:1px solid green;
+    background-color: white;
+    border-radius: 50%;
+    width: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 20px 1px rgb(184, 184, 184);
+    display: none;
+}

@@ -11,9 +11,12 @@ $(document).ready(function(){
   let koboText = $('.kobo').text()
   let kobo = parseInt(koboText, 10);
   new_kobo = kobo
-  
+ 
+  if (kobo < 9){
   $('span#kobo').text('0' + kobo.toLocaleString())
-
+  } else {
+    $('span#kobo').text(kobo.toLocaleString())
+  }
 
 
   $('i#plus').click(function(){
@@ -28,7 +31,7 @@ $(document).ready(function(){
     } else {
       $('span#kobo').text(new_kobo.toLocaleString())
     }
-    $('span#ammount').text(new_amount.toLocaleString())   
+    $('span#ammount').text(new_amount.toLocaleString()) 
     
   })
 
@@ -56,10 +59,15 @@ $(document).ready(function(){
     }
   })
  
-
+ 
   $('#addToCart').click(function(){
     let id = $('#productid').text()
     let qty = $('#qty').text()
+    let counter = parseInt(sessionStorage.getItem('count')) || 0
+    counter += 1
+    sessionStorage.setItem('count', counter)
+    $('#cartCount').show()
+    $('#cartCount').text(counter)
     
     $.ajax({
         url: '/kasuwa/cart',

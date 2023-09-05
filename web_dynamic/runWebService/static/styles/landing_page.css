@@ -1,0 +1,111 @@
+body{
+    background-image: url("/static/images/Landing_page/background.webp");
+    margin: 0px;
+    background-repeat: no-repeat;
+}
+
+.header img{
+    width: 190px;
+    height: 47px;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+.centerPage{
+    height:500px;
+    width: 900px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px rgb(112, 113, 112);
+    background-color: white;
+    background-image: url(/static/images/Landing_page/e_commerce.png);
+    background-repeat:round;
+}
+
+.midMe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:80vh;
+}
+
+.advert{
+    position: absolute;
+    width: 400px;
+    margin-left: 3%;
+    line-height: 25px;
+    margin-top: 1%;
+    background: linear-gradient(-90deg, rgba(242, 237, 237, 0.294), rgba(197, 186, 186, 0.956));
+    padding: 5px 15px;
+    border-radius: 10px;
+    border-left: 2.5px solid black;
+}
+
+/* Button styles */
+.button-sign-in,
+.button-sign-up,
+.button-explore {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button-sign-in:hover,
+.button-sign-up:hover,
+.button-explore:hover {
+  background-color: #0056b3;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+}
+
+.btn li{
+    list-style: none;
+    border: 1px solid rgb(206, 249, 206);
+    padding: 10px 70px 10px 70px;
+    border-radius: 50px;
+    background-color: rgb(188, 205, 188);
+    color:rgb(64, 41, 1);
+    font-weight: 600;
+    box-shadow: 1px 1px 10px 1px rgb(182, 183, 182);
+    cursor: pointer;
+}
+
+.right{
+    right: 0;
+    position: absolute;
+    margin-right: 12%;
+    margin-top: 3%;
+    word-spacing: 20px;
+}
+
+.right li{
+    display: inline;
+    list-style: none;
+    border: 1px solid rgb(206, 249, 206);
+    padding: 10px 40px 10px 40px;
+    border-radius: 50px;
+    background-color: rgb(188, 205, 188);
+    color:rgb(64, 41, 1);
+    font-weight: 600;
+    box-shadow: 1px 1px 10px 1px rgb(182, 183, 182);
+    cursor: pointer;
+}
+
+li:hover{
+    border-bottom: 2px solid black;
+    background-color: rgb(223, 232, 223);
+}
+
+a{
+    text-decoration: none;
+}

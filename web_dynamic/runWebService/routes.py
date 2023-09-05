@@ -23,6 +23,10 @@ def login_required(func):
     return decorated_function
 
 @start.route('/', methods=['GET'])
+def lan():
+    """landing page"""
+    return render_template('landing_page.html')
+
 @start.route('/kasuwa', methods=["GET"])
 def main():
     """render the index page"""
@@ -33,7 +37,7 @@ def main():
             if 'e_mail' not in session:
                 try:
                     for x in range (1, 4):
-                        sendid = randint(1, len(category) + 1)
+                        sendid = randint(1, len(category))
                         displayProducts = db.product_category(sendid)
                         displayProduct.append(displayProducts)
                     return render_template('index.html', category=category, productsIndex=displayProduct)

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kasuwa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/landing_page.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/Logo/kasuwa_icon.png') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="header">
+        <div class="right">
+            <ul>
+                <a href="{{ url_for('kasu.sign_up') }}"><li>Register</li></a>
+                <a href="{{ url_for('kasu.sign_in') }}"><li>Login</li></a>
+            </ul>
+        </div>
+        <img src="{{ url_for('static', filename='images/Logo/kasuwa_logo.png') }}" alt="">
+    </div>
+   
+    <div class="midMe">
+        <div class="centerPage">
+          <h2 style="text-align: center; color: rgb(3, 50, 24); margin-top: 20px;">Welcome to the Kasuwa Shopping Destination! 🌟</h2>
+          <hr>
+          <div class="btn">
+            <ul>
+                <li>
+                <a href="{{ url_for('kasu.main') }}">Explore</a>
+                </li>
+            </ul>
+          </div>
+        </div> 
+               
+    </div>
+
+    
+</body>
+</html>

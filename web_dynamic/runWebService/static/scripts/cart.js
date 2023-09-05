@@ -16,6 +16,23 @@ $(document).ready(function() {
 
     let count = 0
     let totalAmount = 0
+
+    function amt() {
+        totalAmount = 0;
+
+        // Iterate through each checked cart item
+        $('.cart_items .select_all input[type="checkbox"]:checked').each(function () {
+            let a_mount = $(this).closest('.cart_items').find('.description span').text();
+            let qty = $(this).closest('.cart_items').find('.plus #qty').text();
+            let amount = parseInt(a_mount.replace(/,/g, ''), 10);
+            amount = amount * qty
+            totalAmount += amount;
+        });
+
+        // Display the total amount
+        $('.summary_section #total').text('NGN ' + totalAmount.toLocaleString())
+        $('.payNow #grandTotal').text('NGN ' + totalAmount.toLocaleString())
+    }
     
     function checkOut(){
         $('.summary_section span').text(count)
@@ -53,8 +70,6 @@ $(document).ready(function() {
 
     $('.select_all input[type="checkbox"]').change(function () {
         var cartItemsDiv = $(this).closest('.cart_items');
-        let price = $(this).closest('.description span').text()
-        alert(price)
         
         if ($(this).is(':checked')) {
             cartItemsDiv.find('.cart_item_img input[type="checkbox"]').prop('checked', true);
@@ -64,7 +79,7 @@ $(document).ready(function() {
             }
             checkOut()
             same()
-            
+            amt()
         } else {
             cartItemsDiv.find('.cart_item_img input[type="checkbox"]').prop('checked', false);
             $('#specialSelectAll input[type="checkbox"]').prop('checked', false)
@@ -73,12 +88,14 @@ $(document).ready(function() {
                 hideit()
             }
             checkOut()
+            amt()
         }
     });
     $('#specialSelectAll input[type="checkbox"]').change(function () {
         if ($(this).is(':checked')) {
             check_all()
             checkOut()
+            amt()
             if (count > 0){
                 display()
             }
@@ -87,6 +104,7 @@ $(document).ready(function() {
             count = 0
             checkOut() 
             hideit() 
+            amt()
         }
     });
 
