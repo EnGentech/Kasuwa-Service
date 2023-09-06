@@ -458,3 +458,24 @@ body{
     box-shadow: 1px 1px 20px 1px rgb(184, 184, 184);
     display: none;
 }
+
+.home{
+    position: absolute;
+    text-align: center;
+    margin-left: 4%;
+    background-color: rgba(5, 27, 109, 0.52);
+    border: 1px solid white;
+    border-radius: 40px;
+}
+
+.home p{
+    text-align: center;
+    margin: 0px;
+    padding: 2px 20px 2px 20px;
+    
+}
+
+.home, .home p:hover{
+    color: rgb(236, 229, 229);
+    cursor: pointer;
+}
