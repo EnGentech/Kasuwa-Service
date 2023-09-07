@@ -1,4 +1,6 @@
 insert into categories(category, icon, date_created) values
+("Women's Fashion", "fa-brands fa-gitlab", now()),
+("Men's Fashion", "fa-solid fa-shirt", now()),
 ("Phones & Telecommunications", "fa-solid fa-mobile-screen-button", now()),
 ("Computer, Office & Security", "fa-solid fa-desktop", now()),
 ("Consumer Electronics", "fa-solid fa-radio", now()),

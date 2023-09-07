@@ -14,6 +14,7 @@ body{
 .centerPage{
     height:500px;
     width: 900px;
+    margin-top: 5%;
     border-radius: 10px;
     box-shadow: 1px 1px 10px 1px rgb(112, 113, 112);
     background-color: white;
@@ -25,7 +26,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height:80vh;
+    height:70vh;
 }
 
 .advert{
@@ -73,7 +74,7 @@ body{
     border: 1px solid rgb(206, 249, 206);
     padding: 10px 70px 10px 70px;
     border-radius: 50px;
-    background-color: rgb(188, 205, 188);
+    background-color: rgba(188, 205, 188, 0.492);
     color:rgb(64, 41, 1);
     font-weight: 600;
     box-shadow: 1px 1px 10px 1px rgb(182, 183, 182);
@@ -94,7 +95,7 @@ body{
     border: 1px solid rgb(206, 249, 206);
     padding: 10px 40px 10px 40px;
     border-radius: 50px;
-    background-color: rgb(188, 205, 188);
+    background-color: rgba(188, 205, 188, 0.513);
     color:rgb(64, 41, 1);
     font-weight: 600;
     box-shadow: 1px 1px 10px 1px rgb(182, 183, 182);
@@ -108,4 +109,191 @@ li:hover{
 
 a{
     text-decoration: none;
-}   
+}  
+
+.info{
+    display: flex;
+    margin-left: 8%;
+    margin-top: 8%;  
+}
+
+.all{
+    background: linear-gradient(360deg,rgb(161, 222, 190), rgb(244, 240, 240));
+    
+}
+
+.in{
+    background-image: url(/static/images/Landing_page/crt.png);
+}
+
+.info h2{
+    text-align: center;
+    margin-top: 1px;
+    text-decoration: underline;
+}
+
+.info img{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    margin: 0px;
+    padding: 0px;
+}
+.about{
+    width: 400px;
+    position: absolute;
+    margin-left: 20%;
+}
+
+.about h2{
+    color:rgb(58, 0, 58);
+}
+
+.about p{
+    color: rgb(2, 2, 78);
+    font-weight: 500;
+    
+}
+
+.im{
+    border:3px solid rgba(50, 1, 1, 0.574);
+    border-right: 2px solid rgb(50, 1, 1, 0.574);
+    width: 720px;
+    height:300px;
+    border-top-left-radius: 150px;
+    border-bottom-left-radius: 150px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.info p{
+    text-align: justify;
+    line-height: 25px;
+}
+
+.position_mission{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(180deg,rgb(161, 222, 190), rgb(244, 240, 240));
+}
+
+.mission{
+    width: 700px;
+    background-color: rgba(0, 0, 0, 0.611);
+    border-radius: 20px;
+    margin-left: 500px;
+    margin-top: 5%;
+    box-shadow: 1px 1px 20px 1px rgb(241, 241, 188);
+    margin-bottom: 30px;
+}
+
+.mission h2{
+    color:wheat;
+    text-align: center;
+    font-style: italic;
+    font-size: x-large;
+}
+
+.mission span{
+    text-decoration: underline;
+}
+
+.mission p{
+    line-height: 24px;
+    padding: 2%;
+    padding-top: 1px;
+    word-spacing: 5px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mission li{
+    color:rgb(255, 235, 235);
+    line-height: 25px;
+    text-align: justify;
+    margin-right: 5%;
+}
+
+.mission li:hover{
+    background-color: transparent;
+}
+
+.mission h3{
+    color:rgb(247, 229, 196)
+}
+
+.aboutUs{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    border-top: 2px solid green;
+}
+
+.aboutUs img{
+    margin-top: 10%;
+    border-radius: 50%;
+    border: 5px solid white;
+    height: 300px;
+    width: 300px;
+}
+
+.aboutUs p{
+    color: white;
+    width: 350px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 25px;
+    word-spacing: 5px;
+    text-align: justify;
+    height: 150px;
+}
+
+.aboutUs li{
+    display:inline;
+    list-style: none;
+    margin: 0;
+    border: 1px solid white;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding: 4px;
+    border-radius: 20px;
+    margin-right: 15px;
+    background-color: white;
+    color: blue;
+    box-shadow: 1px 1px 20px 1px rgb(58, 58, 54);
+}
+
+.aboutUs li:hover{
+    box-shadow: 1px 1px 20px 1px rgb(241, 241, 188);
+}
+
+.contactUs{
+    text-align: center;
+}
+
+.contactUs h1{
+    margin:0;
+    text-decoration: underline;
+}
+
+.centa{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cp_right{
+    background-color: rgba(9, 43, 9, 0.737);
+    height: 50px;
+    margin:0;
+    justify-content: right;
+    align-items: center;
+    display: flex;
+}
+
+.cp_right p{
+    color: white;
+    margin: 0px;
+    margin-right: 10%;
+    font-size: small;
+}
