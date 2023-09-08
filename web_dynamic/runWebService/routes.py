@@ -162,6 +162,12 @@ def cart():
         cart.append(cartSelect)
         session['cart'] = cart
         return 'Successful'
+    
+@start.route('/kasuwa/cart/order/<items>', methods=['GET'])
+@login_required
+def order(items):
+    """Order your items from cart only when you are signed in"""
+    return render_template('order.html', items=items)
 
 @start.route('/kasuwa/signOut')
 @login_required

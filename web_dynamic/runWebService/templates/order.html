@@ -17,7 +17,7 @@
             <h3 id='grandTotal' style="font-weight: 600; font-size: large;">NGN 0.00</h3> 
             <h4 style="font-weight: 600; font-size: large;">Total</h4>
         </div>
-        <a id='NoItems' href="{{ url_for('kasu.order', items='Cart_items=0') }}"><button id="checkOut">Checkout (<span id="NO">0</span>)</button></a>
+        <button>Proceed to Payment</button>
         <div class="empty">
             
         </div>
@@ -56,7 +56,7 @@
     <div class="cart_items">
         <div class="select_all" id="selectOne">
             <input type="checkbox" class="roundme">
-            <h3 id="print">{{ items[0]['name'] }}</h3>
+            <h3>{{ items[0]['name'] }}</h3>
         </div>
         <hr>
         <div class="cart_items_description">

@@ -111,8 +111,27 @@ $(document).ready(function() {
 
 
 
-    //This part integrates the computational analysis of amount to be paid//
+    //This part integrates the computational analysis of amount to be paid
+    //store product id's of selected iteration into a list 
+    let ids = []
 
+    function ordered(){
+        $('.delid').each(function(){
+            ids.push($(this).text())
+        })
+        alert(ids)
+    }
 
+    $('#checkOut').click(function(){
+        let numb = $('#NO').text()
+        if (numb == 0){
+            $('#NoItems').removeAttr('href')
+        } else {
+            let value = $('#NoItems').attr('href')
+            value = value.replace('0', numb)
+            $('#NoItems').attr('href', value)
+            //ordered()
+        }
+    })
 
 });
