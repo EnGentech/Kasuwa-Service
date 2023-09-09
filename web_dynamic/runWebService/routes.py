@@ -2,7 +2,7 @@ import sys
 sys.path.append(r"c:\Users\Engr. Gentle Inyang\Web_Application_Projects\Kasuwa-Service\web_dynamic")
 import database_management
 
-from flask import Blueprint, render_template, request, url_for, redirect, session, flash
+from flask import Blueprint, render_template, request, url_for, redirect, session, flash, jsonify
 from functools import wraps
 from mailVerification import send_verification_email
 from database_management import Db_Management
@@ -163,11 +163,38 @@ def cart():
         session['cart'] = cart
         return 'Successful'
     
-@start.route('/kasuwa/cart/order/<items>', methods=['GET'])
+@start.route('/kasuwa/cart/order', methods=['POST', 'GET'])
 @login_required
-def order(items):
+def order():
     """Order your items from cart only when you are signed in"""
-    return render_template('order.html', items=items)
+    userProducts = []
+    quantity = []
+    returnList = []
+    if request.method == 'POST':
+        items = request.form.get('order')
+        items = items.split(',')
+        qtyty = request.form.get('qtity')
+        payValue = request.form.get('payOrder')
+        for x in qtyty:
+            try:
+                quantity.append(int(x))
+            except Exception:
+                pass
+        for z in items:
+            try:
+                getid = (int(z))
+                pd = db.view_product(getid)
+                userProducts.append(pd)
+            except Exception:
+                pass
+        for cnt in range(len(quantity)):
+            new = [quantity[cnt], userProducts[cnt]]
+            returnList.append(new)
+               
+        return render_template('order.html', myOrders=returnList, amount=payValue)
+    elif request.method == 'GET':
+        print(userProducts)
+        return render_template('order.html', myOrders=userProducts)
 
 @start.route('/kasuwa/signOut')
 @login_required

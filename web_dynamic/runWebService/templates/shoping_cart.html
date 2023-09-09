@@ -17,7 +17,13 @@
             <h3 id='grandTotal' style="font-weight: 600; font-size: large;">NGN 0.00</h3> 
             <h4 style="font-weight: 600; font-size: large;">Total</h4>
         </div>
-        <a id='NoItems' href="{{ url_for('kasu.order', items='Cart_items=0') }}"><button id="checkOut">Checkout (<span id="NO">0</span>)</button></a>
+        <form style="display: none;" action="{{ url_for('kasu.order') }}" method="POST">
+            <input id='order' type="text" name="order">
+            <input type="text" id="quantity" name="qtity">
+            <input type="text" id="payNow" name="payOrder">
+            <input id="submitme" type="submit" name="submitOrder">
+        </form>
+        <a id='NoItems' hrf="{{ url_for('kasu.order') }}"><button id="checkOut">Checkout (<span id="NO">0</span>)</button></a>
         <div class="empty">
             
         </div>

@@ -2,6 +2,7 @@
 
 {% block header %}
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/shopping_cart.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/order.css') }}">
 <script src="{{ url_for('static', filename='scripts/cart.js') }}"></script>
 {% endblock %}
 
@@ -9,74 +10,70 @@
 
     <div class="summary_section">
         <h2>Summary</h2>
-        <h3 id="total">NGN 0 <span style="font-size: small;">.00</span></h3>
-        <h4>Total</h4>
-        <div class="payNow">
+        <h3 id="total">{{ amount }} <span style="font-size: small;"></span></h3>
+        <h4>Total items cost</h4>
+        <div class="payNw">
             <h3>Free</h3> 
             <h4>Shipping fee</h4>
-            <h3 id='grandTotal' style="font-weight: 600; font-size: large;">NGN 0.00</h3> 
-            <h4 style="font-weight: 600; font-size: large;">Total</h4>
+            <h3 id='grandTotal' style="font-weight: 600; font-size: large;">{{ amount }}</h3> 
+            <h4 style="font-weight: 600; font-size: large;">Total Shipping</h4>
         </div>
-        <button>Proceed to Payment</button>
+        <button>Place Order</button>
+        <small>Upon clicking "Place Order", I confirm that I have read and acknowledge
+            <a id='terms' href="">all terms and policies</a>
+        </small>
         <div class="empty">
             
         </div>
-        <div class="payment_section">
-            <h2>Payment Methods</h2>
-            <div class="payme">
-                <img src="{{ url_for('static', filename='images/Payment_channel/visa.png') }}" alt="">
-                <img src="{{ url_for('static', filename='images/Payment_channel/mastercard.png') }}" alt="">
-                <img src="{{ url_for('static', filename='images/Payment_channel/jcb.png') }}" alt="" id="dim">
-                <img src="{{ url_for('static', filename='images/Payment_channel/greencard.png') }}" alt="" id="dim">
-            </div><br>
-            <h5>Buyers Protection</h5>
-            <p><img src="{{ url_for('static', filename='images/Payment_channel/confrim.png') }}" alt="" id="dim_buyers_protection">
-            &nbsp;Get full refund if the item is not as described or if it is not deliverd</p>
+        <div class="logo">
+            <img id='confirm' src="{{ url_for('static', filename='images/Payment_channel/confrim.png') }}" alt=""> 
+            <img src="{{ url_for('static', filename='images/Logo/kasuwa_logo.png') }}">
+            <p>Kasuwa keeps your information and payment safe</p>
         </div>
     </div>
 
-    <div class="gen_cart_items">
-        <h2>Shopping Cart (<span>{{ count }}</span>)</h2>
-        <div class="select_all" id="specialSelectAll">
-            <input type="checkbox" class="roundme">
-            <p>Select all items</p>
+    <div class="addresses">
+        
+        <h3>Shopping Address</h3>
+        <div class="address">
+            <a id='change' href=""><p>Change</p></a>
+            <p><b>Iberedem Inyang</b> <span>08039678842</span></p>
+            <p>Heritage Polytechnic, Ikot Udota, Eket</p>
+            <p>Eket, Akwa Ibom State, Nigeria: 51002</p>
         </div>
-        <div class="select_all_button">
-            <button id="special_select_all_button">All</button>
-            <button>US $15 off</button>
-            <button>Choice</button>
+    </div>
+
+    <div class="payMethod">
+        
+        <h3>Payment Methods</h3>
+        <div class="pay">
+            <a id='payment' href=""><p>Select Payment Method</p></a>
         </div>
     </div>
 
 
 
     <div class="all">
-    {% if lis %}
-    {% for items in lis %}
+    {% if myOrders %}
+    {% for item in myOrders %}
     <div class="cart_items">
         <div class="select_all" id="selectOne">
-            <input type="checkbox" class="roundme">
-            <h3>{{ items[0]['name'] }}</h3>
+            <h3>{{ item[1]['name'] }}</h3>
         </div>
         <hr>
         <div class="cart_items_description">
             <div class="cart_item_img">
-                <input style="cursor: not-allowed;" type="checkbox">
-                <img src="{{ url_for('static', filename='images/products/' + items[0]['type'] + '.webp') }}" alt="">
+               <img src="{{ url_for('static', filename='images/products/' + item[1]['type'] + '.webp') }}" alt="">
             </div>
             <div class="description">
-                <p>{{ items[0]['description'] }}</p> 
+                <p>{{ item[1]['description'] }}</p> 
                 <p id="adjust">qty</p>                
-                <button>{{ items[0]['type'] }} ></button>
-                <h3>NGN <span>{{ items[0]['naira'] }}</span>.{{ items[0]['kobo'] }}</h3>
+                <button>{{ item[1]['type'] }}</button>
+                <h3>NGN <span>{{ item[1]['naira'] }}</span>.{{ item[1]['kobo'] }}</h3>
             </div>
             <div class="cart_icons">
-                <i class="fa-regular fa-heart" style="color: #1f1f1f;"></i>
-                <i del='delete' class="fa-solid fa-trash-can" style="color: #080808;">
-                    <p class="delid" style="display: none;">{{ items[0]['id'] }}</p>
-                </i>
                 <div class="plus">
-                    <p><b id="qty">{{ items[1] }}</b></p>&nbsp;
+                    <p><b id="qty">{{ item[0] }}</b></p>&nbsp;
                 </div> 
             </div>
         </div>
@@ -84,7 +81,7 @@
     </div>
     {% endfor %}
     {% else %}
-        <p>No items in cart, please add items</p>
+      <p>An Error has occured, please check back</p>
     {% endif %}
     </div>
 

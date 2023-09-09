@@ -114,24 +114,49 @@ $(document).ready(function() {
     //This part integrates the computational analysis of amount to be paid
     //store product id's of selected iteration into a list 
     let ids = []
+    let qttys = []
+    let getAmount = ''
 
-    function ordered(){
-        $('.delid').each(function(){
-            ids.push($(this).text())
-        })
-        alert(ids)
+    function ordered() {
+        $('.cart_items_description').each(function() {
+            const checkboxes = $(this).find('input[type="checkbox"]:checked');
+            if (checkboxes.length > 0) {
+                let id = ($(this).find('.delid').text());
+                let qtty = ($(this).find('#qty').text());
+                getAmount = $('#grandTotal').text()
+                //alert(keypair)
+                ids.push(id)
+                qttys.push(qtty)
+            }
+        });
+        let idString = ids.join(',')
+        $('#order').val(idString)
+        $('#payNow').val(getAmount)
+        $('#quantity').val(qttys)
+        $('#submitme').click()
+        
+        /*$.ajax({
+            url: '/kasuwa/cart/order',
+            method: 'POST',
+            data: {orderedList: idString},
+            success: function(response){
+                console.log('Success')
+            }
+        })*/
+        //I will take it from here
     }
 
     $('#checkOut').click(function(){
-        let numb = $('#NO').text()
+        ordered()
+        /*let numb = $('#NO').text()
         if (numb == 0){
             $('#NoItems').removeAttr('href')
         } else {
             let value = $('#NoItems').attr('href')
             value = value.replace('0', numb)
             $('#NoItems').attr('href', value)
-            //ordered()
-        }
+            
+        }*/
     })
 
 });

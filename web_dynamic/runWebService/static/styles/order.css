@@ -1,0 +1,91 @@
+.addresses{
+    width: 780px;
+    height: auto;
+    background-color: white;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-left: 8% !important;
+    margin: 2%;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.addresses h3{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 16px;
+    padding-bottom: 0px;
+    margin: 0px;
+    margin-bottom: 8px;
+}
+
+#change{
+    float:right;
+    text-decoration: none;
+}
+
+#change p{
+    font-size: large;
+    color: blue;
+}
+
+.address{
+    padding-bottom: 2%;
+}
+
+.address p{
+    margin:0px;
+    font-weight: 200;
+    font-size: small;
+    line-height: 20px;
+    word-spacing: 3px;
+}
+
+.payMethod{
+    width: 780px;
+    height: auto;
+    background-color: white;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-left: 8% !important;
+    margin: 2%;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+
+#payment p{
+    color: blue;
+}
+
+#payment{
+    text-decoration: none;
+}
+
+small{
+    font-size: small;
+    text-align:center;
+    color: grey;
+    display: block;
+}
+
+#terms{
+    color: blue;
+    text-decoration: none;
+}
+
+.logo img{
+    height: 25px;
+    width: 150px;
+}
+
+#confirm{
+    width:17.68px;
+    height: 21px;
+}
+
+.logo p{
+    font-size: small;
+    color:gray;
+}
+
