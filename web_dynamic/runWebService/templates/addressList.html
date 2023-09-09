@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/billingAddress.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/order.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/addressList.css') }}">
+</head>
+<body>
+
+<div class="centerbillingAddress">  
+    <div class="contentPage">
+        <div class="ctrl">
+            <h2 id="close">x</h2>
+        </div>
+        <div class="max">
+            <div class="addr">
+            
+                <h4>Shipping Addresses</h4>
+                
+                <div class="address">
+                    <div class="choice">
+                        <input type="radio">
+                    </div>
+                    <div class="edit">
+                        <a style="text-decoration: none;" href="#"><p>Edit</p></a>
+                    </div>
+                    <div class="contact">
+                        <p><b>Iberedem Inyang</b> <span>08039678842</span></p>
+                        <p>Heritage Polytechnic, Ikot Udota, Eket</p>
+                        <p>Eket, Akwa Ibom State, Nigeria: 51002</p>
+                    </div>
+                </div>
+            </div>
+            <div class="submitBut">
+                <button id="btn1">Add New Address</button>
+            </div>
+        </div>
+        
+    </div>
+</div>  
+
+</body>
+</html>

@@ -227,6 +227,8 @@ def delete():
         db.delCartItem(productid)
     return 'Success'
 
+
+
 def pwdUrl(url):
     """store present user URL"""
     session['store'] = url

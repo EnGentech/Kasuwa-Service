@@ -146,8 +146,17 @@ $(document).ready(function() {
         //I will take it from here
     }
 
+    function check(){
+        let orderedItems = $('#NO').text()
+        if (orderedItems > 0){
+            ordered()
+        } else {
+            alert("Select at least an item")
+        }
+    }
+
     $('#checkOut').click(function(){
-        ordered()
+        check()
         /*let numb = $('#NO').text()
         if (numb == 0){
             $('#NoItems').removeAttr('href')
@@ -157,6 +166,19 @@ $(document).ready(function() {
             $('#NoItems').attr('href', value)
             
         }*/
+    })
+
+    $('#change').click(function(){
+        $('.addressList').show()
+        $('.addressList').css('backdrop-filter', 'brightness(30%)')
+        $('body').css('overflow', 'hidden')
+    })
+
+    $('.submitBut #btn1').click(function(){
+        $('.billingAddress').show()
+        $('.addressList').hide()
+        $('.billingAddress').css('backdrop-filter', 'brightness(30%)')
+        $('body').css('overflow', 'hidden')
     })
 
 });
