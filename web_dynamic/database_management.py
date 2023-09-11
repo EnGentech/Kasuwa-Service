@@ -52,6 +52,26 @@ class Db_Management:
         """create new user into database"""
         new_user = User(username=new[0], email=new[1], password=new[2], phone_number=new[3])
         self.__session.add(new_user)
+        self.__session.flush()
+        self.save()
+
+    def new_billingAddress(self, getid, data):
+        """This method create new billing address for a user in session"""
+        new_address = BillingAddress(
+            nationality=data['nation'],
+            contact_name=data['contactName'],
+            mobile_number=data['mobile'],
+            address=data['address'],
+            state=data['state'],
+            lga=data['lga'],
+            zip_code=data['zip'],
+            user_id=getid
+            )
+        try:
+            self.__session.add(new_address)
+            self.__session.flush()
+        except Exception as e:
+            self.__session.rollback()
         self.save()
 
     def verify_mail(self, mail):
@@ -157,3 +177,8 @@ class Db_Management:
         self.__session.delete(delItem)
         self.__session.commit()
         self.save()
+    
+    def getBillingAddresses(self, userID):
+        """retrive all addresses of a user in session"""
+        addressList = self.__session.query(BillingAddress).filter_by(user_id=userID).all()
+        return addressList

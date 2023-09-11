@@ -170,7 +170,12 @@ def order():
     userProducts = []
     quantity = []
     returnList = []
-    if request.method == 'POST':
+    userid = db.get_active_userID(session['e_mail'])
+    addresses = db.getBillingAddresses(userid[0])
+    for x in addresses:
+        print(x.address)
+    print('\n\n\n\n')
+    if request.method == 'POST':  
         items = request.form.get('order')
         items = items.split(',')
         qtyty = request.form.get('qtity')
@@ -189,12 +194,10 @@ def order():
                 pass
         for cnt in range(len(quantity)):
             new = [quantity[cnt], userProducts[cnt]]
-            returnList.append(new)
-               
-        return render_template('order.html', myOrders=returnList, amount=payValue)
+            returnList.append(new)          
+        return render_template('order.html', myOrders=returnList, amount=payValue, addresses=addresses)
     elif request.method == 'GET':
-        print(userProducts)
-        return render_template('order.html', myOrders=userProducts)
+        return render_template('order.html', myOrders=userProducts, addresses=addresses)
 
 @start.route('/kasuwa/signOut')
 @login_required
@@ -227,7 +230,32 @@ def delete():
         db.delCartItem(productid)
     return 'Success'
 
-
+@start.route('/kasuwa/cart/order/billingAddress', methods=['GET', 'POST'])
+@login_required
+def addNewAddress():
+    """Create new address for a user in session"""
+    if request.method == 'GET':
+        return None
+    elif request.method == 'POST':
+        nationality = request.form.get('nationality')
+        contactName = request.form.get('contactName')
+        mobileNumber = request.form.get('phoneNumber')
+        address = request.form.get('address')
+        state = request.form.get('state')
+        lga = request.form.get('lga')
+        zipCode = request.form.get('zip')
+        myValues = {
+            'nation': nationality,
+            'contactName': contactName,
+            'mobile': mobileNumber,
+            'address': address,
+            'state': state,
+            'lga': lga,
+            'zip': zipCode
+        }
+        sessionID = db.get_active_userID(session['e_mail'])
+        db.new_billingAddress(sessionID[0], myValues)
+        return 'success'
 
 def pwdUrl(url):
     """store present user URL"""

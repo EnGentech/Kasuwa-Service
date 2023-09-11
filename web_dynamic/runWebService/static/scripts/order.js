@@ -1,7 +1,7 @@
 $(document).ready(function(){
    $('#close').click(function(){
     $('.addressList').hide()
-    $('body').css('overflow', 'scroll')
+    $('body').css('overflow-y', 'scroll')
    })
 
    $('#closeBillingAddress').click(function(){
@@ -11,7 +11,16 @@ $(document).ready(function(){
         $('#change').click()
     }, 3000);
     
-   })   
-
+   }) 
+   
+   let availAddress = $('#yes').text()
+   if (availAddress > 0){
+    $('#useClass').addClass('billingAddress')
+   } else {
+    $('#useClass').addClass('nobillingAddress')
+    $('.addressList').hide()
+    $('body').css('overflow', 'hidden')
+    $('.nobillingAddress').css('backdrop-filter', 'brightness(30%)')
+   }
 
 })
