@@ -5,13 +5,48 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/order.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/billingAddress.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/addressList.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/placeOrder.css') }}">
 <script src="{{ url_for('static', filename='scripts/cart.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/order.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/addressList.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/billingAddress.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/placeOrder.js') }}"></script>
 {% endblock %}
 
 {% block content %}
+
+<div class="placeOrders">
+    <div class="placeOrderDisplay">
+        <div class="placeOrderContent">
+            <div class="headContent">
+                <h2 id="closePlaceOrder">x</h2>
+                <h4>Payment Methods</h4>
+
+                <p id="safewithus"><img id='safeConfirm' src="{{ url_for('static', filename='images/Payment_channel/confrim.png') }}" alt="">
+                    Your payment information is safe with us
+                </p>
+                <div class="centa">
+                    <div class="selection">
+                        <input type="radio" name="paymentMethod" id="paymentMethod">
+                        <div class="others">
+                            <p>
+                                <i class="fa-solid fa-credit-card" style="color: #50555e;"></i> &nbsp; Add a new card
+                            </p>
+                            <div class="cards">
+                                <img src="{{ url_for('static', filename='images/Payment_channel/visa.png') }}" alt="">
+                                <img src="{{ url_for('static', filename='images/Payment_channel/mastercard.png') }}" alt="">
+                                <img src="{{ url_for('static', filename='images/Payment_channel/jcb.png') }}" alt="" id="dim">
+                                <img src="{{ url_for('static', filename='images/Payment_channel/greencard.png') }}" alt="" id="dim">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 {% if addresses %}
 <p id="yes" style="display: none;">{{ addresses|length }}</p>
 {% endif %}
@@ -139,7 +174,7 @@
                 <h3 id='grandTotal' style="font-weight: 600; font-size: large;">{{ amount }}</h3> 
                 <h4 style="font-weight: 600; font-size: large;">Total Shipping</h4>
             </div>
-            <button>Place Order</button>
+            <button id="placeOrder">Place Order</button>
             <small>Upon clicking "Place Order", I confirm that I have read and acknowledge
                 <a id='terms' href="">all terms and policies</a>
             </small>

@@ -1,49 +1,60 @@
-.addressList .address{
+.addressList .address {
     border: 1px solid green;
     width: 93%;
     margin: 3%;
     padding: 1%;
-    display:flex;
-    position:relative;
+    display: flex;
+    position: relative;
     border-radius: 10px;
 }
 
-.addressList .addr h4{
+.addressList .addr h4 {
     text-align: center;
 }
 
-.addressList .choice{
+.addressList .choice {
     display: flex;
     align-items: center;
     padding-right: 10px;
 }
 
-.addressList .edit{
-    position:absolute;
-    right:0;
+.addressList .edit {
+    position: absolute;
+    right: 0;
     margin-top: 15px;
     margin-right: 15px;
 }
 
-.addressList .max{
+.addressList .max {
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .addressList .submitBut {
-   width: 70%;
-   position:absolute;
-   height:100%;
-   z-index: 100vh;
-   margin-top: 0px;
-}
-
-.addressList .putit{
+    width: 70%;
+    margin-top: auto;
     display: flex;
     justify-content: center;
-    position: relatve;
 }
 
-.addressList #btn1{
-    width: 100%;
+.addressList #btn1 {
+    width: 75%;
 }
+
+.addressList .max {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.addressList .addr {
+    flex: 1; 
+}
+
+.addressList .max .submitBut {
+    width: 100%;
+    margin-top: auto;
+}
+

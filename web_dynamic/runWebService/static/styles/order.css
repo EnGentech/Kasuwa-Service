@@ -110,3 +110,7 @@ small{
     color:gray;
 }
 
+#placeOrder{
+    cursor: pointer;
+    pointer-events: all;
+}

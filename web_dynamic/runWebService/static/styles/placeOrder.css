@@ -1,0 +1,101 @@
+.placeOrders{
+    position: absolute;
+    left: 0;
+    right:0;
+    top: 0;
+    bottom: 0;
+    z-index: 1000000 !important;
+    display: none;
+}
+
+.placeOrderDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.placeOrderContent{
+    border: 1px solid rgb(207, 242, 202);
+    height: 120px;
+    width: 850px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 1px 1px 20px 1px rgb(184, 184, 184);
+    padding: 10px;
+}
+
+.headContent{
+    text-align: center;
+}
+
+.headContent h4, .headContent #safewithus{
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 3px;
+}
+
+.headContent #safewithus{
+    font-weight: lighter;
+    font-size: small;
+    margin-bottom: 10px;
+    color:green;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.centa{
+    display: flex;
+    justify-content: center;
+}
+
+.selection{
+    width: 95%;
+    border-radius: 15px;
+    height: 70px;
+    border: 1px solid rgb(235, 228, 228);
+    display: flex;
+    justify-content: left;
+}
+
+#closePlaceOrder{
+    float: right;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 10px;
+    font-weight: lighter;
+    color:rgba(249, 136, 136, 0.81);
+}
+
+#closePlaceOrder:hover{
+    color: rgba(234, 25, 25, 0.849);
+    cursor: pointer;
+}
+
+.others{
+   display: block;
+   margin-left: 10px;
+   text-align: left;
+}
+
+.others p{
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cards img{
+    width: 25px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+#paymentMethod{
+    margin-left: 10px;
+}
+
+#safeConfirm{
+    height: 13px;
+    width: 11px;
+}
