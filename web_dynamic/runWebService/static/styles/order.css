@@ -114,3 +114,8 @@ small{
     cursor: pointer;
     pointer-events: all;
 }
+
+#payment{
+    color: blue;
+    cursor: pointer;
+}
