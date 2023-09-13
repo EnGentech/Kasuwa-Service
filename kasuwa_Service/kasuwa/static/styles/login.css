@@ -35,14 +35,15 @@ h3 {
     color: #7BF0A8
 }
 input {
+    position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 15px;
     cursor: pointer;
-    width: 350%;
+    width: 300px;
     font-weight: 700;
     margin-top: 30px;
-    margin-left: -125px;
     border: 1px solid #ccc;
     border-radius: 10px;
 }
@@ -57,20 +58,23 @@ input {
     transform: translateY(-15px);
     opacity: 0.5;
 }
-button {
-
-    background: #7BF0A8;
-    color: hsla(0, 0%, 100%, 0.952);  
+.btn2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background:gray;
     border: none;
     border-radius: 50px;
-    padding: 15px;
+    padding: 15px 0 15px 0;
     cursor: pointer;
-    width: 380%;
+    width: 300px;
     font-weight: 700;
-    margin-left: -125px;
     margin-top: 20px;
+    margin-left: 15px;
 }
-
+.btn2:hover{
+    background-color: #7BF0A8;
+}
 img {
     width: 30%;
     display: flex;
@@ -79,19 +83,32 @@ img {
 }
 
 .flashed-container {
-    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+    margin-top: 0;
     width: 100%;
     max-width: 400px;
     padding: 10px;
-    /* color: #ff0000; */
+    color: #ff0000;
     text-align: center;
-    margin-left: -40px;
 }
 
 ul li {
     list-style: none;
 }
+.signup text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    padding: 10px 10px;
+}
 
-img h3 {
-    margin-left: -50px;
+.signup p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0; 
 }

@@ -3,6 +3,7 @@ from .Base_connect import db_uri, engine, Base, session
 from os import path
 from flask_login import LoginManager
 
+
 def create_app():
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
@@ -26,6 +27,8 @@ def create_app():
     @login_manager.user_loader
     def load_user(id):
         return session.query(User).get(int(id))
+    
+
     print("creating table")
 
     return app

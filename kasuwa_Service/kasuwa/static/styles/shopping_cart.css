@@ -29,7 +29,9 @@
 
 .payment_section img{
     width: 36px;
-    height: 24px;
+    height: 30px;
+    box-shadow: 1px 1px 20px 1px rgb(184, 184, 184);
+    
 }
 
 .payment_section  #dim_buyers_protection{

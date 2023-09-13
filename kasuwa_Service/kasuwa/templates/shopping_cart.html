@@ -36,13 +36,16 @@
     <div class="payment_section">
         <h3>Payment Methods</h3>
         <div class="payme">
-            <img src="static/images/Payment_channel/visa.png" alt="">
-            <img src="static/images/Payment_channel/mastercard.png" alt="">
-            <img src="static/images/Payment_channel/jcb.png" alt="" id="dim">
-            <img src="static/images/Payment_channel/greencard.png" alt="" id="dim">
+            <img src="../static/images/Payment_channel/Visa.png" alt="">
+            <img src="../static/images/Payment_channel/master_card.jpeg" alt="">
+            <img src="../static/images/Payment_channel/apple pay.jpeg" alt="">
+            <img src="../static/images/Payment_channel/google pay.png" alt="">
+            <img src="../static/images/Payment_channel/paypal.png" alt="">
+            <img src="../static/images/Payment_channel/greencard.jpeg" alt="">
         </div><br>
         <h3>Buyers Protection</h3>
-        <p><img src="static/images/Payment_channel/confrim.png" alt="" id="dim_buyers_protection">
+        <p>Product ID: {{ product }}</p>
+        <p><img src="{{ product.image_source }}" alt=" {{ product.name }}" id="dim_buyers_protection">
         &nbsp;Get full refund if the item is not as described or if it is not deliverd</p>
     </div>
 
@@ -58,12 +61,12 @@
                 <img src="static/images/cart_img/USB3.0.webp" alt="">
             </div>
             <div class="description">
-                <p>Olaf USB Flash Drive Metal Pen Drive 2TB/1TB/512G Waterproof High
-                    speed Flash Disk Mini Memory Sticks 2TB U Disk Pen Drive
+                <p>
+                   {{ product.description }}
                 </p> 
                 <p id="adjust">-</p>                
                 <button>otg type c ></button>
-                <h3>US $0.75</h3>
+                <h3>{{ product.price }}</h3>
             </div>
             <div class="cart_icons">
                 <i class="fa-regular fa-heart" style="color: #1f1f1f;"></i>

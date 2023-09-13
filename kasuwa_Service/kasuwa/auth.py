@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import login_user, login_required, logout_user, current_user
 from .Base_connect import session
-from .models import User
+from .models import User, Product
 from werkzeug.security import generate_password_hash, check_password_hash
 
 auth = Blueprint('auth', __name__)
@@ -87,14 +87,12 @@ def signup():
 
     return render_template("sign_up.html")
 
-@auth.route('/shopping_cart', methods=['GET', 'POST'])
-@login_required
-def shopping_cart():
-    data = request.form
-    print(data)
+# @auth.route('/shopping_cart/<int:product_id>')
+# @login_required
+# def shopping_cart(product_id):
+#     product = session.query(Product).filter_by(id=product_id).first()
+#     return render_template('shopping_cart.html', product=product, product_id=product_id)
 
-    # if request.method=='POST':
-    return render_template('shopping_cart.html')
 
 @auth.route('/my_orders', methods=['GET', 'POST'])
 @login_required
@@ -130,3 +128,4 @@ def my_fav_stores():
 @login_required
 def my_coupons():
     return render_template('my_coupons.html')
+

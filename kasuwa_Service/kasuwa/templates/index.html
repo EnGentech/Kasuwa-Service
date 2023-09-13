@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kasuwa</title>
 </head>
 <body>
     {% include 'header.html' %}
@@ -20,132 +20,65 @@
             <div class="category-list">
                 {% for category in categories %}
                 <p>
-                    <a href="{{ url_for('Views.index', category=category.name) }}">
+                    <a href="{{ url_for('Views.category', category_name=category.name) }}">
                         <i class="{{ category.icon }}" style="color: {{ category.color }};"></i> &nbsp;{{ category.name }}
                     </a>
                 </p>
                 {% endfor %}
             </div>
-            
+             
         </section>
         <section class="slider">
             <div class="image_slider">
-                <img src="static/images/slider/market.jpg" alt="" style="height:558px">
-                <img src="static/images/slider/shop_right.jpeg" alt="" style="height:558px">
-                <img src="static/images/slider/e-market.jpeg" alt="" style="height:558px; width: 600px">
-                <img src="static/images/slider/my logo.png" alt="" style="height:558px; width: 600px">
+                <img src="../static/images/shopping cart.jpg" alt="" style="height:558px">
+                <img src="../static/images/slider/new_items.jpeg" alt="" style="height:558px">
+                <img src="../static/images/slider/fruits.jpeg" alt="" style="height:558px; width: 600px">
+                <img src="../static/images/slider/lady2.jpeg" alt="" style="height:558px; width: 600px">
             </div>
         </section>
         <section class="login_sider">
             <div class="login_content">
-                <img src="static/images/Logo/login.png" alt="">
-                <h4>Welcome to Kasuwa</h4>
-                <a href="url_for('auth.signup')">
-                    <button id="btn_log1">Register</button>&nbsp;&nbsp;
-                </a>
-                <a href="url_for('auth.login')">
-                    <button id="btn_log2">Sign in</button>
-                </a>
+                <!-- update here -->
+                <div class="login_imgText">
+                    <img src="../static/images/slider_right/human_logo.jpg" alt="">
+                    {% if current_user.is_authenticated %}
+                    <h4>Hi, {% include "split_email.html" %} </h4>
+                    {% else %}
+                    <h4>Welcome to Kasuwa</h4>
+                    {% endif %}
+                </div>
+                <div class="reg_sig">
+                    <a href="url_for('auth.signup')">
+                        <button id="btn_log1">Register</button>&nbsp;&nbsp;
+                    </a>
+                    <a href="url_for('auth.login')">
+                        <button id="btn_log2">Sign in</button>
+                    </a>
+                </div>
             </div>
+            <!-- end -->
             <hr>
             <div class="login_sider_image">
-                <img src="static/images/slider/shop_right.jpeg" alt="">
+                <img src="../static/images/shopping cart.jpg" alt="">
             </div>
             <p>We offer you shopping experience <br>beyond measureable doubt</b></p>
         </section>
     </div>
+    <!-- editing starts here -->
     <div class="commodities">
+        {% for product in products %}
         <div class="row">
-            <img src="static/images/products/flash_drive.webp" alt="">
-            <h4>NGN<span>333</span>.5</h4>
-            <p>1,000+ sold</p>
-            <p id="flow">Xiaomi Portable U Disk 2TB 1TB 256GB 512GB USB 3.1 Type-C Interface Mobile Phone Computer Mutual Transmission USB Memory</p>
+            <a href="{{ url_for('Views.product_details', product_id=product.id) }}">
+                <img src="{{ product.image_source }}" alt="{{product.name}}" style="max-width: 100%; max-height: 300px;">
+                <h4>NGN<span>{{ product.price }}</span></h4>
+                <p>1,000+ sold</p>
+                <p id="flow">{{ product.description }}</p>
+            </a>
         </div>
-        <div class="row">
-            <img src="static/images/products/watch.webp" alt="">
-            <h4>NGN<span>4500</span>.50</h4>
-            <p>930 sold</p>
-            <p id="flow">Italian Wrist watch made for comfort if you like</p>
-        </div>
-        <div class="row">
-            <img src="static/images/products/drone.webp" alt="">
-            <h4>NGN<span>15,000</span>.20</h4>
-            <p>590 sold</p>
-            <p id="flow">Drone for movies and fun fair</p>
-        </div>
-        <div class="row">
-            <img src="static/images/products/earbud.webp" alt="">
-            <h4>NGN<span>7000</span>.30</h4>
-            <p>990 sold</p>
-            <p id="flow">Original earbud made in ABA, Nigeria</p>
-        </div>
-        <div class="row">
-            <img src="static/images/products/engagement_ring.webp" alt="">
-            <h4>NGN<span>2,150</span>.3</h4>
-            <p>860 sold</p>
-            <p id="flow">You are due for marriage</p>
-        </div>
-        <div class="row">
-            <img src="static/images/products/good_ring.webp" alt="">
-            <h4>NGN<span>1500</span>.23</h4>
-            <p>900 sold</p>
-            <p id="flow">Ring for ndo ke Akwa-Ibom State</p>
-        </div>
-        <div class="row">
-            <img src="static/images/products/pen.webp" alt="">
-            <h4>NGN<span>250</span>.00</h4>
-            <p>1000+ sold</p>
-            <p id="flow">Pen to pass exams without stress</p>
-        </div>
-        <div class="row">
-            <img src="static/images/products/charger.webp" alt="">
-            <h4>NGN<span>3,200</span>.10</h4>
-            <p>400 sold</p>
-            <p id="flow">Charger head and cord made from ABA</p>
-        </div>
-        <div class="row">
-            <img src="static/images/products/vitamin_c.webp" alt="">
-            <h4>NGN<span>1,800</span>.27</h4>
-            <p>320 sold</p>
-            <p id="flow">Norish your body with Vitamin C</p>
-        </div>
-        <div class="row">
-            <img src="static/images/products/shirt.webp" alt="">
-            <h4>NGN<span>7,200</span>.13</h4>
-            <p>1000+ sold</p>
-            <p id="flow">Quality shirt from US</p>
-        </div>
-        <div class="row">
-            <img src="static/images/products/pouch.webp" alt="">
-            <h4>NGN<span>1,300</span>.08</h4>
-            <p>1000+ sold</p>
-            <p id="flow">Quality pouch to keep your phone sparkling</p>
-        </div>
-        <div class="row">
-            <img src="static/images/products/spy_cam.webp" alt="">
-            <h4>NGN<span>10,200</span>.30</h4>
-            <p>780 sold</p>
-            <p id="flow">Observe you space sevretly and catch them live</p>
-        </div>
-        <div class="row">
-            <img src="static/images/products/typeC.webp" alt="">
-            <h4>NGN<span>371</span>.41</h4>
-            <p>500 sold</p>
-            <p id="flow">For fash charging, obtain original typeC cord</p>
-        </div>
-        <div class="row">
-            <img src="static/images/products/smart.webp" alt="">
-            <h4>NGN<span>15,000</span>.50</h4>
-            <p>1000+ sold</p>
-            <p id="flow">Smart device made available for tech guys</p>
-        </div>
-        <div class="row">
-            <img src="static/images/products/wall clock.webp" alt="">
-            <h4>NGN<span>3800</span>.50</h4>
-            <p>998 sold</p>
-            <p id="flow">3D wall clock for your comfort</p>
-        </div>
-    </div><br>
+        {% endfor %}
+        
+    </div> 
+    <br>
 
     <div class="footer">
         <div class="footer_upper">
@@ -191,7 +124,7 @@
             <div class="part2">
                 <h4>Stay connected</h4>
                 <div class="social">
-                    <a href=""><img src="static/images/social_media/facebook.png" alt=""></a>
+                    <a href=""><img src="static/images/social_media/twitter.png" alt=""></a>
                     <a href=""><img src="static/images/social_media/twitter.png" alt=""></a>
                     <a href=""><img src="static/images/social_media/instagram.png" alt=""></a>
                     <a href=""><img src="static/images/social_media/messengerFB.png" alt=""></a>
@@ -225,5 +158,7 @@
     <div class="cp_right">
         <p>&copy;2023|Kasuwa_Service...</p>
     </div>
+    <script src="app.js"></script>
+    <script src="products.js"></script>
 </body>
 </html>

@@ -10,10 +10,15 @@
     <div class="search_icon">
         <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
     </div>
-    <div class="cart">
-        <a href="{{ url_for('auth.shopping_cart') }}">
-            <i class="fa-solid fa-cart-shopping"></i>
-        </div>
+    <div class="cartItems">
+        <div class="cart">
+                <a href="{{ url_for('Views.shopping_cart') }}">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div class="total">
+                <span><p>1</p></span>
+            </div>
+    </div>
         </a>
     <div class="account">
         <a href="{{ url_for('auth.login') }}">

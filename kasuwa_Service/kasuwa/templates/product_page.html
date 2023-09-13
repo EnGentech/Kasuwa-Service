@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/11285bfb5b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/index.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/slider.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    <title>{{ category_name }} Category</title>
+</head>
+<body>
+    {% include 'header.html' %}
+        <div class="commodities">
+            {% for product in products %}
+            <div class="row">
+                <img src="{{ product.image_source }}" alt="" style="max-width: 100%; max-height: 300px;">
+                <h4>NGN<span>{{ product.price }}</span></h4>
+                <p>1,000+ sold</p>
+                <p id="flow">{{ product.description }}</p>
+            </div>
+            {% endfor %}     
+        </div> 
+        <br>
+        {% include 'footer.html'%}
+</body>
+</html>

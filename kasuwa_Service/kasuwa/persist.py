@@ -20,6 +20,8 @@
 # category = Category(
 #     category='Electronics'
 #     )
+# session.add(category)
+# session.commit
 
 # product = Product(
 #     name='Laptop', 

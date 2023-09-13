@@ -67,7 +67,22 @@ body{
     margin-top: 2.4%;
     padding-left: 3%;
     font-size:x-large;
+}
+.cartItems{
+    display: flex;
+    margin-top: 2.4%;
+    padding-left: 3%;
     padding-right: 2%;
+}
+.total{
+    align-items: center;
+    text-align: center;
+    background-color: rgb(0, 255, 132);
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    margin-top: -25px;
+    margin-left: -6px;
 }
 
 a:hover{
@@ -199,13 +214,37 @@ a:hover{
     height:558px;
 }
 
+
 .login_sider img{
-    height: 80px;
-    width:80px;
+    display: flex;
+    margin-right: 10px;
+    justify-content: center;
+    height: 50px;
+    /* background-color: rgb(238, 234, 234); */
+    width:50px;
     align-items: center;
 }
+.login_imgText{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
 
+}
+/* .login_content h4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: -50px;
+    margin-top: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-weight: 550;
+} */
 .login_sider p{
+    margin-right: 20px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: small;
@@ -214,21 +253,17 @@ a:hover{
 }
 
 .login_content{
+    flex-direction: column;
     display:flex;
-    margin-top:5%;
+    margin-top:7%;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.login_content h4{
-    margin-top: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
-    font-weight: 550;
-}
 
 #btn_log1, #btn_log2{
     padding: 10px;
+    margin-top: -20px;
     padding-left: 20px;
     padding-right: 20px;
     color:rgb(0, 255, 8);
@@ -242,6 +277,7 @@ a:hover{
 
 #btn_log1{
     background: linear-gradient(90deg, green, rgb(212, 232, 207) );
+    margin-left: 15px;
 }
 
 #btn_log2{
@@ -284,6 +320,7 @@ a:hover{
     box-shadow: 1px 1px 20px 1px rgb(184, 184, 184);
     cursor: pointer;
 }
+
 
 .row img{
     width: auto;
