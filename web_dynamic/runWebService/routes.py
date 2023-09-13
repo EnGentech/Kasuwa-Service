@@ -9,6 +9,10 @@ from database_management import Db_Management
 from flask_bcrypt import Bcrypt
 from random import randint
 from datetime import datetime
+import paystackapi
+
+payStackSecretKey = 'sk_test_a28e13ca97f109c4688821390d78cd5bdfdc9516'
+#payStack_api = paystack.Transaction(secret_key=payStackSecretKey)
 
 start = Blueprint('kasu', __name__, template_folder='templates')
 db = Db_Management()
@@ -172,9 +176,7 @@ def order():
     returnList = []
     userid = db.get_active_userID(session['e_mail'])
     addresses = db.getBillingAddresses(userid[0])
-    for x in addresses:
-        print(x.address)
-    print('\n\n\n\n')
+    emailInSession = session['e_mail']
     if request.method == 'POST':  
         items = request.form.get('order')
         items = items.split(',')
@@ -195,7 +197,7 @@ def order():
         for cnt in range(len(quantity)):
             new = [quantity[cnt], userProducts[cnt]]
             returnList.append(new)          
-        return render_template('order.html', myOrders=returnList, amount=payValue, addresses=addresses)
+        return render_template('order.html', myOrders=returnList, amount=payValue, addresses=addresses, mail=emailInSession)
     elif request.method == 'GET':
         return render_template('order.html', myOrders=userProducts, addresses=addresses)
 

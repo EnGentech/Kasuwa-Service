@@ -23,7 +23,7 @@ $(document).ready(function(){
     $('.nobillingAddress').css('backdrop-filter', 'brightness(30%)')
    }
 
-   $('#placeOrder, #payment').click(function(){
+   $('#payment').click(function(){
     $('.placeOrders').show()
     $('.placeOrders').css('backdrop-filter', 'brightness(30%)')
     $('body').css('overflow', 'hidden')

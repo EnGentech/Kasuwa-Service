@@ -6,22 +6,19 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/billingAddress.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/addressList.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/placeOrder.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/card.css') }}">
 <script src="{{ url_for('static', filename='scripts/cart.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/order.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/addressList.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/billingAddress.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/placeOrder.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/payWithPaystack.js') }}"></script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
 {% endblock %}
 
 {% block content %}
 
-<div class="addcard">
-    <div class="cardDetails">
-        <div class="cardReview">
-            
-        </div>
-    </div>
-</div>
+<p id="mail" style="display: none;">{{ mail }}</p>
 
 <div class="placeOrders">
     <div class="placeOrderDisplay">
