@@ -1,5 +1,5 @@
 <div class="head_content">
-    <a href="{{ url_for('Views.index') }}">
+    <a href="{{ url_for('Views.index', product_id=product.id) }}">
         <img src="{{ url_for('static', filename='images/kasuwa_logo (2).png') }}">
     </a>
     <div class="search">
@@ -12,7 +12,7 @@
     </div>
     <div class="cartItems">
         <div class="cart">
-                <a href="{{ url_for('Views.shopping_cart') }}">
+                <a href="{{ url_for('Views.cart', product_id=product.id) }}">
                 <i class="fa-solid fa-cart-shopping"></i>
             </div>
             <div class="total">
@@ -66,4 +66,3 @@
         </a>
     </div>
 </div>
-

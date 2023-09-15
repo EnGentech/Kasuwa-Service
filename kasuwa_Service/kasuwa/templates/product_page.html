@@ -13,12 +13,12 @@
 <body>
     {% include 'header.html' %}
         <div class="commodities">
-            {% for product in products %}
+            {% for prod in product %}
             <div class="row">
-                <img src="{{ product.image_source }}" alt="" style="max-width: 100%; max-height: 300px;">
-                <h4>NGN<span>{{ product.price }}</span></h4>
+                <img src="{{ prod.image_source }}" alt="" style="max-width: 100%; max-height: 300px;">
+                <h4>NGN<span>{{ prod.price }}</span></h4>
                 <p>1,000+ sold</p>
-                <p id="flow">{{ product.description }}</p>
+                <p id="flow">{{ prod.description }}</p>
             </div>
             {% endfor %}     
         </div> 

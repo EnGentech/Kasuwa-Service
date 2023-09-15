@@ -13,9 +13,11 @@ def create_app():
 
     from .views import views
     from .auth import auth
+    # from .js_app import js_app
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
+    # app.register_blueprint(js_app, url_prefix='/')
 
     Base.metadata.create_all(engine)
     

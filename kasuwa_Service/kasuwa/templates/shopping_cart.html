@@ -44,7 +44,7 @@
             <img src="../static/images/Payment_channel/greencard.jpeg" alt="">
         </div><br>
         <h3>Buyers Protection</h3>
-        <p>Product ID: {{ product }}</p>
+        <p>Product ID: {{ product.id }}</p>
         <p><img src="{{ product.image_source }}" alt=" {{ product.name }}" id="dim_buyers_protection">
         &nbsp;Get full refund if the item is not as described or if it is not deliverd</p>
     </div>
@@ -58,7 +58,7 @@
         <div class="cart_items_description">
             <div class="cart_item_img">
                 <input type="checkbox">
-                <img src="static/images/cart_img/USB3.0.webp" alt="">
+                <img src="{{ product.image_source }}" alt="">
             </div>
             <div class="description">
                 <p>
@@ -120,42 +120,20 @@
         </div>
         <hr>
         <div class="footer_down">
-            <div class="part2">
-                <h4>Stay connected</h4>
-                <div class="social">
-                    <a href=""><img src="static/images/social_media/facebook.png" alt=""></a>
-                    <a href=""><img src="static/images/social_media/twitter.png" alt=""></a>
-                    <a href=""><img src="static/images/social_media/instagram.png" alt=""></a>
-                    <a href=""><img src="static/images/social_media/messengerFB.png" alt=""></a>
-                    <a href=""><img src="static/images/social_media/whatsapp.png" alt=""></a>
-                </div>
-            </div>
-            <div class="part2_right">
-                <h4>Shopping with us</h4>
-                <p>Making payments</p>
-                <p>Delivery options</p>
-                <p>Buyer Protection</p>
-            </div>
-            <div class="part2_right">
-                <h4>Customer service</h4>
-                <p>Help Center</p>
-                <p>Transaction Services Agreement</p>
-                <p>for non-EU/UK Consumers</p>
-                <p>Terms and Conditions for</p>
-                <p>EU/EEA/UK Consumers</p>
-                <p>(Transactions)</p>
-                <p>Take our feedback survey</p>
-            </div>
-            <div class="part2_right">
-                <h4>Colaborate with Us</h4>
-                <p>Partnership</p>
-                <p>Affiliate program</p>
-                <p>DS Center</p>
-            </div>
-        </div>
+        {% include 'footer.html'%}
     </div>
-    <div class="cp_right">
-        <p>&copy;2023|Kasuwa_Service...</p>
-    </div>
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function mydata() {
+            const product_name = document.getElementById('prod_name').textContent;
+            const product_descr = document.getElementById('prod_des').textContent;
+    
+            // Log the retrieved data to the console
+            console.log("Product Name:", product_name);
+            console.log("Product Description:", product_descr);
+        }
+    // Your JavaScript code here
+    });
+    </script> -->
 </body>
 </html>

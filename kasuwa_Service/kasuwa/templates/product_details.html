@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/product_detail.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
     <script src="{{ url_for('static', filename='scripts/index.js') }}"></script>
+    <script src="../static/scripts/products.js"></script>
+    <script src="../static/scripts/app.js"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,12 +24,12 @@
             <div class="product-info">
                 <div class="product-info-left">
                     <div class="image-viewer">
-                                <img src="{{ product.image_source }}" alt="{{ product.name }}" style="max-width: 100%; max-height: 300px;">
+                                <img id="prod_image" src="{{ product.image_source }}" alt="{{ product.name }}" style="max-width: 100%; max-height: 300px;">
                     </div>
                 </div>
                 <div class="product-info-right">
                     <div class="product-title_container">
-                        <h1 class="product-title">{{ product.name }}</h1>
+                        <h1 class="product-title" id="prod_name"> {{ product.name }}</h1>
                     </div>
                     <div class="comet-divider comet-divider_small"></div>
                     <div class="price-banner">
@@ -62,11 +64,10 @@
                         <span class="common currency">
                             NGN
                         </span>
-                        <span class="common round-figure">
+                        <span id="prod_price" class="common round-figure">
                             {{ product.price }}
                         </span>
                         <span class="common float-amount">
-                            .9
                         </span>
                     </div>
 
@@ -79,7 +80,7 @@
                     <h1 class="title">Description</h1>
                 </div>
 
-                <div class="product-description">
+                <div id="prod_des" class="product-description">
                     {{ product.description }}
                 </div>
             </section>
@@ -99,7 +100,7 @@
                                 <span>Power Type</span>
                             </div>
                             <div class="specification-desc">
-                                <span>Rechargeable</span>
+                                <span id="prod_type" >{{ product.type }}</span>
                             </div>
                         </div>
                         <div class="specification-prop">
@@ -107,61 +108,7 @@
                                 <span>Power Type</span>
                             </div>
                             <div class="specification-desc">
-                                <span>Rechargeable</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="specification-line">
-                        <div class="specification-prop">
-                            <div class="specification-title">
-                                <span>Power Type</span>
-                            </div>
-                            <div class="specification-desc">
-                                <span>Rechargeable</span>
-                            </div>
-                        </div>
-                        <div class="specification-prop">
-                            <div class="specification-title">
-                                <span>Power Type</span>
-                            </div>
-                            <div class="specification-desc">
-                                <span>Rechargeable</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="specification-line">
-                        <div class="specification-prop">
-                            <div class="specification-title">
-                                <span>Power Type</span>
-                            </div>
-                            <div class="specification-desc">
-                                <span>Rechargeable</span>
-                            </div>
-                        </div>
-                        <div class="specification-prop">
-                            <div class="specification-title">
-                                <span>Power Type</span>
-                            </div>
-                            <div class="specification-desc">
-                                <span>Rechargeable</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="specification-line">
-                        <div class="specification-prop">
-                            <div class="specification-title">
-                                <span>Power Type</span>
-                            </div>
-                            <div class="specification-desc">
-                                <span>Rechargeable</span>
-                            </div>
-                        </div>
-                        <div class="specification-prop">
-                            <div class="specification-title">
-                                <span>Power Type</span>
-                            </div>
-                            <div class="specification-desc">
-                                <span>Rechargeable</span>
+                                <span>{{ product.type }}</span>
                             </div>
                         </div>
                     </li>
@@ -240,9 +187,9 @@
                             </div>
 
                         </div>
-                        <div class="quantity-info">
+                        <div class="quantity-info" id="prod_stock">
                             <div>
-                                <span>9463 Pieces available</span>
+                                <span id="prod_stock">{{ product.stock }} Pieces available</span>
                             </div>
                         </div>
                     </div>
@@ -250,12 +197,11 @@
                         <button type="button"
                             class="comet-btn comet-btn-primary buy-now comet-btn-large comet-btn-important">
                             <span>Buy Now</span>
-                        </button>
-                        <a href="{{ url_for('Views.shopping_cart') }}">
-                            <button type="button" class="comet-btn comet-btn-primary comet-btn-large add-to-cart comet-btn-important">
+                            <button id="add-to-cart-button"
+                                class="comet-btn comet-btn-primary comet-btn-large comet-btn-important"
+                                data-product-id="{{ product.id }}">
                                 <span>Add to Cart</span>
                             </button>
-                        </a>                        
                     </div>
 
                 </div>
@@ -263,7 +209,5 @@
         </div>
     </section>
     {% include 'footer.html'%}
-
 </body>
-
 </html>

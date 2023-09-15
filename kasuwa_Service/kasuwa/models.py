@@ -76,6 +76,21 @@ class Product(Base):
     def __repr__(self):
         return f"<Productname {self.name}>"
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'type': self.type,
+            'description': self.description,
+            'stock': self.stock,
+            'price': self.price,
+            'category_id': self.category_id,
+            'date':self.date,
+            'image': self.image_source
+        }
+
+
+
 class Transaction(Base):
     __tablename__ = "transactions"
 

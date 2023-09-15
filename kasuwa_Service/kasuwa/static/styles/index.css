@@ -134,24 +134,31 @@ a:hover{
     border-radius: 5px;
     color: rgb(51, 181, 55);
 }
-
-.drop_down_acc button{
-    padding-left: 12%;
-    padding-right: 12%;
-    padding-top: 4%;
-    padding-bottom: 4%;
+.welcome{
+    display: flex;
+    margin-top: 20px;
 }
-
-.drop_down_acc button:hover{
+#btn1{
+    margin-top: 20px;
+}
+.drop_down_acc button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
     cursor: pointer;
 }
-
+.drop_down_acc img{
+    display: flex;
+    width: 25%;
+}
 #btn1{
     color: white;
     background-color: rgb(57, 128, 59);
     border: none;
     font-weight: bolder;
     border-radius: 5px;
+    width: 44%;
 }
 
 #btn2{
@@ -160,6 +167,8 @@ a:hover{
     border: none;
     font-weight: bolder;
     border-radius: 5px;
+    padding-top: 2%;
+    width: 44%;
 }
 
 #btn3{
@@ -231,6 +240,12 @@ a:hover{
     align-items: center;
     flex-direction: column;
 
+}
+.acc-ord-mgs{
+    margin-top: -20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
 }
 /* .login_content h4{
     display: flex;

@@ -145,17 +145,16 @@
             </div>
 
             <div class="list--list">
-                {% for product in products %}
+                {% for prod in product %}
                 <a class="manhattan--container card--list search-card-item" >
                     <div class="mahattan-image cards--image" style="padding-bottom: 100%;">
-                        <img src="{{ product.image_source }}" alt="" style="max-width: 100%; max-height: 300px;">
+                        <img src="{{ prod.image_source }}" alt="" style="max-width: 100%; max-height: 300px;">
                     </div>
                     <div class="manhattan--content">
                         <div class="manhattan--title card--title"
                             title="Casual Simplicity Women's Elastic Waist Wide Leg Cropped Pants All-match Fashion Solid Color Trousers Summer Female Clothing">
                             <h1 class="manhattan--titleText">
-                                {{product.description }}
-                                <!--  -->
+                                {{ prod.description }}
                             </h1>
                         </div>
                         <div class="manhattan--tradeContainer">
