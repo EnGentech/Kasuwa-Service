@@ -13,10 +13,13 @@ def Landing_page():
 def index():
     categories = session.query(Category).all()
     product = session.query(Product).all()
+    # price = session.query(Product).all()
     # product = session.query(Product).filter_by(id=product.id)
+    decimal_parts = []
     for prod in product:
-        print(prod.name)
-    return render_template('index.html', categories=categories, product=product)
+        decimal_part = str(prod.price - int(prod.price))[1:]
+        decimal_parts.append(decimal_part)
+    return render_template('index.html', categories=categories, product=product, decimal_parts=decimal_part)
     
 
 

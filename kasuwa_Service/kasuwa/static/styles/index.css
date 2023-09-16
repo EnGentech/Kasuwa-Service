@@ -326,9 +326,11 @@ a:hover{
 .row{
     background-color: white;
     padding-bottom: 10px;
-    height:320px;
+    height:300px;
     border-radius: 10px;
-    margin-top: 20px
+    margin-top: 20px;
+    width: 200px;
+    /* justify-content: space-between; */
 }
 
 .row:hover{
@@ -338,7 +340,7 @@ a:hover{
 
 
 .row img{
-    width: auto;
+    width: 200px;
     height: auto;
     border-radius: 10px 10px 0px 0px;
 }
@@ -358,20 +360,29 @@ a:hover{
     margin-top: 8px;
 }
 
-.row span{
+/* .row span{
     font-size: xx-large;
+} */
+/* price format */
+.price {
+    font-size: 24px;
+    font-weight: bold;
 }
+
+/* .decimal {
+    font-size: 16px;
+    vertical-align:baseline;
+    color: blue;
+} */
+
 
 .row h4, .row p{
     padding: 0px 8px;
 }
 
-.row #flow:hover{
-    position: absolute;
-    cursor: pointer;
-    overflow:visible;
-    color:red;
-}
+
+
+
 
 .footer{
     background-color: white;
@@ -447,4 +458,15 @@ a:hover{
     margin: 0px;
     margin-right: 10%;
     font-size: small;
+}
+
+.drop_down_signout{
+    margin-top: 10px;
+}
+.drop_down_signup{
+    margin-top: 10px;
+}
+.drop_down_signup .drop_down_signout{
+    font-size: 20px;
+    font-weight: bold;
 }

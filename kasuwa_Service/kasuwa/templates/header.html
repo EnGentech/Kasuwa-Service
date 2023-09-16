@@ -30,18 +30,29 @@
         
     </div>
     <div class="drop_down_acc">
+        {% if current_user.is_authenticated %}
+        <div class="drop_down_signout">
+            <img src="../static/images/user/userlogout.png" alt="">
+        Welcome back,
         {% include "split_email.html" %}
+        </div>
+        <a href="{{ url_for('auth.logout') }}">
+            <button id="btn3">signout</button>
+        </a>
+        {% else %}
+        <div class="drop_down_signup">
+            Welcome to kasuwa!
         <div class="drop_down_acc_button">
             <a href="{{ url_for('auth.signup') }}">
                 <button id="btn1">Register</button>
             </a>
             <a href="{{ url_for('auth.login') }}">
                 <button id="btn2">Sign in</button>
-            </a>
-            <a href="{{ url_for('auth.logout') }}">
-                <button id="btn3">signout</button>
             </a>                
-        </div><hr>
+        </div>
+        </div>
+        {% endif %}
+        <hr>
         <a href="{{ url_for('auth.my_orders') }}">
             <p id="effect_p">My Orders</p>
         </a>

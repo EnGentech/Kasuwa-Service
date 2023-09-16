@@ -6,6 +6,7 @@
     <script src="https://kit.fontawesome.com/11285bfb5b.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url_for('static', filename='scripts/index.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/category.css') }}">
     <script src="{{ url_for('static', filename='scripts/slider.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
     <meta charset="UTF-8">
@@ -78,10 +79,20 @@
         {% for prod in product %}
         <div class="row">
             <a href="{{ url_for('Views.product_details', product_id=prod.id) }}">
-                <img src="{{ prod.image_source }}" alt="{{prod.name}}" style="max-width: 100%; max-height: 300px;">
-                <h4>NGN<span>{{ prod.price }}</span></h4>
+                <img src="{{ prod.image_source }}" alt="{{prod.name}}">
+                <h4>
+                    NGN<span class="price">{{ prod.price}}</span>
+                    <!-- <span class="decimal">{{ decimal_parts }}</span> -->
+                </h4>
                 <p>1,000+ sold</p>
-                <p id="flow">{{ prod.description }}</p>
+                <!-- here -->
+                <div class="manhattan--title card--title"
+                    title="Casual Simplicity Women's Elastic Waist Wide Leg Cropped Pants All-match Fashion Solid Color Trousers Summer Female Clothing">
+                    <h1 class="manhattan--titleText">
+                        {{ prod.description }}
+                    </h1>
+                </div>
+                <!-- hi -->
             </a>
         </div>
         {% endfor %}
