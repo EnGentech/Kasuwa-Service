@@ -356,8 +356,8 @@ body{
     justify-content: space-evenly;
 }
 
-.footer_down .social{
-    margin-right: 250px;
+.part2{
+    width: 350px;
 }
 
 .footer_down .social img{
@@ -478,4 +478,134 @@ body{
 .home, .home p:hover{
     color: rgb(236, 229, 229);
     cursor: pointer;
+}
+
+/* Implementing responsiveness */
+
+@media screen and (max-width: 1325px) {
+    .footer_upper{
+        flex-wrap: wrap;
+    }
+    .footer{
+        height: 750px
+    }
+    .drop_down_acc{
+        margin-right: 30px;
+    }
+    .drop_down_acc #btn1, .drop_down_acc #btn2{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+@media screen and (max-width:1070px) {
+    .part2{
+        width: 200px;  
+    }
+    .search{
+        width: 400px;
+    }
+    .drop_down_acc{
+        width: 170px;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .part2_right{
+        display: none; 
+    }
+    .footer{
+        height: 600px;
+    }
+    .search{
+        margin-top: 9%;  
+    }
+    .search_icon{
+        margin-top: 9%;
+    }
+    .head_content{
+        height: 120px;
+    }
+    .head_content #shift{
+        padding-left: 5% !important;
+    }
+    .drop_down_acc p{
+        line-height: 10px;
+    }
+    .drop_down_acc{
+        margin-top: 6%;
+    }
+}
+
+@media  screen and (max-width: 840px) {
+    .head_content img{
+        position: absolute;
+    }
+    .search{
+        margin-left: 15%;
+        width: 390px !important;
+    }
+    .search_icon{
+        width: 40px;
+    }
+}
+
+@media screen and (max-width: 764) {
+    .search{
+        width: 330px;
+    }    
+}
+
+#notInUse{
+    display:none;
+}
+
+@media  screen and (max-width: 758px) {
+    .search{
+        width: 320px !important;
+    }
+    .head_content img{
+        width: 100px;
+        height: 20px;
+        margin-top: 2%;
+    }
+}
+
+@media  screen and (max-width: 660px) {
+    #inUse{
+        display: none;
+    }
+    #notInUse{
+        display: block;
+        margin-right: 5%;
+        margin-top: 5%;
+    }
+    .cart{
+        margin-top: 4%;
+        margin-right: 10px;
+    }
+    .search{
+        margin-top: 12%;
+    }
+    .search_icon{
+        margin-top: 12%;
+    }
+    .footer{
+        height: 750px;
+    }
+}
+
+@media  screen and (max-width: 600px) {
+    .footer_upper{
+        display: none;
+    }
+    .footer{
+        height: 150px;
+    }
+    .search{
+        margin-top: 14%;
+    }
+    .search_icon{
+        margin-top: 14%;
+    }
 }

@@ -87,3 +87,9 @@ h3 {
     right:0;
     color: rgba(0, 138, 0, 0.425);
 }
+
+@media screen and (max-width: 414px) {
+    .signup-container{
+        margin: 10px;
+    }
+}

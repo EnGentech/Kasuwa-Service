@@ -1,9 +1,21 @@
 $(document).ready(function(){
+    let a = 0
     $('.account').hover(function(){
         $('.drop_down_acc').show()
+        a = 1
+    })
+    $('.account').click(function(){
+        $('.drop_down_acc').show()
+        a = 1
     })
     $('.drop_down_acc').mouseleave(function(){
         $('.drop_down_acc').hide()
+    })
+    
+    $('body').click(function(){
+        if (a == 1){
+            $('.drop_down_acc').hide()
+        }
     })
 
     $('.category p').click(function(){

@@ -14,7 +14,7 @@ body{
 .centerPage{
     height:500px;
     width: 900px;
-    margin-top: 5%;
+    margin-top: 30px;
     border-radius: 10px;
     box-shadow: 1px 1px 10px 1px rgb(112, 113, 112);
     background-color: white;
@@ -25,8 +25,6 @@ body{
 .midMe{
     display: flex;
     justify-content: center;
-    align-items: center;
-    height:70vh;
 }
 
 .advert{
@@ -296,3 +294,346 @@ a{
     margin-right: 10%;
     font-size: small;
 }
+
+/* Your base CSS styles here */
+
+/* Mobile-first approach */
+.header img {
+    width: 190px;
+    height: 47px;
+    margin-left: 10%;
+    margin-top: 3%;
+  }
+  
+  .centerPage {
+    height: 500px;
+    width: 900px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px rgb(112, 113, 112);
+    background-color: white;
+    background-image: url(/static/images/Landing_page/e_commerce.png);
+    background-repeat: round;
+  }
+  
+  .advert {
+    position: absolute;
+    width: 400px;
+    margin-left: 3%;
+    line-height: 25px;
+    margin-top: 1%;
+    background: linear-gradient(-90deg, rgba(242, 237, 237, 0.294), rgba(197, 186, 186, 0.956));
+    padding: 5px 15px;
+    border-radius: 10px;
+    border-left: 2.5px solid black;
+  }
+  
+  /* Button styles */
+  .button-sign-in,
+  .button-sign-up,
+  .button-explore {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+  }
+  
+  .btn li {
+    list-style: none;
+    border: 1px solid rgb(206, 249, 206);
+    padding: 10px 70px 10px 70px;
+    border-radius: 50px;
+    background-color: rgba(188, 205, 188, 0.492);
+    color: rgb(64, 41, 1);
+    font-weight: 600;
+    box-shadow: 1px 1px 10px 1px rgb(182, 183, 182);
+    cursor: pointer;
+  }
+  
+  .right {
+    right: 0;
+    position: absolute;
+    margin-right: 12%;
+    margin-top: 3%;
+    word-spacing: 20px;
+  }
+  
+  .right li {
+    display: inline;
+    list-style: none;
+    border: 1px solid rgb(206, 249, 206);
+    padding: 10px 40px 10px 40px;
+    border-radius: 50px;
+    background-color: rgba(188, 205, 188, 0.513);
+    color: rgb(64, 41, 1);
+    font-weight: 600;
+    box-shadow: 1px 1px 10px 1px rgb(182, 183, 182);
+    cursor: pointer;
+  }
+  
+  li:hover {
+    border-bottom: 2px solid black;
+    background-color: rgb(223, 232, 223);
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .info {
+    display: flex;
+    margin-left: 8%;
+    margin-top: 8%;
+  }
+  
+  .all {
+    background: linear-gradient(360deg, rgb(161, 222, 190), rgb(244, 240, 240));
+  }
+  
+  .in {
+    background-image: url(/static/images/Landing_page/crt.png);
+  }
+  
+  .info h2 {
+    text-align: center;
+    margin-top: 1px;
+    text-decoration: underline;
+  }
+  
+  .info img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .about h2 {
+    color: rgb(58, 0, 58);
+  }
+  
+  .about p {
+    color: rgb(2, 2, 78);
+    font-weight: 500;
+  }
+  
+  .im {
+    border: 3px solid rgba(50, 1, 1, 0.574);
+    border-right: 2px solid rgb(50, 1, 1, 0.574);
+    width: 720px;
+    height: 300px;
+    border-top-left-radius: 150px;
+    border-bottom-left-radius: 150px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+  }
+  
+  .info p {
+    text-align: justify;
+    line-height: 25px;
+    padding-right: 15px;
+    padding-left: 10px;
+  }
+  
+  .position_mission {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(180deg, rgb(161, 222, 190), rgb(244, 240, 240));
+  }
+  
+  .mission {
+    width: 700px;
+    background-color: rgba(0, 0, 0, 0.611);
+    border-radius: 20px;
+    margin-left: 500px;
+    margin-top: 5%;
+    box-shadow: 1px 1px 20px 1px rgb(241, 241, 188);
+    margin-bottom: 30px;
+  }
+  
+  .mission h2 {
+    color: wheat;
+    text-align: center;
+    font-style: italic;
+    font-size: x-large;
+  }
+  
+  .mission span {
+    text-decoration: underline;
+  }
+  
+  .mission p {
+    line-height: 24px;
+    padding: 2%;
+    padding-top: 1px;
+    word-spacing: 5px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .mission li {
+    color: rgb(255, 235, 235);
+    line-height: 25px;
+    text-align: justify;
+    margin-right: 5%;
+  }
+  
+  .mission li:hover {
+    background-color: transparent;
+  }
+  
+  .mission h3 {
+    color: rgb(247, 229, 196);
+  }
+  
+  .aboutUs {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    border-top: 2px solid green;
+  }
+  
+  .aboutUs img {
+    margin-top: 10%;
+    border-radius: 50%;
+    border: 5px solid white;
+    height: 300px;
+    width: 300px;
+  }
+  
+  .aboutUs p {
+    color: white;
+    width: 350px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 25px;
+    word-spacing: 5px;
+    text-align: justify;
+    height: 170px;
+  }
+  
+  .aboutUs li {
+    display: inline;
+    list-style: none;
+    margin: 0;
+    border: 1px solid white;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding: 4px;
+    border-radius: 20px;
+    margin-right: 15px;
+    background-color: white;
+    color: blue;
+    box-shadow: 1px 1px 20px 1px rgb(58, 58, 54);
+  }
+  
+  .aboutUs li:hover {
+    box-shadow: 1px 1px 20px 1px rgb(241, 241, 188);
+  }
+  
+  .contactUs {
+    text-align: center;
+  }
+  
+  .contactUs h1 {
+    margin: 0;
+    text-decoration: underline;
+  }
+  
+  .centa {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cp_right {
+    background-color: rgba(9, 43, 9, 0.737);
+    height: 50px;
+    margin: 0;
+    justify-content: right;
+    align-items: center;
+    display: flex;
+  }
+  
+  .cp_right p {
+    color: white;
+    margin: 0px;
+    margin-right: 10%;
+    font-size: small;
+  }
+  
+  /* Responsive CSS */
+  
+  /* Adjust Header Image Size for smaller screens */
+  @media screen and (max-width: 1120px) {
+    .aboutUs{
+        display: flex;
+        flex-wrap: wrap;
+    }
+  }
+
+  @media screen and (max-width: 1060px) {
+    .centerPage{
+        width: 600px;
+        height: 300px;
+    }
+    .info{
+        margin-left: 2%;
+    }
+    .btn{
+        height: 8vh;
+    }
+    body{
+        background-size: 100% auto;
+    }
+  }
+  
+  @media screen and (max-width: 1120px) {
+    .mission{
+        margin-left: 2%;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .about{
+        display: none;
+    }
+    .im{
+        border:none;
+        display: flex;
+        justify-content: center;
+    }
+    .right{
+        margin-top: 5%;
+        margin-right: 15px;
+    }
+    .right li{
+        background-color: white;
+        padding: 2px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .aboutUs li{
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+    }
+    .header img{
+      width: 100px;
+      height: 20px;
+    }
+  }

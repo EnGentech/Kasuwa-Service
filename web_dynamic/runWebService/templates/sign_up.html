@@ -24,10 +24,12 @@
             <input class='inp' type="password" placeholder="Confirm Password" id="con_pass" required>
         </div>
         <div class="form-group">
-            <input class='inp' type="email" name="mail" placeholder="E-Mail"  required>
+            <input class='inp' type="email" name="mail" placeholder="E-Mail"  
+            title="please enter a valid mail address" pattern="^[a-zA-Z]+@[a-zA-Z]+.[a-zA-Z]{2,4}$">
         </div>
         <div class="form-group">
-            <input class='inp' type="tel" name="phoneNumber" class="float-label" placeholder="Phone" required>
+            <input class='inp' type="tel" name="phoneNumber" class="float-label" placeholder="Phone"
+            title="please enter a valid phone number" required pattern="^((0[\d]{10})|\+\d{9,15})$">
         </div>
         <input id='registerBtn' type="submit">
         <p class="error">{{ error }}</p>
